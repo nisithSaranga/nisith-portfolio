@@ -37,7 +37,7 @@ export default function Home() {
 
           <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
             Nisith Saranga - IT Intern Candidate | Software Engineering Undergraduate
-                             Building full-stack projects with Next.js, Node, .NET, and SQL
+                             Building full-stack projects
           </h1>
 
           <p className="mt-6 max-w-2xl text-zinc-300">
