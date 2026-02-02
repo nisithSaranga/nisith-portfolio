@@ -101,14 +101,14 @@ export default function Home() {
                 </p>
 
                 <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
-                  Nisith Saranga - IT Intern Candidate | Software Engineering Undergraduate
+                  Nisith Saranga - I am a Full stack Developer...
                   <br />
                   <span className="text-zinc-300">Building full-stack projects</span>
                 </h1>
 
                 <p className="mt-6 max-w-2xl text-zinc-300">
                   I build web and software solutions using modern stacks. Here are my projects,
-                  skills, and education — optimized for internship selection boards: clear, real,
+                  skills, and education - optimized for internship selection boards: clear, real,
                   and easy to verify.
                 </p>
 
