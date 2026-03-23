@@ -211,15 +211,14 @@ export default function Home() {
 
         {/* PROJECTS (amended: image slots per project) */}
         <Section id="projects" title="Projects">
-          <div className="grid gap-4 md:grid-cols-2">
-            <ProjectCard
-              title="FixTrack – Vehicle Service Platform"
-              desc="Final-year project platform for booking, tracking, and managing vehicle services."
-              tags={["Next.js", "APIs", "Database"]}
-              imageSrc="/fixtrack1.jpg"
-              imageAlt="FixTrack project screenshot"
-              imageHint="Add image: public/projects/fixtrack1.jpg"
-            />
+         <div className="grid gap-4 md:grid-cols-2">
+           <ProjectCard
+             title="FixTrack – Vehicle Service Platform"
+             desc="Final-year project platform for booking, tracking, and managing vehicle services."
+             tags={["Next.js", "APIs", "Database"]}
+             projectImages={["/fixtrack1.jpg", "/fixtrack2.jpg", "/fixtrack3.jpg"]}
+             imageAlt="FixTrack project screenshots"
+           />
             <ProjectCard
               title="SPC Pharmacy Network – Service-Oriented Web App"
               desc="Service-oriented web application for managing pharmacy operations and workflows."
