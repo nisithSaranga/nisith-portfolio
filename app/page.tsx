@@ -26,7 +26,6 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Only show loader once per browser session
     try {
       const key = "nisith_portfolio_loader_seen";
       const seen = sessionStorage.getItem(key);
@@ -35,7 +34,6 @@ export default function Home() {
         setShowLoader(true);
         sessionStorage.setItem(key, "1");
 
-        // Loader duration (matches bar animation)
         const t = window.setTimeout(() => {
           setShowLoader(false);
         }, 1600);
@@ -43,7 +41,6 @@ export default function Home() {
         return () => window.clearTimeout(t);
       }
     } catch {
-      // If sessionStorage is blocked, just don't show loader
       setShowLoader(false);
     } finally {
       setMounted(true);
@@ -54,7 +51,6 @@ export default function Home() {
     <>
       {showLoader && <Preloader />}
 
-      {/* Keep your site exactly as-is, just fade it in after loader */}
       <main
         className={[
           "min-h-screen bg-zinc-950 text-zinc-100 transition-opacity duration-700",
@@ -62,7 +58,6 @@ export default function Home() {
           mounted ? "" : "opacity-0",
         ].join(" ")}
       >
-        {/* Top bar */}
         <header className="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/80 backdrop-blur">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
             <div className="font-semibold tracking-tight">
@@ -84,7 +79,6 @@ export default function Home() {
           </div>
         </header>
 
-        {/* Hero */}
         <section className="relative">
           <div className="pointer-events-none absolute inset-0 opacity-40">
             <div className="absolute left-1/2 top-[-120px] h-[380px] w-[380px] -translate-x-1/2 rounded-full bg-fuchsia-500/25 blur-3xl" />
@@ -92,16 +86,14 @@ export default function Home() {
           </div>
 
           <div className="mx-auto max-w-6xl px-4 py-20">
-            {/* HERO GRID (text + photo) */}
             <div className="grid items-center gap-10 lg:grid-cols-12">
-              {/* Left: Hero text */}
               <div className="lg:col-span-8">
                 <p className="mb-4 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-zinc-300">
                   Software Engineering Undergraduate • IT Intern Candidate
                 </p>
 
                 <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
-                  I'm Nisith, a Full stack Developer...
+                  I&apos;m Nisith, a Full stack Developer...
                   <br />
                   <span className="text-zinc-300"></span>
                 </h1>
@@ -151,24 +143,15 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Right: Photo */}
               <div className="lg:col-span-4">
                 <div className="mx-auto w-full max-w-sm">
                   <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
-                    {/* Placeholder image path:
-                        Put your photo at public/profile.jpg
-                        (or change src below) */}
                     <div className="aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 bg-black/30">
                       <img
                         src="/profile.png"
                         alt="Nisith Saranga"
                         className="h-full w-full object-cover"
                       />
-
-                      <div className="flex h-full w-full items-center justify-center p-6 text-center text-sm text-zinc-400">
-                        Add your photo: <br />
-                        <span className="text-zinc-300">public/profile.jpg</span>
-                      </div>
                     </div>
                     <p className="mt-3 text-xs text-zinc-500">
                       Tip: use a clean headshot, good lighting, neutral background.
@@ -177,11 +160,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            {/* END HERO GRID */}
           </div>
         </section>
 
-        {/* Sections */}
         <Section id="about" title="About">
           <p className="text-zinc-300">
             I’m Nisith Saranga, a software engineering undergraduate pursuing an IT internship.
@@ -190,7 +171,6 @@ export default function Home() {
           </p>
         </Section>
 
-        {/* SKILLS (amended: icon grid) */}
         <Section id="skills" title="Skills">
           <div className="grid gap-3 sm:grid-cols-2">
             <SkillItem icon={SiJavascript} label="JavaScript" color="text-yellow-400" />
@@ -209,16 +189,16 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* PROJECTS (amended: image slots per project) */}
         <Section id="projects" title="Projects">
-         <div className="grid gap-4 md:grid-cols-2">
-           <ProjectCard
-             title="FixTrack – Vehicle Service Platform"
-             desc="Final-year project platform for booking, tracking, and managing vehicle services."
-             tags={["Next.js", "APIs", "Database"]}
-             projectImages={["/fixtrack1.jpg", "/fixtrack2.jpg", "/fixtrack3.jpg"]}
-             imageAlt="FixTrack project screenshots"
-           />
+          <div className="grid gap-4 md:grid-cols-2">
+            <ProjectCard
+              title="FixTrack – Vehicle Service Platform"
+              desc="Final-year project platform for booking, tracking, and managing vehicle services."
+              tags={["Next.js", "APIs", "Database"]}
+              projectImages={["/fixtrack1.jpg", "/fixtrack2.jpg", "/fixtrack3.jpg"]}
+              imageAlt="FixTrack project screenshots"
+            />
+
             <ProjectCard
               title="SPC Pharmacy Network – Service-Oriented Web App"
               desc="Service-oriented web application for managing pharmacy operations and workflows."
@@ -274,13 +254,26 @@ export default function Home() {
               Best way: email me and I’ll reply fast.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
-              <a className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-zinc-950 hover:opacity-90" href="mailto:nisithsaranga13@gmail.com">
+              <a
+                className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-zinc-950 hover:opacity-90"
+                href="mailto:nisithsaranga13@gmail.com"
+              >
                 Email me
               </a>
-              <a className="rounded-full border border-white/15 px-5 py-2.5 text-sm hover:border-white/30" href="https://www.linkedin.com/in/nisith-saranga-0529732a5/" target="_blank" rel="noreferrer">
+              <a
+                className="rounded-full border border-white/15 px-5 py-2.5 text-sm hover:border-white/30"
+                href="https://www.linkedin.com/in/nisith-saranga-0529732a5/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 LinkedIn
               </a>
-              <a className="rounded-full border border-white/15 px-5 py-2.5 text-sm hover:border-white/30" href="https://github.com/nisithSaranga" target="_blank" rel="noreferrer">
+              <a
+                className="rounded-full border border-white/15 px-5 py-2.5 text-sm hover:border-white/30"
+                href="https://github.com/nisithSaranga"
+                target="_blank"
+                rel="noreferrer"
+              >
                 GitHub
               </a>
             </div>
@@ -313,12 +306,10 @@ function Preloader() {
           </div>
         </div>
 
-        {/* Progress line */}
         <div className="mt-8 h-[2px] w-full overflow-hidden rounded-full bg-white/10">
           <div className="h-full w-full origin-left animate-[nisithLoad_1.4s_ease-in-out_forwards] bg-gradient-to-r from-cyan-400 via-white to-fuchsia-400" />
         </div>
 
-        {/* Keyframes (scoped via styled-jsx) */}
         <style jsx>{`
           @keyframes nisithLoad {
             0% { transform: scaleX(0); opacity: 0.8; }
@@ -354,7 +345,10 @@ function SkillCard({ title, items }: { title: string; items: string[] }) {
       <p className="text-sm text-zinc-400">{title}</p>
       <ul className="mt-3 flex flex-wrap gap-2">
         {items.map((x) => (
-          <li key={x} className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-sm text-zinc-200">
+          <li
+            key={x}
+            className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-sm text-zinc-200"
+          >
             {x}
           </li>
         ))}
@@ -409,6 +403,7 @@ function ProjectCard({
 
   useEffect(() => {
     setCurrentIndex(0);
+    setFailedImages([]);
   }, [projectImages]);
 
   return (
@@ -482,39 +477,6 @@ function ProjectCard({
             key={t}
             className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-zinc-200"
           >
-            {t}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-} {
-  return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-5 hover:border-white/20">
-      {/* Image slot */}
-      <div className="mb-4 overflow-hidden rounded-xl border border-white/10 bg-black/30">
-        <div className="aspect-video w-full">
-          <img
-            src={imageSrc}
-            alt={imageAlt}
-            className="h-full w-full object-cover"
-            onError={(e) => {
-              // hide broken image icon if not provided yet
-              (e.currentTarget as HTMLImageElement).style.display = "none";
-            }}
-          />
-          <div className="flex h-full w-full items-center justify-center p-4 text-center text-sm text-zinc-400">
-            {imageHint}
-          </div>
-        </div>
-      </div>
-
-      <h3 className="text-lg font-semibold">{title}</h3>
-      <p className="mt-2 text-sm text-zinc-300">{desc}</p>
-
-      <div className="mt-4 flex flex-wrap gap-2">
-        {tags.map((t) => (
-          <span key={t} className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-zinc-200">
             {t}
           </span>
         ))}
