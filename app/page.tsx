@@ -216,9 +216,9 @@ export default function Home() {
               title="FixTrack – Vehicle Service Platform"
               desc="Final-year project platform for booking, tracking, and managing vehicle services."
               tags={["Next.js", "APIs", "Database"]}
-              imageSrc="/projects/fixtrack.jpg"
+              imageSrc="/projects/fixtrack1.jpg"
               imageAlt="FixTrack project screenshot"
-              imageHint="Add image: public/projects/fixtrack.jpg"
+              imageHint="Add image: public/projects/fixtrack1.jpg"
             />
             <ProjectCard
               title="SPC Pharmacy Network – Service-Oriented Web App"
