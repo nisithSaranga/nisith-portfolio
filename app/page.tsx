@@ -223,25 +223,24 @@ export default function Home() {
               title="SPC Pharmacy Network – Service-Oriented Web App"
               desc="Service-oriented web application for managing pharmacy operations and workflows."
               tags={["Web App", "Services", "SQL"]}
-              imageSrc="/projects/spc.jpg"
+              projectImages={["/spc.jpg"]}
               imageAlt="SPC Pharmacy Network project screenshot"
-              imageHint="Add image: public/projects/spc.jpg"
             />
+
             <ProjectCard
               title="LuxeVista Resort – Mobile App"
               desc="Mobile app concept for resort browsing, booking support, and user experience."
               tags={["Mobile", "UI/UX", "App"]}
-              imageSrc="/projects/luxevista.jpg"
+              projectImages={["/luxevista.jpg"]}
               imageAlt="LuxeVista Resort project screenshot"
-              imageHint="Add image: public/projects/luxevista.jpg"
             />
+
             <ProjectCard
               title="FitZone Fitness Center – Web App"
               desc="Web application for fitness center operations and member-facing features."
               tags={["Web", "CRUD", "Forms"]}
-              imageSrc="/projects/fitzone.jpg"
+              projectImages={["/fitzone.jpg"]}
               imageAlt="FitZone Fitness Center project screenshot"
-              imageHint="Add image: public/projects/fitzone.jpg"
             />
           </div>
 
@@ -385,17 +384,111 @@ function ProjectCard({
   title,
   desc,
   tags,
-  imageSrc,
+  projectImages,
   imageAlt,
-  imageHint,
 }: {
   title: string;
   desc: string;
   tags: string[];
-  imageSrc: string;
+  projectImages: string[];
   imageAlt: string;
-  imageHint: string;
 }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [failedImages, setFailedImages] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (!isHovered || projectImages.length <= 1) return;
+
+    const interval = window.setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % projectImages.length);
+    }, 1200);
+
+    return () => window.clearInterval(interval);
+  }, [isHovered, projectImages.length]);
+
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [projectImages]);
+
+  return (
+    <div
+      className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:border-white/20"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        setCurrentIndex(0);
+      }}
+    >
+      <div className="mb-4 overflow-hidden rounded-xl border border-white/10 bg-black/30">
+        <div className="relative aspect-video w-full overflow-hidden">
+          {projectImages.length > 0 ? (
+            <div
+              className="flex h-full w-full transition-transform duration-700 ease-in-out"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
+              {projectImages.map((img, index) => (
+                <div key={index} className="h-full w-full shrink-0">
+                  {!failedImages.includes(img) ? (
+                    <img
+                      src={img}
+                      alt={`${imageAlt} ${index + 1}`}
+                      className="h-full w-full object-cover"
+                      onError={() => {
+                        setFailedImages((prev) =>
+                          prev.includes(img) ? prev : [...prev, img]
+                        );
+                      }}
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center p-4 text-center text-sm text-zinc-400">
+                      Failed to load: {img}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="flex h-full w-full items-center justify-center p-4 text-center text-sm text-zinc-400">
+              No images provided
+            </div>
+          )}
+        </div>
+      </div>
+
+      {projectImages.length > 1 && (
+        <div className="mb-4 flex justify-center gap-2">
+          {projectImages.map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              onClick={() => setCurrentIndex(index)}
+              className={[
+                "h-2.5 w-2.5 rounded-full transition-all duration-300",
+                currentIndex === index ? "bg-white" : "bg-zinc-600 hover:bg-zinc-400",
+              ].join(" ")}
+              aria-label={`Show image ${index + 1}`}
+            />
+          ))}
+        </div>
+      )}
+
+      <h3 className="text-lg font-semibold">{title}</h3>
+      <p className="mt-2 text-sm text-zinc-300">{desc}</p>
+
+      <div className="mt-4 flex flex-wrap gap-2">
+        {tags.map((t) => (
+          <span
+            key={t}
+            className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-zinc-200"
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+} {
   return (
     <div className="rounded-2xl border border-white/10 bg-white/5 p-5 hover:border-white/20">
       {/* Image slot */}
