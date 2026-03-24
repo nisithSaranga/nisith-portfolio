@@ -236,16 +236,16 @@ export default function Home() {
               <p className="mt-2 font-medium">HND Certificate</p>
 
               <div className="mt-4 grid md:grid-cols-2 gap-6">
-                <a href="/hnd1.jpeg" target="_blank">
+                <a href="/hnd1.jpg" target="_blank">
                   <img
-                    src="/hnd1.jpeg"
+                    src="/hnd1.jpg"
                     className="w-full max-h-72 object-contain rounded-xl border border-white/10 hover:scale-105 transition"
                   />
                 </a>
 
-                <a href="/hnd2.jpeg" target="_blank">
+                <a href="/hnd2.jpg" target="_blank">
                   <img
-                    src="/hnd2.jpeg"
+                    src="/hnd2.jpg"
                     className="w-full max-h-72 object-contain rounded-xl border border-white/10 hover:scale-105 transition"
                   />
                 </a>
