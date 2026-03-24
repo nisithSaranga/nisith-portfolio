@@ -232,17 +232,27 @@ export default function Home() {
         <Section id="education" title="Education & Certification">
           <div className="grid gap-4 md:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-              <p className="text-sm text-zinc-400">Higher Diploma</p>
-              <p className="mt-2 font-medium">Higher Diploma in Computing and Software Engineering (Merit)</p>
-              <p className="mt-2 text-sm text-zinc-300">
-                Cardiff Metropolitan University (awarded)
-              </p>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
               <p className="text-sm text-zinc-400">Certificate</p>
-              <p className="mt-2 font-medium">HND Certificate (Scan)</p>
-              <p className="mt-2 text-sm text-zinc-300">
-                We’ll add a clean PDF/image link and a dedicated “Certificates” section.
+              <p className="mt-2 font-medium">HND Certificate</p>
+
+              <div className="mt-4 flex gap-4">
+                <a href="/hnd1.jpg" target="_blank">
+                  <img
+                    src="/hnd1.jpg"
+                    className="w-32 h-20 object-cover rounded-lg border border-white/10 hover:scale-105 transition"
+                  />
+                </a>
+
+                <a href="/hnd2.jpg" target="_blank">
+                  <img
+                    src="/hnd2.jpg"
+                    className="w-32 h-20 object-cover rounded-lg border border-white/10 hover:scale-105 transition"
+                  />
+                </a>
+              </div>
+
+              <p className="mt-3 text-sm text-zinc-300">
+                Click to view full certificate
               </p>
             </div>
           </div>
