@@ -200,13 +200,13 @@ export default function Home() {
                     href="#projects"
                     className="rounded-full bg-white px-5 py-3 text-sm font-medium text-zinc-950 transition hover:opacity-90"
                   >
-                    View Projects
+                    See Projects
                   </a>
                   <a
                     href="/Nisith_Saranga_CV.pdf"
                     className="rounded-full border border-white/15 px-5 py-3 text-sm text-zinc-100 transition hover:border-white/30"
                   >
-                    Download CV
+                    View Resume
                   </a>
                   <a
                     href="https://github.com/nisithSaranga"
@@ -221,7 +221,7 @@ export default function Home() {
                 <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:max-w-[34rem]">
                   <InfoCard
                     label="Stack"
-                    value="Next.js • Node/Express • .NET • SQL Server"
+                    value="• Next.js • Node/Express.js • .NET "
                   />
                   <InfoCard
                     label="Location"
@@ -287,7 +287,7 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section id="skills" title="My Skills" subtitle="Technologies I work with">
+        <Section id="skills" title="My Skills">
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
             {skillItems.map((skill) => (
               <SkillMeterCard
@@ -474,7 +474,7 @@ export default function Home() {
                     icon={<FaEnvelope />}
                   />
                   <FooterIconLink
-                    href="https://wa.me/94700000000"
+                    href="https://wa.me/94712698980"
                     label="WhatsApp"
                     icon={<FaWhatsapp />}
                   />
