@@ -21,10 +21,9 @@ import {
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
 
 const rotatingRoles = [
-  "Full-stack Developer",
-  "Frontend Builder",
-  "Backend Problem Solver",
-  "IT Intern Candidate",
+  "a Full-stack Developer",
+  "an Undergraduate",
+  "an IT Intern Candidate",
 ];
 
 const navItems = [
@@ -165,11 +164,11 @@ export default function Home() {
                 <h1 className="mx-auto max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl lg:mx-0 lg:text-6xl">
                   I&apos;m Nisith,
                   <br />
-                  <span className="text-white">building clean digital products.</span>
+
                 </h1>
 
                 <div className="mt-4 min-h-[38px] text-lg font-medium text-zinc-300 sm:text-xl lg:text-2xl">
-                  <span className="text-zinc-400">I am a </span>
+                  <span className="text-zinc-400">I am </span>
                   <span className="bg-gradient-to-r from-fuchsia-400 via-pink-300 to-cyan-300 bg-clip-text text-transparent">
                     <TypewriterRotator words={rotatingRoles} />
                   </span>
