@@ -82,30 +82,18 @@ const footerSocialLinks = [
 ];
 
 export default function Home() {
-  const [showLoader, setShowLoader] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
   const [mounted, setMounted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
 
-    try {
-      const key = "nisith_portfolio_loader_seen";
-      const seen = sessionStorage.getItem(key);
-
-      if (!seen) {
-        setShowLoader(true);
-        sessionStorage.setItem(key, "1");
-
-        const timer = window.setTimeout(() => {
-          setShowLoader(false);
-        }, 1900);
-
-        return () => window.clearTimeout(timer);
-      }
-    } catch {
+    const timer = window.setTimeout(() => {
       setShowLoader(false);
-    }
+    }, 2500); // change to 3000 if you want 3 seconds
+
+    return () => window.clearTimeout(timer);
   }, []);
 
   return (
