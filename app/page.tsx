@@ -311,7 +311,7 @@ export default function Home() {
               title="FitZone Fitness Center – Web App"
               desc="Web application for fitness center operations and member-facing features."
               tags={["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"]}
-              projectImages={["/fitzone1.jpg","/fitzone2.jpg","/fitzone3.jpg]"}
+              projectImages={["/fitzone1.jpg","/fitzone2.jpg","/fitzone3.jpg"]}
               imageAlt="FitZone Fitness Center project screenshots"
             />
           </div>
