@@ -193,8 +193,8 @@ export default function Home() {
           <div className="grid gap-4 md:grid-cols-2">
             <ProjectCard
               title="FixTrack – Vehicle Service Platform"
-              desc="Final-year project platform for booking, tracking, and managing vehicle services."
-              tags={["Next.js", "APIs", "Database"]}
+              desc="a full-stack platform for breakdown reporting, live tracking & mechanic dispatch. "
+              tags={["Node.js", "Next.js", "Firebase"]}
               projectImages={["/fixtrack1.jpg", "/fixtrack2.jpg", "/fixtrack3.jpg"]}
               imageAlt="FixTrack project screenshots"
             />
@@ -202,16 +202,16 @@ export default function Home() {
             <ProjectCard
               title="SPC Pharmacy Network – Service-Oriented Web App"
               desc="Service-oriented web application for managing pharmacy operations and workflows."
-              tags={["Web App", "Services", "SQL"]}
-              projectImages={["/spc.jpg"]}
-              imageAlt="SPC Pharmacy Network project screenshot"
+              tags={["ASP.NET Core", "React", "SQL Server"]}
+              projectImages={["/soc1.jpg", "/soc2.jpg", "/soc3.jpg"]}
+              imageAlt="SPC Pharmacy Network project screenshots"
             />
 
             <ProjectCard
               title="LuxeVista Resort – Mobile App"
               desc="Mobile app concept for resort browsing, booking support, and user experience."
-              tags={["Mobile", "UI/UX", "App"]}
-              projectImages={["/luxevista.jpg"]}
+              tags={["Android Studio", "Java", "MySQL"]}
+              projectImages={["/luxe1.jpg", "/luxe2.jpg"]}
               imageAlt="LuxeVista Resort project screenshot"
             />
 
