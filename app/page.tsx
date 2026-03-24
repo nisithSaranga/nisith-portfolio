@@ -157,14 +157,9 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:pb-20 sm:pt-16 lg:pt-20">
             <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(300px,420px)]">
               <div className="min-w-0 text-center lg:text-left">
-                <p className="mx-auto mb-4 inline-flex max-w-full rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-zinc-300 lg:mx-0">
-                  Software Engineering Undergraduate • IT Intern Candidate
-                </p>
 
                 <h1 className="mx-auto max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl lg:mx-0 lg:text-6xl">
-                  I&apos;m Nisith,
-                  <br />
-
+                  I&apos;m Nisith Saranga
                 </h1>
 
                 <div className="mt-4 min-h-[38px] text-lg font-medium text-zinc-300 sm:text-xl lg:text-2xl">
@@ -175,9 +170,7 @@ export default function Home() {
                 </div>
 
                 <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-zinc-300 sm:text-base lg:mx-0">
-                  I build web and software solutions with a strong focus on clean UI, practical APIs,
-                  and data-backed systems. This portfolio highlights my projects, skills, and academic
-                  background in a format that is easy for internship recruiters to review.
+                  I focus on transforming ideas into polished and effective digital solutions.
                 </p>
 
                 <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
@@ -258,15 +251,15 @@ export default function Home() {
         <Section id="about" title="About Me">
           <div className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-7">
             <p className="text-zinc-300 leading-7">
-              I&apos;m Nisith Saranga, a Software Engineering undergraduate pursuing an IT internship.
-              I enjoy building practical systems end-to-end: clean interfaces, structured backend logic,
-              and reliable database-driven features. I care about readable code, clear documentation,
-              and delivering work that feels complete and professional.
+              I&apos;m Nisith Saranga,a Software Engineering undergraduate with a strong interest in building systems that are both functional and polished.
+              I like combining clean user interfaces, structured backend development, and reliable data handling to create solutions that solve real problems.
+               This portfolio reflects the kind of developer I’m becoming: practical, detail-focused, and committed to building work that is clear, professional,
+               and genuinely useful. I’m currently seeking an IT internship where I can apply my skills, learn fast, and add real value.
             </p>
           </div>
         </Section>
 
-        <Section id="skills" title="My Skills" subtitle="Technologies I work with">
+        <Section id="skills" title="My Skills">
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
             {skillItems.map((skill) => (
               <SkillMeterCard
@@ -411,12 +404,16 @@ function Preloader() {
       </div>
 
       <div className="relative z-10 w-full max-w-md rounded-[28px] border border-white/10 bg-white/[0.04] p-8 text-center shadow-2xl shadow-black/40 backdrop-blur">
-        <div className="mx-auto flex h-20 w-20 items-center justify-center overflow-hidden rounded-full border border-white/15 bg-white/5">
-          <img
-            src="/profile.png"
-            alt="Nisith Saranga"
-            className="h-full w-full object-cover"
-          />
+        <div className="flex justify-center">
+          <div className="rounded-full bg-gradient-to-br from-fuchsia-500 via-violet-500 to-cyan-400 p-[3px] shadow-lg shadow-fuchsia-500/20">
+            <div className="overflow-hidden rounded-full border border-white/10 bg-zinc-900">
+              <img
+                src="/profile.png"
+                alt="Nisith Saranga"
+                className="h-44 w-44 object-cover sm:h-52 sm:w-52"
+              />
+            </div>
+          </div>
         </div>
 
         <p className="mt-5 text-2xl font-semibold tracking-tight text-white">
