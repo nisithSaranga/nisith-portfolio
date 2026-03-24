@@ -763,7 +763,8 @@ function FooterColumn({
 
       <div className="mt-5 space-y-4">
         {links.map((link) => {
-          const isExternal = link.external ?? link.href.startsWith("http") || link.href.startsWith("mailto:");
+          const isExternal =
+            link.external ?? (link.href.startsWith("http") || link.href.startsWith("mailto:"));
 
           return (
             <a
