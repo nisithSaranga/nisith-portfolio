@@ -220,8 +220,8 @@ export default function Home() {
 
                 <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:max-w-[34rem]">
                   <InfoCard
-                    label="Stack"
-                    value="• Next.js • Node/Express.js • .NET "
+                    label="Passion"
+                    value=" Java "
                   />
                   <InfoCard
                     label="Location"
@@ -335,10 +335,6 @@ export default function Home() {
               imageAlt="FitZone Fitness Center project screenshots"
             />
           </div>
-
-          <p className="mt-6 text-sm text-zinc-400">
-            More project breakdowns, repository links, and live previews can be added next.
-          </p>
         </Section>
 
         <Section id="education" title="Education & Certifications">
