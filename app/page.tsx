@@ -259,10 +259,10 @@ export default function Home() {
                           Full-stack
                         </span>
                         <span className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-zinc-200">
-                          Problem solving
+                          Problem Solver
                         </span>
                         <span className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-zinc-200">
-                          Internship ready
+                          Aspiring It Intern
                         </span>
                       </div>
                     </div>
@@ -421,7 +421,7 @@ export default function Home() {
               </a>
 
               <a
-                href="https://wa.me/94700000000"
+                href="https://wa.me/94712698980"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="WhatsApp"
@@ -450,7 +450,7 @@ export default function Home() {
             <div className="mt-12 border-t border-white/10 pt-6">
               <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
                 <p className="text-sm text-zinc-400">
-                  © {new Date().getFullYear()} Nisith Saranga. Built with Next.js.
+                  © {new Date().getFullYear()} Developed by Nisith Saranga.
                 </p>
 
                 <div className="flex items-center gap-3">
