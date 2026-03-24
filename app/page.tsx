@@ -215,12 +215,16 @@ export default function Home() {
               <div className="min-w-0">
                 <div className="mx-auto w-full max-w-sm">
                   <div className="rounded-[28px] border border-white/10 bg-white/5 p-4 shadow-2xl shadow-black/30">
-                    <div className="overflow-hidden rounded-[22px] border border-white/10 bg-black/30">
-                      <img
-                        src="/profile.png"
-                        alt="Nisith Saranga"
-                        className="aspect-[4/5] h-full w-full object-cover"
-                      />
+                    <div className="flex justify-center pt-2">
+                      <div className="rounded-full bg-gradient-to-br from-fuchsia-500 via-violet-500 to-cyan-400 p-[3px] shadow-lg shadow-fuchsia-500/20">
+                        <div className="overflow-hidden rounded-full bg-zinc-900">
+                          <img
+                            src="/profile.png"
+                            alt="Nisith Saranga"
+                            className="h-40 w-40 object-cover sm:h-44 sm:w-44"
+                          />
+                        </div>
+                      </div>
                     </div>
 
                     <div className="mt-4">
@@ -404,16 +408,12 @@ function Preloader() {
       </div>
 
       <div className="relative z-10 w-full max-w-md rounded-[28px] border border-white/10 bg-white/[0.04] p-8 text-center shadow-2xl shadow-black/40 backdrop-blur">
-        <div className="flex justify-center">
-          <div className="rounded-full bg-gradient-to-br from-fuchsia-500 via-violet-500 to-cyan-400 p-[3px] shadow-lg shadow-fuchsia-500/20">
-            <div className="overflow-hidden rounded-full border border-white/10 bg-zinc-900">
-              <img
-                src="/profile.png"
-                alt="Nisith Saranga"
-                className="h-44 w-44 object-cover sm:h-52 sm:w-52"
-              />
-            </div>
-          </div>
+        <div className="overflow-hidden rounded-[22px] border border-white/10 bg-black/30">
+          <img
+            src="/profile.png"
+            alt="Nisith Saranga"
+            className="aspect-[4/5] h-full w-full object-cover"
+          />
         </div>
 
         <p className="mt-5 text-2xl font-semibold tracking-tight text-white">
