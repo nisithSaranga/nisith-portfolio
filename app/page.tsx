@@ -9,6 +9,9 @@ import {
   FaCss3Alt,
   FaJava,
   FaDatabase,
+  FaLinkedinIn,
+  FaEnvelope,
+  FaWhatsapp,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -22,8 +25,8 @@ import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
 
 const rotatingRoles = [
   "a Full-stack Developer",
-  "an Undergraduate",
   "an IT Intern Candidate",
+  "a Problem Solver",
 ];
 
 const navItems = [
@@ -50,6 +53,34 @@ const skillItems = [
   { icon: FaGithub, label: "Git & GitHub", color: "text-zinc-300", level: 84 },
 ];
 
+const footerPortfolioLinks = [
+  { label: "About Me", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
+];
+
+const footerSkillLinks = [
+  { label: "JavaScript", href: "#skills" },
+  { label: "TypeScript", href: "#skills" },
+  { label: "React", href: "#skills" },
+  { label: "Next.js", href: "#skills" },
+];
+
+const footerSupportLinks = [
+  { label: "Resume Download", href: "/Nisith_Saranga_CV.pdf", external: false },
+  { label: "Hire Me", href: "#contact", external: false },
+  { label: "Contact Support", href: "mailto:nisithsaranga13@gmail.com", external: true },
+  { label: "FAQs", href: "#contact", external: false },
+];
+
+const footerSocialLinks = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/nisith-saranga-0529732a5/" },
+  { label: "GitHub", href: "https://github.com/nisithSaranga" },
+  { label: "Email", href: "mailto:nisithsaranga13@gmail.com" },
+  { label: "WhatsApp", href: "https://wa.me/94700000000" },
+];
+
 export default function Home() {
   const [showLoader, setShowLoader] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -68,7 +99,7 @@ export default function Home() {
 
         const timer = window.setTimeout(() => {
           setShowLoader(false);
-        }, 2100);
+        }, 1900);
 
         return () => window.clearTimeout(timer);
       }
@@ -155,9 +186,8 @@ export default function Home() {
           </div>
 
           <div className="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:pb-20 sm:pt-16 lg:pt-20">
-            <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(300px,420px)]">
+            <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,430px)]">
               <div className="min-w-0 text-center lg:text-left">
-
                 <h1 className="mx-auto max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl lg:mx-0 lg:text-6xl">
                   I&apos;m Nisith Saranga
                 </h1>
@@ -170,7 +200,7 @@ export default function Home() {
                 </div>
 
                 <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-zinc-300 sm:text-base lg:mx-0">
-                  I focus on transforming ideas into polished and effective digital solutions.
+                  Turning ideas into practical, polished solutions is what I do best.
                 </p>
 
                 <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
@@ -196,11 +226,7 @@ export default function Home() {
                   </a>
                 </div>
 
-                <div className="mt-12 grid gap-4 sm:grid-cols-3">
-                  <InfoCard
-                    label="Focus"
-                    value="Full-stack projects & internship readiness"
-                  />
+                <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:max-w-[34rem]">
                   <InfoCard
                     label="Stack"
                     value="Next.js • Node/Express • .NET • SQL Server"
@@ -214,26 +240,29 @@ export default function Home() {
 
               <div className="min-w-0">
                 <div className="mx-auto w-full max-w-sm">
-                  <div className="rounded-[28px] border border-white/10 bg-white/5 p-4 shadow-2xl shadow-black/30">
-                    <div className="flex justify-center pt-2">
-                      <div className="rounded-full bg-gradient-to-br from-fuchsia-500 via-violet-500 to-cyan-400 p-[3px] shadow-lg shadow-fuchsia-500/20">
-                        <div className="overflow-hidden rounded-full bg-zinc-900">
+                  <div className="rounded-[30px] border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-black/30">
+                    <div className="relative flex justify-center">
+                      <div className="absolute top-8 h-56 w-56 rounded-full bg-fuchsia-500/15 blur-3xl sm:h-64 sm:w-64" />
+                      <div className="absolute top-10 h-52 w-52 rounded-full bg-cyan-500/10 blur-3xl sm:h-60 sm:w-60" />
+
+                      <div className="relative rounded-full bg-gradient-to-br from-fuchsia-500 via-violet-500 to-cyan-400 p-[4px] shadow-[0_0_45px_rgba(168,85,247,0.18)]">
+                        <div className="rounded-full bg-zinc-950 p-2">
                           <img
                             src="/profile.png"
                             alt="Nisith Saranga"
-                            className="h-40 w-40 object-cover sm:h-44 sm:w-44"
+                            className="h-56 w-56 rounded-full object-cover object-[center_12%] sm:h-64 sm:w-64 lg:h-72 lg:w-72"
                           />
                         </div>
                       </div>
                     </div>
 
-                    <div className="mt-4">
-                      <p className="text-sm font-medium text-white">Nisith Saranga</p>
-                      <p className="mt-1 text-sm text-zinc-400">
+                    <div className="mt-6 text-center">
+                      <p className="text-lg font-semibold text-white">Nisith Saranga</p>
+                      <p className="mt-2 text-sm leading-6 text-zinc-400">
                         Software Engineering undergraduate looking for IT internship opportunities.
                       </p>
 
-                      <div className="mt-4 flex flex-wrap gap-2">
+                      <div className="mt-4 flex flex-wrap justify-center gap-2">
                         <span className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-zinc-200">
                           Full-stack
                         </span>
@@ -254,16 +283,19 @@ export default function Home() {
 
         <Section id="about" title="About Me">
           <div className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-7">
-            <p className="text-zinc-300 leading-7">
-              I&apos;m Nisith Saranga,a Software Engineering undergraduate with a strong interest in building systems that are both functional and polished.
-              I like combining clean user interfaces, structured backend development, and reliable data handling to create solutions that solve real problems.
-               This portfolio reflects the kind of developer I’m becoming: practical, detail-focused, and committed to building work that is clear, professional,
-               and genuinely useful. I’m currently seeking an IT internship where I can apply my skills, learn fast, and add real value.
+            <p className="leading-8 text-zinc-300">
+              I&apos;m Nisith Saranga, a Software Engineering undergraduate with a strong interest in
+              building systems that are both functional and polished. I enjoy combining clean user
+              interfaces, structured backend development, and reliable data handling to create
+              solutions that solve real problems. This portfolio reflects the kind of developer I’m
+              becoming: practical, detail-focused, and committed to building work that is clear,
+              professional, and genuinely useful. I’m currently seeking an IT internship where I can
+              apply my skills, learn fast, and add real value.
             </p>
           </div>
         </Section>
 
-        <Section id="skills" title="My Skills">
+        <Section id="skills" title="My Skills" subtitle="Technologies I work with">
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
             {skillItems.map((skill) => (
               <SkillMeterCard
@@ -307,7 +339,7 @@ export default function Home() {
               title="FitZone Fitness Center – Web App"
               desc="Web application for fitness center operations and member-facing features."
               tags={["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"]}
-              projectImages={["/fitzone1.jpg","/fitzone2.jpg","/fitzone3.jpg"]}
+              projectImages={["/fitzone1.jpg", "/fitzone2.jpg", "/fitzone3.jpg"]}
               imageAlt="FitZone Fitness Center project screenshots"
             />
           </div>
@@ -389,9 +421,45 @@ export default function Home() {
           </div>
         </Section>
 
-        <footer className="border-t border-white/10 py-10">
-          <div className="mx-auto max-w-6xl px-4 text-sm text-zinc-500">
-            © {new Date().getFullYear()} Nisith Saranga. Built with Next.js.
+        <footer className="border-t border-white/10 bg-black/20">
+          <div className="mx-auto max-w-6xl px-4 py-14">
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+              <FooterColumn title="Portfolio" links={footerPortfolioLinks} />
+              <FooterColumn title="Skills" links={footerSkillLinks} />
+              <FooterColumn title="Support" links={footerSupportLinks} />
+              <FooterColumn title="Social" links={footerSocialLinks} />
+            </div>
+
+            <div className="mt-12 border-t border-white/10 pt-6">
+              <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+                <p className="text-sm text-zinc-400">
+                  © {new Date().getFullYear()} Nisith Saranga. Built with Next.js.
+                </p>
+
+                <div className="flex items-center gap-3">
+                  <FooterIconLink
+                    href="https://www.linkedin.com/in/nisith-saranga-0529732a5/"
+                    label="LinkedIn"
+                    icon={<FaLinkedinIn />}
+                  />
+                  <FooterIconLink
+                    href="https://github.com/nisithSaranga"
+                    label="GitHub"
+                    icon={<FaGithub />}
+                  />
+                  <FooterIconLink
+                    href="mailto:nisithsaranga13@gmail.com"
+                    label="Email"
+                    icon={<FaEnvelope />}
+                  />
+                  <FooterIconLink
+                    href="https://wa.me/94700000000"
+                    label="WhatsApp"
+                    icon={<FaWhatsapp />}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </footer>
       </main>
@@ -408,11 +476,11 @@ function Preloader() {
       </div>
 
       <div className="relative z-10 w-full max-w-md rounded-[28px] border border-white/10 bg-white/[0.04] p-8 text-center shadow-2xl shadow-black/40 backdrop-blur">
-        <div className="overflow-hidden rounded-[22px] border border-white/10 bg-black/30">
+        <div className="mx-auto flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-zinc-900 ring-2 ring-fuchsia-500/20">
           <img
             src="/profile.png"
             alt="Nisith Saranga"
-            className="aspect-[4/5] h-full w-full object-cover"
+            className="h-full w-full object-cover object-[center_12%]"
           />
         </div>
 
@@ -429,7 +497,7 @@ function Preloader() {
         </p>
 
         <div className="mt-7 h-[4px] w-full overflow-hidden rounded-full bg-white/10">
-          <div className="h-full w-full origin-left animate-[nisithLoad_1.9s_ease-in-out_forwards] bg-gradient-to-r from-fuchsia-400 via-white to-cyan-400" />
+          <div className="h-full w-full origin-left animate-[nisithLoad_1.7s_ease-in-out_forwards] bg-gradient-to-r from-fuchsia-400 via-white to-cyan-400" />
         </div>
 
         <style jsx>{`
@@ -478,7 +546,7 @@ function TypewriterRotator({ words }: { words: string[] }) {
 
         setSubIndex((prev) => prev + (deleting ? -1 : 1));
       },
-      finishedTyping ? 1100 : deleting ? 45 : 80
+      finishedTyping ? 1000 : deleting ? 45 : 80
     );
 
     return () => window.clearTimeout(timeout);
@@ -677,5 +745,61 @@ function ProjectCard({
         ))}
       </div>
     </div>
+  );
+}
+
+function FooterColumn({
+  title,
+  links,
+}: {
+  title: string;
+  links: { label: string; href: string; external?: boolean }[];
+}) {
+  return (
+    <div>
+      <h3 className="inline-block border-b border-fuchsia-500/70 pb-1 text-xl font-medium text-fuchsia-400">
+        {title}
+      </h3>
+
+      <div className="mt-5 space-y-4">
+        {links.map((link) => {
+          const isExternal = link.external ?? link.href.startsWith("http") || link.href.startsWith("mailto:");
+
+          return (
+            <a
+              key={`${title}-${link.label}`}
+              href={link.href}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noreferrer" : undefined}
+              className="block text-lg text-zinc-200 transition hover:text-white"
+            >
+              {link.label}
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function FooterIconLink({
+  href,
+  label,
+  icon,
+}: {
+  href: string;
+  label: string;
+  icon: React.ReactNode;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={label}
+      className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-zinc-200 transition hover:border-fuchsia-400/60 hover:text-white"
+    >
+      <span className="text-lg">{icon}</span>
+    </a>
   );
 }
