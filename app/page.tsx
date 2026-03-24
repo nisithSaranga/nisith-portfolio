@@ -25,8 +25,8 @@ import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
 
 const rotatingRoles = [
   "a Full-stack Developer",
+  "an Undergraduate ",
   "an IT Intern Candidate",
-  "a Problem Solver",
 ];
 
 const navItems = [
@@ -78,7 +78,7 @@ const footerSocialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/nisith-saranga-0529732a5/" },
   { label: "GitHub", href: "https://github.com/nisithSaranga" },
   { label: "Email", href: "mailto:nisithsaranga13@gmail.com" },
-  { label: "WhatsApp", href: "https://wa.me/94700000000" },
+  { label: "WhatsApp", href: "https://wa.me/94712698980" },
 ];
 
 export default function Home() {
@@ -120,26 +120,26 @@ export default function Home() {
         ].join(" ")}
       >
         <header className="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/80 backdrop-blur-xl">
-          <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4">
-            <a href="#" className="min-w-0 font-semibold tracking-tight">
-              Nisith <span className="text-zinc-400">Saranga</span>
+          <div className="mx-auto flex w-full max-w-6xl items-center px-4 py-4">
+            <a href="#" className="flex min-w-0 items-center gap-3 font-semibold tracking-tight">
+              <img
+                src="/profile.png"
+                alt="Nisith Saranga"
+                className="h-9 w-9 rounded-full border border-white/10 object-cover object-[center_12%] ring-2 ring-fuchsia-500/30"
+              />
+              <span>
+                Nisith <span className="text-zinc-400">Saranga</span>
+              </span>
             </a>
 
-            <nav className="hidden items-center gap-6 text-sm text-zinc-300 md:flex">
-              {navItems.map((item) => (
-                <a key={item.href} className="transition hover:text-white" href={item.href}>
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-
-            <div className="flex items-center gap-2">
-              <a
-                className="hidden rounded-full border border-white/15 px-4 py-2 text-sm transition hover:border-white/30 md:inline-flex"
-                href="#contact"
-              >
-                Let&apos;s talk
-              </a>
+            <div className="ml-auto flex items-center">
+              <nav className="hidden items-center gap-8 text-sm text-zinc-300 md:flex">
+                {navItems.map((item) => (
+                  <a key={item.href} className="transition hover:text-white" href={item.href}>
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
 
               <button
                 type="button"
@@ -153,29 +153,22 @@ export default function Home() {
             </div>
           </div>
 
-          {mobileMenuOpen && (
-            <div className="border-t border-white/10 md:hidden">
-              <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3">
-                {navItems.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    className="rounded-xl px-3 py-3 text-sm text-zinc-300 transition hover:bg-white/5 hover:text-white"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                ))}
+        {mobileMenuOpen && (
+          <div className="border-t border-white/10 md:hidden">
+            <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3">
+              {navItems.map((item) => (
                 <a
-                  href="#contact"
-                  className="mt-2 rounded-xl bg-white px-3 py-3 text-center text-sm font-medium text-zinc-950"
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-xl px-3 py-3 text-sm text-zinc-300 transition hover:bg-white/5 hover:text-white"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Let&apos;s talk
+                  {item.label}
                 </a>
-              </div>
+              ))}
             </div>
-          )}
+          </div>
+        )}
         </header>
 
         <section className="relative overflow-x-clip">
@@ -200,8 +193,7 @@ export default function Home() {
                 </div>
 
                 <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-zinc-300 sm:text-base lg:mx-0">
-                  Turning ideas into practical, polished solutions is what I do best.
-                </p>
+                   I focus on transforming ideas into polished and effective digital solutions.                </p>
 
                 <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
                   <a
@@ -350,13 +342,15 @@ export default function Home() {
         </Section>
 
         <Section id="education" title="Education & Certifications">
-          <div className="grid gap-4 md:grid-cols-2">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
-              <p className="text-sm text-zinc-400">Certificate</p>
-              <p className="mt-2 text-lg font-medium text-white">HND in Computing & Software Engineering</p>
+          <div className="flex justify-center">
+            <div className="w-full max-w-4xl rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
+              <p className="text-center text-sm text-zinc-400">Certificate</p>
+              <p className="mt-2 text-center text-lg font-medium text-white">
+                HND in Computing & Software Engineering
+              </p>
 
-              <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                <a href="/hnd1.jpg" target="_blank" rel="noreferrer" className="group">
+          <div className="mt-5 grid justify-items-center gap-4 sm:grid-cols-2">
+          <a href="/hnd1.jpg" target="_blank" rel="noreferrer" className="group w-full max-w-[300px]">
                   <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/30">
                     <img
                       src="/hnd1.jpg"
@@ -366,7 +360,7 @@ export default function Home() {
                   </div>
                 </a>
 
-                <a href="/hnd2.jpg" target="_blank" rel="noreferrer" className="group">
+                <a href="/hnd2.jpg" target="_blank" rel="noreferrer" className="group w-full max-w-[300px]">
                   <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/30">
                     <img
                       src="/hnd2.jpg"
@@ -377,7 +371,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <p className="mt-4 text-sm text-zinc-300">
+              <p className="mt-4 text-center text-sm text-zinc-300">
                 Click either certificate to open the full image.
               </p>
             </div>
@@ -385,38 +379,65 @@ export default function Home() {
         </Section>
 
         <Section id="contact" title="Contact">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-            <p className="text-zinc-300">
-              I&apos;m open to internship opportunities, project collaboration, and professional networking.
+          <div className="mx-auto max-w-3xl rounded-[32px] border border-white/10 bg-white/[0.05] p-8 text-center shadow-2xl shadow-black/20">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-500/20 via-violet-500/20 to-cyan-400/20 ring-1 ring-white/10">
+              <FaEnvelope className="text-2xl text-white" />
+            </div>
+
+            <p className="mt-5 text-lg font-medium text-white">
+              Let’s connect
             </p>
 
-            <div className="mt-5 flex flex-wrap gap-3">
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base">
+              I’m open to internship opportunities, collaborations, and professional connections.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
-                className="rounded-full bg-white px-5 py-3 text-sm font-medium text-zinc-950 transition hover:opacity-90"
                 href="mailto:nisithsaranga13@gmail.com"
+                aria-label="Email"
+                title="Email"
+                className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-zinc-200 transition hover:-translate-y-1 hover:border-fuchsia-400/50 hover:text-white"
               >
-                Email me
+                <FaEnvelope className="text-xl" />
               </a>
+
               <a
-                className="rounded-full border border-white/15 px-5 py-3 text-sm text-zinc-100 transition hover:border-white/30"
                 href="https://www.linkedin.com/in/nisith-saranga-0529732a5/"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+                className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-zinc-200 transition hover:-translate-y-1 hover:border-fuchsia-400/50 hover:text-white"
               >
-                LinkedIn
+                <FaLinkedinIn className="text-xl" />
               </a>
+
               <a
-                className="rounded-full border border-white/15 px-5 py-3 text-sm text-zinc-100 transition hover:border-white/30"
                 href="https://github.com/nisithSaranga"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="GitHub"
+                title="GitHub"
+                className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-zinc-200 transition hover:-translate-y-1 hover:border-fuchsia-400/50 hover:text-white"
               >
-                GitHub
+                <FaGithub className="text-xl" />
+              </a>
+
+              <a
+                href="https://wa.me/94700000000"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="WhatsApp"
+                title="WhatsApp"
+                className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-zinc-200 transition hover:-translate-y-1 hover:border-fuchsia-400/50 hover:text-white"
+              >
+                <FaWhatsapp className="text-xl" />
               </a>
             </div>
 
-            <p className="mt-4 text-xs text-zinc-500">
-              Usually the fastest response will be through email or LinkedIn.
+            <p className="mt-6 text-xs text-zinc-500">
+              Best reached by email or LinkedIn.
             </p>
           </div>
         </Section>
