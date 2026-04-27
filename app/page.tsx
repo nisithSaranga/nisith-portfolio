@@ -259,15 +259,21 @@ export default function Home() {
         <Section id="projects" title="Projects">
           <div className="grid gap-5 md:grid-cols-2">
             <ProjectCard
-              title="FixTrack – Vehicle Service Platform"
+              title="FixTrack - Vehicle Service Platform"
               desc="A full-stack platform for breakdown reporting, live tracking, and mechanic dispatch."
               tags={["Express.js", "Next.js", "Firebase"]}
               projectImages={["/fixtrack1.jpg", "/fixtrack2.jpg", "/fixtrack3.jpg"]}
               imageAlt="FixTrack project screenshots"
             />
-
             <ProjectCard
-              title="SPC Pharmacy Network – Service-Oriented Web App"
+              title="OceanView Resort - Reservation Management System"
+              desc="Java EE web application to manage resort reservations, prevent booking conflicts & generate invoices."
+              tags={["Java EE", "MySQL", "HTML5", "Bootstrap"]}
+              projectImages={["/oceanview1.png", "/oceanview2.png" ]}
+              imageAlt="Oceanview RMS project screenshots"
+            />
+            <ProjectCard
+              title="SPC Pharmacy Network - Service Oriented Web App"
               desc="Service-oriented web application for managing pharmacy operations and business workflows."
               tags={["ASP.NET Core", "React", "SQL Server"]}
               projectImages={["/soc1.jpg", "/soc2.jpg", "/soc3.jpg"]}
@@ -275,15 +281,15 @@ export default function Home() {
             />
 
             <ProjectCard
-              title="LuxeVista Resort – Mobile App"
-              desc="Mobile app concept for resort browsing, booking support, and smoother user experience."
-              tags={["Android Studio", "Java", "MySQL"]}
+              title="LuxeVista Resort - Mobile App (Android studio)"
+              desc="Mobile app concept for resort browsing, booking support, and smoother user experience "
+              tags={[ "Java", "XML", "MySQL"]}
               projectImages={["/luxe1.jpg", "/luxe2.jpg"]}
               imageAlt="LuxeVista Resort project screenshots"
             />
 
             <ProjectCard
-              title="FitZone Fitness Center – Web App"
+              title="FitZone Fitness Center - Web App"
               desc="Web application for fitness center operations and member-facing features."
               tags={["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"]}
               projectImages={["/fitzone1.jpg", "/fitzone2.jpg", "/fitzone3.jpg"]}
@@ -291,43 +297,62 @@ export default function Home() {
             />
           </div>
         </Section>
+<Section id="education" title="Education & Certifications">
+  <div className="flex flex-col items-center gap-6">
 
-        <Section id="education" title="Education & Certifications">
-          <div className="flex justify-center">
-            <div className="w-full max-w-4xl rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
-              <p className="text-center text-sm text-zinc-400">Certificate</p>
-              <p className="mt-2 text-center text-lg font-medium text-white">
-                HND in Computing & Software Engineering
-              </p>
+    {/* Degree Details — plain background */}
+    <div className="w-full max-w-4xl space-y-3 pb-4">
 
-          <div className="mt-5 grid justify-items-center gap-4 sm:grid-cols-2">
-          <a href="/hnd1.jpg" target="_blank" rel="noreferrer" className="group w-full max-w-[300px]">
-                  <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/30">
-                    <img
-                      src="/hnd1.jpg"
-                      alt="HND Certificate front"
-                      className="h-64 w-full object-contain transition duration-300 group-hover:scale-[1.03]"
-                    />
-                  </div>
-                </a>
+      {/* BSc */}
+      <div className="group flex items-start gap-3 p-4">
+        <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-pink-500 via-purple-500 to-cyan-400" />
+        <div>
+          <p className="bg-gradient-to-r from-white to-cyan-400 bg-clip-text font-semibold text-white transition group-hover:text-transparent">
+            BSc (Hons) in Software Engineering (Reading)
+          </p>
+          <p className="text-sm text-zinc-500">Cardiff Metropolitan Unviversity (Reading) </p>
+        </div>
+      </div>
 
-                <a href="/hnd2.jpg" target="_blank" rel="noreferrer" className="group w-full max-w-[300px]">
-                  <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/30">
-                    <img
-                      src="/hnd2.jpg"
-                      alt="HND Certificate back"
-                      className="h-64 w-full object-contain transition duration-300 group-hover:scale-[1.03]"
-                    />
-                  </div>
-                </a>
-              </div>
+      {/* HND */}
+      <div className="group flex items-start gap-3 p-4">
+        <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-pink-500 via-purple-500 to-cyan-400" />
+        <div>
+        <p className="bg-gradient-to-r from-white via-pink-400 to-cyan-400 bg-clip-text font-semibold text-white transition group-hover:text-transparent">
+          HND in Computing & Software Engineering
+        </p>
+          <p className="text-sm text-zinc-500">Cardiff Metropolitan Unviversity </p>
+        </div>
+      </div>
 
-              <p className="mt-4 text-center text-sm text-zinc-300">
-                Click either certificate to open the full image.
-              </p>
-            </div>
+    </div>
+
+    {/* Certificate container */}
+    <div className="w-full max-w-4xl rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
+      <p className="text-center text-sm text-zinc-400">Certificate</p>
+      <p className="mt-2 text-center text-lg font-medium text-white">
+        HND in Computing & Software Engineering
+      </p>
+
+      <div className="mt-5 flex justify-center">
+        <a href="/hnd1.jpg" target="_blank" rel="noreferrer" className="group w-full max-w-[300px]">
+          <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+            <img
+              src="/hnd1.jpg"
+              alt="HND Certificate front"
+              className="h-64 w-full object-contain transition duration-300 group-hover:scale-[1.03]"
+            />
           </div>
-        </Section>
+        </a>
+      </div>
+
+      <p className="mt-4 text-center text-sm text-zinc-300">
+        Click to view the full image.
+      </p>
+    </div>
+
+  </div>
+</Section>
 
         <Section id="contact" title="Contact">
           <div className="mx-auto max-w-3xl rounded-[32px] border border-white bg-gradient-purple-500 via-blue-500 p-8 text-center shadow-2xl shadow-black/20">
@@ -420,7 +445,7 @@ export default function Home() {
               Nisith Saranga
             </p>
 
-            <p className="max-w-sm text-center text-sm text-zinc-500">
+            <p className="max-w-sm text-center text-sm text-500">
               Your next intern just built this.
             </p>
 
