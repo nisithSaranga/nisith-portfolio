@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { DiAndroid } from "react-icons/di";
 import {
   FaReact,
   FaNodeJs,
@@ -48,7 +49,7 @@ const skillItems = [
   { icon: FaJava, label: "Java", color: "text-amber-300", level: 75 },
   { icon: SiJavascript, label: "JavaScript", color: "text-yellow-400", level: 75 },
   { icon: SiTypescript, label: "TypeScript", color: "text-blue-400", level: 50 },
-  { icon: FaPython, label: "Python", color: "text-yellow-400", level: 50 },
+  { icon: FaPython, label: "Python", color: "text-blue-400", level: 50 },
   { icon: FaReact, label: "React", color: "text-cyan-400", level: 50 },
   { icon: FaNodeJs, label: "Node.js", color: "text-green-400", level: 60 },
   { icon: FaHtml5, label: "HTML5", color: "text-orange-400", level: 85 },
@@ -56,35 +57,8 @@ const skillItems = [
   {icon:SiPhp, label:"PHP", color: "text-purple-400", level: 60},
   {icon:SiMongodb, label:"MongoDB", color: "text-green-400", level: 70},
   {icon:GrMysql, label:"MySQL", color: "text-blue-400", level: 70},
+  { icon: DiAndroid, label: "Android Studio", color: "text-green-400", level: 60 },
   { icon: FaGithub, label: "Git & GitHub", color: "text-zinc-300", level: 75 },
-];
-
-const footerPortfolioLinks = [
-  { label: "About Me", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
-];
-
-const footerSkillLinks = [
-  { label: "Java", href: "#skills" },
-  { label: "JavaScript", href: "#skills" },
-  { label: "React", href: "#skills" },
-  { label: "Node.js", href: "#skills" },
-];
-
-const footerSupportLinks = [
-  { label: "Resume Download", href: "/nisithResumeF.pdf", external: false },
-  { label: "Hire Me", href: "#contact", external: false },
-  { label: "Contact Support", href: "mailto:nisithsaranga13@gmail.com", external: true },
-  { label: "FAQs", href: "#contact", external: false },
-];
-
-const footerSocialLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/nisith-saranga-0529732a5/" },
-  { label: "GitHub", href: "https://github.com/nisithSaranga" },
-  { label: "Email", href: "mailto:nisithsaranga13@gmail.com" },
-  { label: "WhatsApp", href: "https://wa.me/94712698980" },
 ];
 
 export default function Home() {
@@ -121,29 +95,19 @@ export default function Home() {
                 alt="Nisith Saranga"
                 className="h-9 w-9 rounded-full border border-white/10 object-cover object-[center_12%] ring-2 ring-fuchsia-500/30"
               />
-              <span>
-                Nisith <span className="text-zinc-400">Saranga</span>
+              <span className="bg-gradient-to-r from-fuchsia-400 via-violet-300 to-cyan-400 bg-clip-text text-10px font-semibold tracking-tight text-transparent">
+                Nisith Saranga
               </span>
             </a>
 
             <div className="ml-auto flex items-center">
-              <nav className="hidden items-center gap-8 text-sm text-zinc-300 md:flex">
+              <nav className="hidden items-center gap-10 text-sm text-white-0 md:flex">
                 {navItems.map((item) => (
-                  <a key={item.href} className="transition hover:text-white" href={item.href}>
+                  <a key={item.href} className="transition hover:text-cyan-400" href={item.href}>
                     {item.label}
                   </a>
                 ))}
               </nav>
-
-              <button
-                type="button"
-                className="inline-flex rounded-full border border-white/15 p-2 text-zinc-200 transition hover:border-white/30 md:hidden"
-                aria-label="Toggle navigation"
-                aria-expanded={mobileMenuOpen}
-                onClick={() => setMobileMenuOpen((prev) => !prev)}
-              >
-                {mobileMenuOpen ? <HiX className="text-2xl" /> : <HiOutlineMenuAlt3 className="text-2xl" />}
-              </button>
             </div>
           </div>
 
@@ -180,50 +144,30 @@ export default function Home() {
                 </h1>
 
                 <div className="mt-4 min-h-[38px] text-lg font-medium text-zinc-300 sm:text-xl lg:text-2xl">
-                  <span className="text-zinc-400">I am </span>
+                  <span className="text-fuchsia-400">I am </span>
                   <span className="bg-gradient-to-r from-fuchsia-400 via-pink-300 to-cyan-300 bg-clip-text text-transparent">
                     <TypewriterRotator words={rotatingRoles} />
                   </span>
                 </div>
 
                 <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-zinc-300 sm:text-base lg:mx-0">
-                   I focus on transforming ideas into polished and effective digital solutions.                </p>
+                   I focus on transforming ideas into polished and effective digital solutions,<br/>every line of code is a step toward something better.            </p>
 
                 <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
                   <a
                     href="#projects"
-                    className="rounded-full bg-white px-5 py-3 text-sm font-medium text-zinc-950 transition hover:opacity-90"
-                  >
-                    See Projects
-                  </a>
-                  <a
-                    href="/Nisith_Saranga_CV.pdf"
-                    className="rounded-full border border-white/15 px-5 py-3 text-sm text-zinc-100 transition hover:border-white/30"
-                  >
-                    View Resume
-                  </a>
-                  <a
-                    href="https://github.com/nisithSaranga"
-                    className="rounded-full border border-white/15 px-5 py-3 text-sm text-zinc-100 transition hover:border-white/30"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    GitHub
-                  </a>
-                </div>
-
-                <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:max-w-[34rem]">
-                  <InfoCard
-                    label="Passion"
-                    value=" Java "
-                  />
-                  <InfoCard
-                    label="Location"
-                    value="Sri Lanka (open to remote)"
-                  />
+                      className="group rounded-full border border-white transition px-5 py-3 text-sm font-medium text-white"
+                    >
+                      <span className="group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:via-purple-500 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent">
+                        View Work
+                      </span>
+                    </a>
+                    <a href="#contact"
+                   className="group rounded-full border border-white transition px-5 py-3 text-sm font-medium text-white">
+                   <span className="group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:via-purple-500 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent">
+                    Contact Me</span></a>
                 </div>
               </div>
-
               <div className="min-w-0">
                 <div className="mx-auto w-full max-w-sm">
                   <div className="rounded-[30px] border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-black/30">
@@ -231,14 +175,32 @@ export default function Home() {
                       <div className="absolute top-8 h-56 w-56 rounded-full bg-fuchsia-500/15 blur-3xl sm:h-64 sm:w-64" />
                       <div className="absolute top-10 h-52 w-52 rounded-full bg-cyan-500/10 blur-3xl sm:h-60 sm:w-60" />
 
-                      <div className="relative rounded-full bg-gradient-to-br from-fuchsia-500 via-violet-500 to-cyan-400 p-[4px] shadow-[0_0_45px_rgba(168,85,247,0.18)]">
-                        <div className="rounded-full bg-zinc-950 p-2">
-                          <img
-                            src="/profile.png"
-                            alt="Nisith Saranga"
-                            className="h-56 w-56 rounded-full object-cover object-[center_12%] sm:h-64 sm:w-64 lg:h-72 lg:w-72"
-                          />
+                      {/* wrapper to hold spinner + image together */}
+                      <div className="relative flex items-center justify-center">
+
+                        {/* full spinning ring */}
+                        <div
+                          className="absolute rounded-full"
+                          style={{
+                            width: "calc(100% + 15px)",
+                            height: "calc(100% + 15px)",
+                            background: "conic-gradient(from 0deg, #e879f9, #8b5cf6, #22d3ee, #6ee7b7, #e879f9)",
+                            animation: "spin 3s linear infinite",
+                            zIndex: 0,
+                          }}
+                        />
+
+                        {/* dark gap between spinner and image */}
+                        <div className="relative z-10 rounded-full  p-[1px]">
+                          <div className="rounded-full  p-1">
+                            <img
+                              src="/profile.png"
+                              alt="Nisith Saranga"
+                              className="h-56 w-56 rounded-full object-cover object-[center_12%] sm:h-64 sm:w-64 lg:h-72 lg:w-72"
+                            />
+                          </div>
                         </div>
+
                       </div>
                     </div>
 
@@ -267,20 +229,19 @@ export default function Home() {
           </div>
         </section>
 
-        <Section id="about" title="About Me">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-7">
-            <p className="leading-8 text-zinc-300">
-              I&apos;m Nisith Saranga, a Software Engineering undergraduate with a strong interest in
-              building systems that are both functional and polished. I enjoy combining clean user
-              interfaces, structured backend development, and reliable data handling to create
-              solutions that solve real problems. This portfolio reflects the kind of developer I’m
-              becoming: practical, detail-focused, and committed to building work that is clear,
-              professional, and genuinely useful. I’m currently seeking an IT internship where I can
-              apply my skills, learn fast, and add real value.
-            </p>
-          </div>
-        </Section>
-
+<Section id="about" title="About Me">
+  <div className="mx-auto max-w-fit rounded-3xl border p-6 sm:p-8">
+    <p className="text-center leading-8 text-zinc-300">
+      I&apos;m Nisith Saranga, a Software Engineering undergraduate with a strong interest in
+      building systems that are both functional and polished.<br/>
+      I enjoy combining clean user interfaces, structured backend development & reliable
+      data handling to create solutions that solve real problems.<br/>
+      This portfolio reflects the kind of developer I&apos;m becoming: practical, detail-focused
+      & committed to building work that is clear, professional & useful.<br/>
+      I&apos;m currently seeking an IT internship where I can apply my skills, learn fast & add real value.
+    </p>
+  </div>
+</Section>
         <Section id="skills" title="My Skills">
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
             {skillItems.map((skill) => (
@@ -369,7 +330,7 @@ export default function Home() {
         </Section>
 
         <Section id="contact" title="Contact">
-          <div className="mx-auto max-w-3xl rounded-[32px] border border-white/10 bg-white/[0.05] p-8 text-center shadow-2xl shadow-black/20">
+          <div className="mx-auto max-w-3xl rounded-[32px] border border-white bg-gradient-purple-500 via-blue-500 p-8 text-center shadow-2xl shadow-black/20">
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-500/20 via-violet-500/20 to-cyan-400/20 ring-1 ring-white/10">
               <FaEnvelope className="text-2xl text-white" />
             </div>
@@ -378,7 +339,7 @@ export default function Home() {
               Let’s connect
             </p>
 
-            <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base">
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-white-400 sm:text-base">
               I’m open to internship opportunities, collaborations, and professional connections.
             </p>
 
@@ -432,47 +393,43 @@ export default function Home() {
           </div>
         </Section>
 
-        <footer className="border-t border-white/10 bg-black/20">
-          <div className="mx-auto max-w-6xl px-4 py-14">
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-              <FooterColumn title="Portfolio" links={footerPortfolioLinks} />
-              <FooterColumn title="Skills" links={footerSkillLinks} />
-              <FooterColumn title="Support" links={footerSupportLinks} />
-              <FooterColumn title="Social" links={footerSocialLinks} />
-            </div>
+      <footer className="relative overflow-hidden border-t border-white/10">
+        {/* gradient background matching layout */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-1/4 top-0 h-40 w-60 rounded-full bg-fuchsia-500/15 blur-3xl" />
+          <div className="absolute right-1/4 bottom-0 h-40 w-60 rounded-full bg-cyan-500/10 blur-3xl" />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
 
-            <div className="mt-12 border-t border-white/10 pt-6">
-              <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-                <p className="text-sm text-zinc-400">
-                  © {new Date().getFullYear()} Developed by Nisith Saranga.
-                </p>
+        <div className="relative mx-auto max-w-6xl py-16 sm:py-10">
+          {/* back to top button */}
+          <div className="flex flex-col items-center gap-6">
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="group flex flex-col items-center gap-2 text-zinc-400 transition hover:text-white"
+            >
+              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-xl transition group-hover:border-fuchsia-400/50 group-hover:bg-fuchsia-500/10 group-hover:-translate-y-1">
+                ↑
+              </span>
+              <span className="text-xs tracking-widest uppercase">Back to Top</span>
+            </button>
 
-                <div className="flex items-center gap-3">
-                  <FooterIconLink
-                    href="https://www.linkedin.com/in/nisith-saranga-0529732a5/"
-                    label="LinkedIn"
-                    icon={<FaLinkedinIn />}
-                  />
-                  <FooterIconLink
-                    href="https://github.com/nisithSaranga"
-                    label="GitHub"
-                    icon={<FaGithub />}
-                  />
-                  <FooterIconLink
-                    href="mailto:nisithsaranga13@gmail.com"
-                    label="Email"
-                    icon={<FaEnvelope />}
-                  />
-                  <FooterIconLink
-                    href="https://wa.me/94712698980"
-                    label="WhatsApp"
-                    icon={<FaWhatsapp />}
-                  />
-                </div>
-              </div>
-            </div>
+            <div className="h-px w-24 rounded-full bg-gradient-to-r from-fuchsia-500/50 via-violet-400/50 to-cyan-400/50" />
+
+            <p className="bg-gradient-to-r from-fuchsia-400 via-violet-300 to-cyan-400 bg-clip-text text-2xl font-semibold tracking-tight text-transparent">
+              Nisith Saranga
+            </p>
+
+            <p className="max-w-sm text-center text-sm text-zinc-500">
+              Your next intern just built this.
+            </p>
+
+            <p className="text-xs text-zinc-600">
+              © {new Date().getFullYear()} Developed by Nisith Saranga. All rights reserved.
+            </p>
           </div>
-        </footer>
+        </div>
+      </footer>
       </main>
     </>
   );
