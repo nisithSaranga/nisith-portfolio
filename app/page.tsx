@@ -12,6 +12,8 @@ import {
   FaLinkedinIn,
   FaEnvelope,
   FaWhatsapp,
+  FaPython,
+  FaPhp,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -20,8 +22,13 @@ import {
   SiTailwindcss,
   SiDotnet,
   SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiPhp,
 } from "react-icons/si";
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
+import { DiMysql } from "react-icons/di";
+import { GrMysql } from "react-icons/gr";
 
 const rotatingRoles = [
   "a Full-stack Developer",
@@ -38,19 +45,18 @@ const navItems = [
 ];
 
 const skillItems = [
-  { icon: SiJavascript, label: "JavaScript", color: "text-yellow-400", level: 88 },
-  { icon: SiTypescript, label: "TypeScript", color: "text-blue-400", level: 78 },
-  { icon: FaReact, label: "React", color: "text-cyan-400", level: 84 },
-  { icon: SiNextdotjs, label: "Next.js", color: "text-zinc-200", level: 82 },
-  { icon: FaNodeJs, label: "Node.js", color: "text-green-400", level: 80 },
-  { icon: SiExpress, label: "Express.js", color: "text-zinc-300", level: 74 },
-  { icon: FaHtml5, label: "HTML5", color: "text-orange-400", level: 92 },
-  { icon: FaCss3Alt, label: "CSS3", color: "text-blue-300", level: 88 },
-  { icon: SiTailwindcss, label: "Tailwind CSS", color: "text-sky-400", level: 86 },
-  { icon: SiDotnet, label: "ASP.NET Core", color: "text-violet-400", level: 76 },
-  { icon: FaDatabase, label: "SQL Server", color: "text-red-400", level: 78 },
   { icon: FaJava, label: "Java", color: "text-amber-300", level: 75 },
-  { icon: FaGithub, label: "Git & GitHub", color: "text-zinc-300", level: 84 },
+  { icon: SiJavascript, label: "JavaScript", color: "text-yellow-400", level: 75 },
+  { icon: SiTypescript, label: "TypeScript", color: "text-blue-400", level: 50 },
+  { icon: FaPython, label: "Python", color: "text-yellow-400", level: 50 },
+  { icon: FaReact, label: "React", color: "text-cyan-400", level: 50 },
+  { icon: FaNodeJs, label: "Node.js", color: "text-green-400", level: 60 },
+  { icon: FaHtml5, label: "HTML5", color: "text-orange-400", level: 85 },
+  { icon: FaCss3Alt, label: "CSS3", color: "text-blue-300", level: 80 },
+  {icon:SiPhp, label:"PHP", color: "text-purple-400", level: 60},
+  {icon:SiMongodb, label:"MongoDB", color: "text-green-400", level: 70},
+  {icon:GrMysql, label:"MySQL", color: "text-blue-400", level: 70},
+  { icon: FaGithub, label: "Git & GitHub", color: "text-zinc-300", level: 75 },
 ];
 
 const footerPortfolioLinks = [
@@ -61,14 +67,14 @@ const footerPortfolioLinks = [
 ];
 
 const footerSkillLinks = [
+  { label: "Java", href: "#skills" },
   { label: "JavaScript", href: "#skills" },
-  { label: "TypeScript", href: "#skills" },
   { label: "React", href: "#skills" },
-  { label: "Next.js", href: "#skills" },
+  { label: "Node.js", href: "#skills" },
 ];
 
 const footerSupportLinks = [
-  { label: "Resume Download", href: "/Nisith_Saranga_CV.pdf", external: false },
+  { label: "Resume Download", href: "/nisithResumeF.pdf", external: false },
   { label: "Hire Me", href: "#contact", external: false },
   { label: "Contact Support", href: "mailto:nisithsaranga13@gmail.com", external: true },
   { label: "FAQs", href: "#contact", external: false },
@@ -713,7 +719,6 @@ function ProjectCard({
 
           {projectImages.length > 1 && (
             <div className="absolute right-3 top-3 rounded-full border border-white/10 bg-black/50 px-3 py-1 text-[11px] text-zinc-200 backdrop-blur">
-              Hover preview
             </div>
           )}
         </div>
