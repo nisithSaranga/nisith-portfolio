@@ -10,9 +10,9 @@ The goal of this project was to create a fast, responsive, and modern portfolio 
 
 **🛠️ Tech Stack**
 
-Frontend: HTML5, CSS3 (including CSS Grid & Flexbox), JavaScript (ES6+)
+Frontend: Next.js with TypeSccript
 
-Styling: Tailwind CSS (for rapid, utility-first styling)
+Styling: Tailwind CSS 
 
 Deployment: Vercel (CI/CD integrated with GitHub)
 
