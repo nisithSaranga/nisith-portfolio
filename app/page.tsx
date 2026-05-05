@@ -26,9 +26,11 @@ import {
   SiMongodb,
   SiMysql,
   SiPhp,
+  SiGooglecolab,
+  SiJupyter,
 } from "react-icons/si";
+
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
-import { DiMysql } from "react-icons/di";
 import { GrMysql } from "react-icons/gr";
 
 const rotatingRoles = [
@@ -54,11 +56,14 @@ const skillItems = [
   { icon: FaNodeJs, label: "Node.js", color: "text-green-400", level: 60 },
   { icon: FaHtml5, label: "HTML5", color: "text-orange-400", level: 85 },
   { icon: FaCss3Alt, label: "CSS3", color: "text-blue-300", level: 80 },
-  {icon:SiPhp, label:"PHP", color: "text-purple-400", level: 60},
-  {icon:SiMongodb, label:"MongoDB", color: "text-green-400", level: 70},
-  {icon:GrMysql, label:"MySQL", color: "text-blue-400", level: 70},
+  { icon: SiTailwindcss, label: "Tailwind CSS", color: "text-blue-300", level: 65},
+  { icon: SiPhp, label:"PHP", color: "text-purple-400", level: 60},
+  { icon: SiMongodb, label:"MongoDB", color: "text-green-400", level: 70},
+  { icon: GrMysql, label:"MySQL", color: "text-blue-400", level: 70},
   { icon: DiAndroid, label: "Android Studio", color: "text-green-400", level: 60 },
   { icon: FaGithub, label: "Git & GitHub", color: "text-zinc-300", level: 75 },
+  { icon: SiGooglecolab, label: "Google Colab", color:"text-orange-400", level : 65},
+  { icon: SiJupyter, label: "Jupyter Notebook", color:"text-orange-400", level: 65}
 ];
 
 export default function Home() {
