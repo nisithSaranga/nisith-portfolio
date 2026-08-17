@@ -1,4 +1,6 @@
+
 "use client";
+
 
 import React, { useEffect, useState } from "react";
 import { DiAndroid } from "react-icons/di";
@@ -14,8 +16,11 @@ import {
   FaEnvelope,
   FaWhatsapp,
   FaPython,
-  FaPhp,
+  FaChartLine,
+  FaServer,
 } from "react-icons/fa";
+
+
 import {
   SiNextdotjs,
   SiTypescript,
@@ -23,21 +28,38 @@ import {
   SiTailwindcss,
   SiDotnet,
   SiExpress,
+  SiSocketdotio,
+  SiBootstrap,
+  SiFastapi,
   SiMongodb,
   SiMysql,
+  SiFirebase,
   SiPhp,
+  SiTensorflow,
+  SiNumpy,
+  SiScikitlearn,
+  SiKaggle,
+  SiPostman,
   SiGooglecolab,
   SiJupyter,
 } from "react-icons/si";
 
+
+import { TbBrandCSharp } from "react-icons/tb";
+
+
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
 import { GrMysql } from "react-icons/gr";
 
+
+
 const rotatingRoles = [
   "a Full-stack Developer",
-  "an Undergraduate ",
+  "an Undergraduate",
   "an IT Intern Candidate",
 ];
+
+
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -47,36 +69,84 @@ const navItems = [
   { label: "Contact", href: "#contact" },
 ];
 
-const skillItems = [
-  { icon: FaJava, label: "Java", color: "text-amber-300", level: 75 },
-  { icon: SiJavascript, label: "JavaScript", color: "text-yellow-400", level: 75 },
-  { icon: SiTypescript, label: "TypeScript", color: "text-blue-400", level: 50 },
-  { icon: FaPython, label: "Python", color: "text-blue-400", level: 50 },
-  { icon: FaReact, label: "React", color: "text-cyan-400", level: 50 },
-  { icon: FaNodeJs, label: "Node.js", color: "text-green-400", level: 60 },
-  { icon: FaHtml5, label: "HTML5", color: "text-orange-400", level: 85 },
-  { icon: FaCss3Alt, label: "CSS3", color: "text-blue-300", level: 80 },
-  { icon: SiTailwindcss, label: "Tailwind CSS", color: "text-blue-300", level: 65},
-  { icon: SiPhp, label:"PHP", color: "text-purple-400", level: 60},
-  { icon: SiMongodb, label:"MongoDB", color: "text-green-400", level: 70},
-  { icon: GrMysql, label:"MySQL", color: "text-blue-400", level: 70},
-  { icon: DiAndroid, label: "Android Studio", color: "text-green-400", level: 60 },
-  { icon: FaGithub, label: "Git & GitHub", color: "text-zinc-300", level: 75 },
-  { icon: SiGooglecolab, label: "Google Colab", color:"text-orange-400", level : 65},
-  { icon: SiJupyter, label: "Jupyter Notebook", color:"text-orange-400", level: 65}
+const skillGroups = [
+  {
+    title: "Programming Languages",
+    items: [
+      { icon: FaJava, label: "Java", color: "text-amber-300", level: 75 },
+      { icon: SiJavascript, label: "JavaScript", color: "text-yellow-400", level: 75 },
+      { icon: SiTypescript, label: "TypeScript", color: "text-blue-400", level: 50 },
+      { icon: FaPython, label: "Python", color: "text-blue-400", level: 50 },
+      { icon: TbBrandCSharp, label: "C#", color: "text-purple-400", level: 60 },
+    ],
+  },
+  {
+    title: "Frontend & Backend",
+    items: [
+      { icon: FaReact, label: "React", color: "text-cyan-400", level: 50 },
+      { icon: SiNextdotjs, label: "Next.js", color: "text-zinc-300", level: 65 },
+      { icon: FaNodeJs, label: "Node.js", color: "text-green-400", level: 60 },
+      { icon: SiExpress, label: "Express.js", color: "text-zinc-300", level: 60 },
+      { icon: SiSocketdotio, label: "Socket.IO", color: "text-zinc-300", level: 55 },
+      { icon: SiFastapi, label: "FastAPI", color: "text-teal-400", level: 50 },
+    ],
+  },
+  {
+    title: "Web Technologies",
+    items: [
+      { icon: FaHtml5, label: "HTML5", color: "text-orange-400", level: 85 },
+      { icon: FaCss3Alt, label: "CSS3", color: "text-blue-300", level: 80 },
+      { icon: SiBootstrap, label: "Bootstrap", color: "text-purple-400", level: 65 },
+      { icon: SiTailwindcss, label: "Tailwind CSS", color: "text-blue-300", level: 65 },
+    ],
+  },
+  {
+    title: "Frameworks & Platforms",
+    items: [
+      { icon: SiDotnet, label: ".NET", color: "text-purple-400", level: 60 },
+      { icon: SiPhp, label: "PHP", color: "text-purple-400", level: 60 },
+      { icon: DiAndroid, label: "Android Studio", color: "text-green-400", level: 60 },
+    ],
+  },
+  {
+    title: "Databases",
+    items: [
+      { icon: SiMongodb, label: "MongoDB", color: "text-green-400", level: 70 },
+      { icon: GrMysql, label: "MySQL", color: "text-blue-400", level: 70 },
+      { icon: FaServer, label: "SQL Server", color: "text-red-400", level: 60 },
+      { icon: SiFirebase, label: "Firebase", color: "text-yellow-400", level: 65 },
+    ],
+  },
+  {
+    title: "Machine Learning & Data Science",
+    items: [
+      { icon: SiNumpy, label: "NumPy", color: "text-blue-400", level: 60 },
+      { icon: SiScikitlearn, label: "Scikit-learn", color: "text-orange-400", level: 60 },
+      { icon: SiTensorflow, label: "TensorFlow", color: "text-orange-400", level: 60 },
+      { icon: SiTensorflow, label: "TensorFlow.js", color: "text-orange-400", level: 55 },
+      { icon: FaChartLine, label: "Matplotlib", color: "text-blue-400", level: 55 },
+    ],
+  },
+  {
+    title: "Development & Tools",
+    items: [
+      { icon: FaGithub, label: "Git & GitHub", color: "text-zinc-300", level: 75 },
+      { icon: SiPostman, label: "Postman", color: "text-orange-400", level: 70 },
+      { icon: SiGooglecolab, label: "Google Colab", color: "text-orange-400", level: 65 },
+      { icon: SiKaggle, label: "Kaggle Notebook", color: "text-blue-400", level: 65 },
+      { icon: SiJupyter, label: "Jupyter Notebook", color: "text-orange-400", level: 65 },
+    ],
+  },
 ];
 
 export default function Home() {
   const [showLoader, setShowLoader] = useState(true);
-  const [mounted, setMounted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-
     const timer = window.setTimeout(() => {
       setShowLoader(false);
-    }, 2500); // change to 3000 if you want 3 seconds
+    }, 2500);
 
     return () => window.clearTimeout(timer);
   }, []);
@@ -87,19 +157,22 @@ export default function Home() {
 
       <main
         className={[
-          "min-h-screen overflow-x-clip bg-zinc-950 text-zinc-100 transition-opacity duration-700",
-          mounted ? "opacity-100" : "opacity-0",
-          showLoader ? "pointer-events-none opacity-0" : "opacity-100",
-        ].join(" ")}
+  "min-h-screen overflow-x-clip bg-zinc-950 text-zinc-100 transition-opacity duration-700",
+  showLoader ? "pointer-events-none opacity-0" : "opacity-100",
+].join(" ")}
       >
         <header className="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/80 backdrop-blur-xl">
           <div className="mx-auto flex w-full max-w-6xl items-center px-4 py-4">
-            <a href="#" className="flex min-w-0 items-center gap-3 font-semibold tracking-tight">
+            <a
+              href="#"
+              className="flex min-w-0 items-center gap-3 font-semibold tracking-tight"
+            >
               <img
                 src="/profile.png"
                 alt="Nisith Saranga"
                 className="h-9 w-9 rounded-full border border-white/10 object-cover object-[center_12%] ring-2 ring-fuchsia-500/30"
               />
+
               <span className="bg-gradient-to-r from-fuchsia-400 via-violet-300 to-cyan-400 bg-clip-text text-10px font-semibold tracking-tight text-transparent">
                 Nisith Saranga
               </span>
@@ -108,7 +181,11 @@ export default function Home() {
             <div className="ml-auto flex items-center">
               <nav className="hidden items-center gap-10 text-sm text-white-0 md:flex">
                 {navItems.map((item) => (
-                  <a key={item.href} className="transition hover:text-cyan-400" href={item.href}>
+                  <a
+                    key={item.href}
+                    className="transition hover:text-cyan-400"
+                    href={item.href}
+                  >
                     {item.label}
                   </a>
                 ))}
@@ -116,22 +193,22 @@ export default function Home() {
             </div>
           </div>
 
-        {mobileMenuOpen && (
-          <div className="border-t border-white/10 md:hidden">
-            <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="rounded-xl px-3 py-3 text-sm text-zinc-300 transition hover:bg-white/5 hover:text-white"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
+          {mobileMenuOpen && (
+            <div className="border-t border-white/10 md:hidden">
+              <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3">
+                {navItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-xl px-3 py-3 text-sm text-zinc-300 transition hover:bg-white/5 hover:text-white"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
         </header>
 
         <section className="relative overflow-x-clip">
@@ -248,21 +325,45 @@ export default function Home() {
   </div>
 </Section>
         <Section id="skills" title="My Skills">
-          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {skillItems.map((skill) => (
-              <SkillMeterCard
-                key={skill.label}
-                icon={skill.icon}
-                label={skill.label}
-                color={skill.color}
-                level={skill.level}
-              />
-            ))}
-          </div>
-        </Section>
+  <div className="space-y-10">
+    {skillGroups.map((group) => (
+      <div key={group.title}>
+        <h3 className="mb-4 flex items-center gap-3 text-lg font-semibold text-zinc-200 sm:text-xl">
+          <span className="h-1 w-8 rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-400" />
+          {group.title}
+        </h3>
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {group.items.map((skill) => (
+            <SkillMeterCard
+              key={skill.label}
+              icon={skill.icon}
+              label={skill.label}
+              color={skill.color}
+              level={skill.level}
+            />
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</Section>
 
         <Section id="projects" title="Projects">
           <div className="grid gap-5 md:grid-cols-2">
+            <ProjectCard
+              title="FIFA 2026 World Cup Bracket Challenge"
+              desc="A full-stack prediction platform built with the MERN stack in TypeScript."
+              tags={["MERN", "Typescript", "Docker","	football-data.org API"]}
+              projectImages={["/fifa1.jpg", "/fifa2.jpg", "/fifa3.jpg"]}
+              imageAlt="FixTrack project screenshots"
+            />
+            <ProjectCard
+              title="Confide - Private STI Screening for Men"
+              desc="A Privacy-Preserving Deep Learning System for Preliminary Visual Screening of Male Anogenital Sexually Transmitted Infections."
+              tags={["Transfer Learning","Convolutional Neural Network", "FastAPI", "Tensorflow.js"]}
+              projectImages={["/confide1.png", "/confide2.png", "/confide3.png"]}
+              imageAlt="FixTrack project screenshots"
+            />
             <ProjectCard
               title="FixTrack - Vehicle Service Platform"
               desc="A full-stack platform for breakdown reporting, live tracking, and mechanic dispatch."
@@ -281,7 +382,7 @@ export default function Home() {
               title="SPC Pharmacy Network - Service Oriented Web App"
               desc="Service-oriented web application for managing pharmacy operations and business workflows."
               tags={["ASP.NET Core", "React", "SQL Server"]}
-              projectImages={["/soc1.jpg", "/soc2.jpg", "/soc3.jpg"]}
+              projectImages={["/soc1.png", "/soc2.png", "/soc3.png","/soc4.png"]}
               imageAlt="SPC Pharmacy Network project screenshots"
             />
 
@@ -651,11 +752,6 @@ function ProjectCard({
 
     return () => window.clearInterval(interval);
   }, [previewing, projectImages.length]);
-
-  useEffect(() => {
-    setCurrentIndex(0);
-    setFailedImages([]);
-  }, [projectImages]);
 
   return (
     <div
