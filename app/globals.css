@@ -1,8 +1,27 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f8fc;
+  --foreground: #111827;
+  --surface: #ffffff;
+  --surface-muted: #f1f5f9;
+  --border: #dbe3ee;
+  --muted-text: #5f6b7a;
+  --accent: #2563eb;
+  --accent-soft: #dbeafe;
+}
+
+.dark {
+  --background: #070b14;
+  --foreground: #f8fafc;
+  --surface: #0d1422;
+  --surface-muted: #111a2b;
+  --border: #202b3d;
+  --muted-text: #94a3b8;
+  --accent: #3b82f6;
+  --accent-soft: #172554;
 }
 
 @theme inline {
@@ -12,19 +31,45 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
