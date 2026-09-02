@@ -1,8 +1,8 @@
 
 "use client";
 
-
 import React, { useEffect, useState } from "react";
+import {Navbar} from "@/components/navbar";
 import { DiAndroid } from "react-icons/di";
 import {
   FaReact,
@@ -19,8 +19,6 @@ import {
   FaChartLine,
   FaServer,
 } from "react-icons/fa";
-
-
 import {
   SiNextdotjs,
   SiTypescript,
@@ -43,12 +41,7 @@ import {
   SiGooglecolab,
   SiJupyter,
 } from "react-icons/si";
-
-
 import { TbBrandCSharp } from "react-icons/tb";
-
-
-import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
 import { GrMysql } from "react-icons/gr";
 
 
@@ -57,16 +50,6 @@ const rotatingRoles = [
   "a Full-stack Developer",
   "an Undergraduate",
   "an IT Intern Candidate",
-];
-
-
-
-const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Education", href: "#education" },
-  { label: "Contact", href: "#contact" },
 ];
 
 const skillGroups = [
@@ -141,7 +124,6 @@ const skillGroups = [
 
 export default function Home() {
   const [showLoader, setShowLoader] = useState(true);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -161,55 +143,7 @@ export default function Home() {
   showLoader ? "pointer-events-none opacity-0" : "opacity-100",
 ].join(" ")}
       >
-        <header className="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/80 backdrop-blur-xl">
-          <div className="mx-auto flex w-full max-w-6xl items-center px-4 py-4">
-            <a
-              href="#"
-              className="flex min-w-0 items-center gap-3 font-semibold tracking-tight"
-            >
-              <img
-                src="/profile.png"
-                alt="Nisith Saranga"
-                className="h-9 w-9 rounded-full border border-white/10 object-cover object-[center_12%] ring-2 ring-fuchsia-500/30"
-              />
-
-              <span className="bg-gradient-to-r from-fuchsia-400 via-violet-300 to-cyan-400 bg-clip-text text-10px font-semibold tracking-tight text-transparent">
-                Nisith Saranga
-              </span>
-            </a>
-
-            <div className="ml-auto flex items-center">
-              <nav className="hidden items-center gap-10 text-sm text-white-0 md:flex">
-                {navItems.map((item) => (
-                  <a
-                    key={item.href}
-                    className="transition hover:text-cyan-400"
-                    href={item.href}
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </nav>
-            </div>
-          </div>
-
-          {mobileMenuOpen && (
-            <div className="border-t border-white/10 md:hidden">
-              <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3">
-                {navItems.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    className="rounded-xl px-3 py-3 text-sm text-zinc-300 transition hover:bg-white/5 hover:text-white"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
-        </header>
+        <Navbar />
 
         <section className="relative overflow-x-clip">
           <div className="pointer-events-none absolute inset-0 opacity-60">
