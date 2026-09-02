@@ -3,6 +3,7 @@
 
 import React, { useEffect, useState } from "react";
 import {Navbar} from "@/components/navbar";
+import { Hero } from "@/components/hero";
 import { DiAndroid } from "react-icons/di";
 import {
   FaReact,
@@ -144,106 +145,7 @@ export default function Home() {
 ].join(" ")}
       >
         <Navbar />
-
-        <section className="relative overflow-x-clip">
-          <div className="pointer-events-none absolute inset-0 opacity-60">
-            <div className="absolute left-1/2 top-[-120px] h-[240px] w-[240px] -translate-x-1/2 rounded-full bg-fuchsia-500/20 blur-3xl sm:h-[340px] sm:w-[340px]" />
-            <div className="absolute right-[-100px] top-[140px] h-[240px] w-[240px] rounded-full bg-cyan-500/15 blur-3xl sm:right-[-40px] sm:h-[340px] sm:w-[340px]" />
-            <div className="absolute bottom-[-80px] left-[-60px] h-[200px] w-[200px] rounded-full bg-violet-500/10 blur-3xl sm:h-[280px] sm:w-[280px]" />
-          </div>
-
-          <div className="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:pb-20 sm:pt-16 lg:pt-20">
-            <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,430px)]">
-              <div className="min-w-0 text-center lg:text-left">
-                <h1 className="mx-auto max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl lg:mx-0 lg:text-6xl">
-                  I&apos;m Nisith Saranga
-                </h1>
-
-                <div className="mt-4 min-h-[38px] text-lg font-medium text-zinc-300 sm:text-xl lg:text-2xl">
-                  <span className="text-fuchsia-400">I am </span>
-                  <span className="bg-gradient-to-r from-fuchsia-400 via-pink-300 to-cyan-300 bg-clip-text text-transparent">
-                    <TypewriterRotator words={rotatingRoles} />
-                  </span>
-                </div>
-
-                <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-zinc-300 sm:text-base lg:mx-0">
-                   I focus on transforming ideas into polished and effective digital solutions,<br/>every line of code is a step toward something better.            </p>
-
-                <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-                  <a
-                    href="#projects"
-                      className="group rounded-full border border-white transition px-5 py-3 text-sm font-medium text-white"
-                    >
-                      <span className="group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:via-purple-500 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent">
-                        View Work
-                      </span>
-                    </a>
-                    <a href="#contact"
-                   className="group rounded-full border border-white transition px-5 py-3 text-sm font-medium text-white">
-                   <span className="group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:via-purple-500 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent">
-                    Contact Me</span></a>
-                </div>
-              </div>
-              <div className="min-w-0">
-                <div className="mx-auto w-full max-w-sm">
-                  <div className="rounded-[30px] border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-black/30">
-                    <div className="relative flex justify-center">
-                      <div className="absolute top-8 h-56 w-56 rounded-full bg-fuchsia-500/15 blur-3xl sm:h-64 sm:w-64" />
-                      <div className="absolute top-10 h-52 w-52 rounded-full bg-cyan-500/10 blur-3xl sm:h-60 sm:w-60" />
-
-                      {/* wrapper to hold spinner + image together */}
-                      <div className="relative flex items-center justify-center">
-
-                        {/* full spinning ring */}
-                        <div
-                          className="absolute rounded-full"
-                          style={{
-                            width: "calc(100% + 15px)",
-                            height: "calc(100% + 15px)",
-                            background: "conic-gradient(from 0deg, #e879f9, #8b5cf6, #22d3ee, #6ee7b7, #e879f9)",
-                            animation: "spin 3s linear infinite",
-                            zIndex: 0,
-                          }}
-                        />
-
-                        {/* dark gap between spinner and image */}
-                        <div className="relative z-10 rounded-full  p-[1px]">
-                          <div className="rounded-full  p-1">
-                            <img
-                              src="/profile.png"
-                              alt="Nisith Saranga"
-                              className="h-56 w-56 rounded-full object-cover object-[center_12%] sm:h-64 sm:w-64 lg:h-72 lg:w-72"
-                            />
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-
-                    <div className="mt-6 text-center">
-                      <p className="text-lg font-semibold text-white">Nisith Saranga</p>
-                      <p className="mt-2 text-sm leading-6 text-zinc-400">
-                        Software Engineering undergraduate looking for IT internship opportunities.
-                      </p>
-
-                      <div className="mt-4 flex flex-wrap justify-center gap-2">
-                        <span className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-zinc-200">
-                          Full-stack
-                        </span>
-                        <span className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-zinc-200">
-                          Problem Solver
-                        </span>
-                        <span className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-zinc-200">
-                          Aspiring It Intern
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Hero />
 
 <Section id="about" title="About Me">
   <div className="mx-auto max-w-fit rounded-3xl border p-6 sm:p-8">
