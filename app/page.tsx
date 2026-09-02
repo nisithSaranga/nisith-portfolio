@@ -354,15 +354,15 @@ export default function Home() {
               title="FIFA 2026 World Cup Bracket Challenge"
               desc="A full-stack prediction platform built with the MERN stack in TypeScript."
               tags={["MERN", "Typescript", "Docker","	football-data.org API"]}
-              projectImages={["/fifa1.jpg", "/fifa2.jpg", "/fifa3.jpg"]}
-              imageAlt="FixTrack project screenshots"
+              projectImages={["/fifa1.jpg", "/fifa2.png", "/fifa3.png","/fifa4.png"]}
+              imageAlt="FIFA 2026 World Cup Bracket Challenge project screenshots"
             />
             <ProjectCard
               title="Confide - Private STI Screening for Men"
               desc="A Privacy-Preserving Deep Learning System for Preliminary Visual Screening of Male Anogenital Sexually Transmitted Infections."
               tags={["Transfer Learning","Convolutional Neural Network", "FastAPI", "Tensorflow.js"]}
-              projectImages={["/confide1.png", "/confide2.png", "/confide3.png"]}
-              imageAlt="FixTrack project screenshots"
+              projectImages={["/confide1.png", "/confide2.png", "/confide3.png", "/confide4.png"]}
+              imageAlt="Confide project screenshots"
             />
             <ProjectCard
               title="FixTrack - Vehicle Service Platform"
@@ -385,15 +385,7 @@ export default function Home() {
               projectImages={["/soc1.png", "/soc2.png", "/soc3.png","/soc4.png"]}
               imageAlt="SPC Pharmacy Network project screenshots"
             />
-
-            <ProjectCard
-              title="LuxeVista Resort - Mobile App (Android studio)"
-              desc="Mobile app concept for resort browsing, booking support, and smoother user experience "
-              tags={[ "Java", "XML", "MySQL"]}
-              projectImages={["/luxe1.jpg", "/luxe2.jpg"]}
-              imageAlt="LuxeVista Resort project screenshots"
-            />
-
+            
             <ProjectCard
               title="FitZone Fitness Center - Web App"
               desc="Web application for fitness center operations and member-facing features."
@@ -416,7 +408,7 @@ export default function Home() {
           <p className="bg-gradient-to-r from-white to-cyan-400 bg-clip-text font-semibold text-white transition group-hover:text-transparent">
             BSc (Hons) in Software Engineering (Reading)
           </p>
-          <p className="text-sm text-zinc-500">Cardiff Metropolitan Unviversity (Reading) </p>
+          <p className="text-sm text-zinc-500">Cardiff Metropolitan University (Reading) </p>
         </div>
       </div>
 
@@ -427,7 +419,7 @@ export default function Home() {
         <p className="bg-gradient-to-r from-white via-pink-400 to-cyan-400 bg-clip-text font-semibold text-white transition group-hover:text-transparent">
           HND in Computing & Software Engineering
         </p>
-          <p className="text-sm text-zinc-500">Cardiff Metropolitan Unviversity </p>
+          <p className="text-sm text-zinc-500">Cardiff Metropolitan University </p>
         </div>
       </div>
 
