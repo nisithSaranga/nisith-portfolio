@@ -1,10 +1,11 @@
-
 "use client";
 
 import React, { useEffect, useState } from "react";
-import {Navbar} from "@/components/navbar";
+import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { DiAndroid } from "react-icons/di";
+import { About } from "@/components/about";
+
 import {
   FaReact,
   FaNodeJs,
@@ -12,7 +13,6 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaJava,
-  FaDatabase,
   FaLinkedinIn,
   FaEnvelope,
   FaWhatsapp,
@@ -20,6 +20,7 @@ import {
   FaChartLine,
   FaServer,
 } from "react-icons/fa";
+
 import {
   SiNextdotjs,
   SiTypescript,
@@ -31,7 +32,6 @@ import {
   SiBootstrap,
   SiFastapi,
   SiMongodb,
-  SiMysql,
   SiFirebase,
   SiPhp,
   SiTensorflow,
@@ -42,10 +42,9 @@ import {
   SiGooglecolab,
   SiJupyter,
 } from "react-icons/si";
+
 import { TbBrandCSharp } from "react-icons/tb";
 import { GrMysql } from "react-icons/gr";
-
-
 
 const rotatingRoles = [
   "a Full-stack Developer",
@@ -58,8 +57,18 @@ const skillGroups = [
     title: "Programming Languages",
     items: [
       { icon: FaJava, label: "Java", color: "text-amber-300", level: 75 },
-      { icon: SiJavascript, label: "JavaScript", color: "text-yellow-400", level: 75 },
-      { icon: SiTypescript, label: "TypeScript", color: "text-blue-400", level: 50 },
+      {
+        icon: SiJavascript,
+        label: "JavaScript",
+        color: "text-yellow-400",
+        level: 75,
+      },
+      {
+        icon: SiTypescript,
+        label: "TypeScript",
+        color: "text-blue-400",
+        level: 50,
+      },
       { icon: FaPython, label: "Python", color: "text-blue-400", level: 50 },
       { icon: TbBrandCSharp, label: "C#", color: "text-purple-400", level: 60 },
     ],
@@ -71,7 +80,12 @@ const skillGroups = [
       { icon: SiNextdotjs, label: "Next.js", color: "text-zinc-300", level: 65 },
       { icon: FaNodeJs, label: "Node.js", color: "text-green-400", level: 60 },
       { icon: SiExpress, label: "Express.js", color: "text-zinc-300", level: 60 },
-      { icon: SiSocketdotio, label: "Socket.IO", color: "text-zinc-300", level: 55 },
+      {
+        icon: SiSocketdotio,
+        label: "Socket.IO",
+        color: "text-zinc-300",
+        level: 55,
+      },
       { icon: SiFastapi, label: "FastAPI", color: "text-teal-400", level: 50 },
     ],
   },
@@ -80,8 +94,18 @@ const skillGroups = [
     items: [
       { icon: FaHtml5, label: "HTML5", color: "text-orange-400", level: 85 },
       { icon: FaCss3Alt, label: "CSS3", color: "text-blue-300", level: 80 },
-      { icon: SiBootstrap, label: "Bootstrap", color: "text-purple-400", level: 65 },
-      { icon: SiTailwindcss, label: "Tailwind CSS", color: "text-blue-300", level: 65 },
+      {
+        icon: SiBootstrap,
+        label: "Bootstrap",
+        color: "text-purple-400",
+        level: 65,
+      },
+      {
+        icon: SiTailwindcss,
+        label: "Tailwind CSS",
+        color: "text-blue-300",
+        level: 65,
+      },
     ],
   },
   {
@@ -89,7 +113,12 @@ const skillGroups = [
     items: [
       { icon: SiDotnet, label: ".NET", color: "text-purple-400", level: 60 },
       { icon: SiPhp, label: "PHP", color: "text-purple-400", level: 60 },
-      { icon: DiAndroid, label: "Android Studio", color: "text-green-400", level: 60 },
+      {
+        icon: DiAndroid,
+        label: "Android Studio",
+        color: "text-green-400",
+        level: 60,
+      },
     ],
   },
   {
@@ -98,30 +127,86 @@ const skillGroups = [
       { icon: SiMongodb, label: "MongoDB", color: "text-green-400", level: 70 },
       { icon: GrMysql, label: "MySQL", color: "text-blue-400", level: 70 },
       { icon: FaServer, label: "SQL Server", color: "text-red-400", level: 60 },
-      { icon: SiFirebase, label: "Firebase", color: "text-yellow-400", level: 65 },
+      {
+        icon: SiFirebase,
+        label: "Firebase",
+        color: "text-yellow-400",
+        level: 65,
+      },
     ],
   },
   {
     title: "Machine Learning & Data Science",
     items: [
       { icon: SiNumpy, label: "NumPy", color: "text-blue-400", level: 60 },
-      { icon: SiScikitlearn, label: "Scikit-learn", color: "text-orange-400", level: 60 },
-      { icon: SiTensorflow, label: "TensorFlow", color: "text-orange-400", level: 60 },
-      { icon: SiTensorflow, label: "TensorFlow.js", color: "text-orange-400", level: 55 },
-      { icon: FaChartLine, label: "Matplotlib", color: "text-blue-400", level: 55 },
+      {
+        icon: SiScikitlearn,
+        label: "Scikit-learn",
+        color: "text-orange-400",
+        level: 60,
+      },
+      {
+        icon: SiTensorflow,
+        label: "TensorFlow",
+        color: "text-orange-400",
+        level: 60,
+      },
+      {
+        icon: SiTensorflow,
+        label: "TensorFlow.js",
+        color: "text-orange-400",
+        level: 55,
+      },
+      {
+        icon: FaChartLine,
+        label: "Matplotlib",
+        color: "text-blue-400",
+        level: 55,
+      },
     ],
   },
   {
     title: "Development & Tools",
     items: [
-      { icon: FaGithub, label: "Git & GitHub", color: "text-zinc-300", level: 75 },
-      { icon: SiPostman, label: "Postman", color: "text-orange-400", level: 70 },
-      { icon: SiGooglecolab, label: "Google Colab", color: "text-orange-400", level: 65 },
-      { icon: SiKaggle, label: "Kaggle Notebook", color: "text-blue-400", level: 65 },
-      { icon: SiJupyter, label: "Jupyter Notebook", color: "text-orange-400", level: 65 },
+      {
+        icon: FaGithub,
+        label: "Git & GitHub",
+        color: "text-zinc-300",
+        level: 75,
+      },
+      {
+        icon: SiPostman,
+        label: "Postman",
+        color: "text-orange-400",
+        level: 70,
+      },
+      {
+        icon: SiGooglecolab,
+        label: "Google Colab",
+        color: "text-orange-400",
+        level: 65,
+      },
+      {
+        icon: SiKaggle,
+        label: "Kaggle Notebook",
+        color: "text-blue-400",
+        level: 65,
+      },
+      {
+        icon: SiJupyter,
+        label: "Jupyter Notebook",
+        color: "text-orange-400",
+        level: 65,
+      },
     ],
   },
 ];
+
+const contactLinkClass =
+  "flex h-14 w-14 items-center justify-center rounded-2xl " +
+  "border border-[var(--border)] bg-[var(--surface)] text-foreground " +
+  "transition hover:-translate-y-1 hover:border-fuchsia-500/60 " +
+  "hover:text-fuchsia-700 dark:hover:text-fuchsia-300";
 
 export default function Home() {
   const [showLoader, setShowLoader] = useState(true);
@@ -140,166 +225,198 @@ export default function Home() {
 
       <main
         className={[
-  "min-h-screen overflow-x-clip bg-zinc-950 text-zinc-100 transition-opacity duration-700",
-  showLoader ? "pointer-events-none opacity-0" : "opacity-100",
-].join(" ")}
+          "min-h-screen overflow-x-clip bg-background text-foreground transition-opacity duration-700",
+          showLoader ? "pointer-events-none opacity-0" : "opacity-100",
+        ].join(" ")}
       >
         <Navbar />
         <Hero />
+        <About />
 
-<Section id="about" title="About Me">
-  <div className="mx-auto max-w-fit rounded-3xl border p-6 sm:p-8">
-    <p className="text-center leading-8 text-zinc-300">
-      I&apos;m Nisith Saranga, a Software Engineering undergraduate with a strong interest in
-      building systems that are both functional and polished.<br/>
-      I enjoy combining clean user interfaces, structured backend development & reliable
-      data handling to create solutions that solve real problems.<br/>
-      This portfolio reflects the kind of developer I&apos;m becoming: practical, detail-focused
-      & committed to building work that is clear, professional & useful.<br/>
-      I&apos;m currently seeking an IT internship where I can apply my skills, learn fast & add real value.
-    </p>
-  </div>
-</Section>
         <Section id="skills" title="My Skills">
-  <div className="space-y-10">
-    {skillGroups.map((group) => (
-      <div key={group.title}>
-        <h3 className="mb-4 flex items-center gap-3 text-lg font-semibold text-zinc-200 sm:text-xl">
-          <span className="h-1 w-8 rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-400" />
-          {group.title}
-        </h3>
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-          {group.items.map((skill) => (
-            <SkillMeterCard
-              key={skill.label}
-              icon={skill.icon}
-              label={skill.label}
-              color={skill.color}
-              level={skill.level}
-            />
-          ))}
-        </div>
-      </div>
-    ))}
-  </div>
-</Section>
+          <div className="space-y-10">
+            {skillGroups.map((group) => (
+              <div key={group.title}>
+                <h3 className="mb-4 flex items-center gap-3 text-lg font-semibold text-foreground sm:text-xl">
+                  <span className="h-1 w-8 rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-400" />
+                  {group.title}
+                </h3>
+
+                <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+                  {group.items.map((skill) => (
+                    <SkillMeterCard
+                      key={skill.label}
+                      icon={skill.icon}
+                      label={skill.label}
+                      color={skill.color}
+                      level={skill.level}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
 
         <Section id="projects" title="Projects">
           <div className="grid gap-5 md:grid-cols-2">
             <ProjectCard
               title="FIFA 2026 World Cup Bracket Challenge"
               desc="A full-stack prediction platform built with the MERN stack in TypeScript."
-              tags={["MERN", "Typescript", "Docker","	football-data.org API"]}
-              projectImages={["/fifa1.jpg", "/fifa2.png", "/fifa3.png","/fifa4.png"]}
+              tags={["MERN", "Typescript", "Docker", "football-data.org API"]}
+              projectImages={[
+                "/fifa1.jpg",
+                "/fifa2.png",
+                "/fifa3.png",
+                "/fifa4.png",
+              ]}
               imageAlt="FIFA 2026 World Cup Bracket Challenge project screenshots"
             />
+
             <ProjectCard
               title="Confide - Private STI Screening for Men"
               desc="A Privacy-Preserving Deep Learning System for Preliminary Visual Screening of Male Anogenital Sexually Transmitted Infections."
-              tags={["Transfer Learning","Convolutional Neural Network", "FastAPI", "Tensorflow.js"]}
-              projectImages={["/confide1.png", "/confide2.png", "/confide3.png", "/confide4.png"]}
+              tags={[
+                "Transfer Learning",
+                "Convolutional Neural Network",
+                "FastAPI",
+                "Tensorflow.js",
+              ]}
+              projectImages={[
+                "/confide1.png",
+                "/confide2.png",
+                "/confide3.png",
+                "/confide4.png",
+              ]}
               imageAlt="Confide project screenshots"
             />
+
             <ProjectCard
               title="FixTrack - Vehicle Service Platform"
               desc="A full-stack platform for breakdown reporting, live tracking, and mechanic dispatch."
               tags={["Express.js", "Next.js", "Firebase"]}
-              projectImages={["/fixtrack1.jpg", "/fixtrack2.jpg", "/fixtrack3.jpg"]}
+              projectImages={[
+                "/fixtrack1.jpg",
+                "/fixtrack2.jpg",
+                "/fixtrack3.jpg",
+              ]}
               imageAlt="FixTrack project screenshots"
             />
+
             <ProjectCard
               title="OceanView Resort - Reservation Management System"
               desc="Java EE web application to manage resort reservations, prevent booking conflicts & generate invoices."
               tags={["Java EE", "MySQL", "HTML5", "Bootstrap"]}
-              projectImages={["/oceanview1.png", "/oceanview2.png" ]}
+              projectImages={["/oceanview1.png", "/oceanview2.png"]}
               imageAlt="Oceanview RMS project screenshots"
             />
+
             <ProjectCard
               title="SPC Pharmacy Network - Service Oriented Web App"
               desc="Service-oriented web application for managing pharmacy operations and business workflows."
               tags={["ASP.NET Core", "React", "SQL Server"]}
-              projectImages={["/soc1.png", "/soc2.png", "/soc3.png","/soc4.png"]}
+              projectImages={[
+                "/soc1.png",
+                "/soc2.png",
+                "/soc3.png",
+                "/soc4.png",
+              ]}
               imageAlt="SPC Pharmacy Network project screenshots"
             />
-            
+
             <ProjectCard
               title="FitZone Fitness Center - Web App"
               desc="Web application for fitness center operations and member-facing features."
               tags={["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"]}
-              projectImages={["/fitzone1.jpg", "/fitzone2.jpg", "/fitzone3.jpg"]}
+              projectImages={[
+                "/fitzone1.jpg",
+                "/fitzone3.jpg",
+              ]}
               imageAlt="FitZone Fitness Center project screenshots"
             />
           </div>
         </Section>
-<Section id="education" title="Education & Certifications">
-  <div className="flex flex-col items-center gap-6">
 
-    {/* Degree Details — plain background */}
-    <div className="w-full max-w-4xl space-y-3 pb-4">
+        <Section id="education" title="Education & Certifications">
+          <div className="flex flex-col items-center gap-6">
+            {/* Degree details */}
+            <div className="w-full max-w-4xl space-y-3 pb-4">
+              {/* BSc */}
+              <div className="group flex items-start gap-3 p-4">
+                <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-pink-500 via-purple-500 to-cyan-400" />
 
-      {/* BSc */}
-      <div className="group flex items-start gap-3 p-4">
-        <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-pink-500 via-purple-500 to-cyan-400" />
-        <div>
-          <p className="bg-gradient-to-r from-white to-cyan-400 bg-clip-text font-semibold text-white transition group-hover:text-transparent">
-            BSc (Hons) in Software Engineering (Reading)
-          </p>
-          <p className="text-sm text-zinc-500">Cardiff Metropolitan University (Reading) </p>
-        </div>
-      </div>
+                <div>
+                  <p className="bg-gradient-to-r from-slate-900 to-cyan-700 bg-clip-text font-semibold text-foreground transition group-hover:text-transparent dark:from-white dark:to-cyan-400">
+                    BSc (Hons) in Software Engineering (Reading)
+                  </p>
+                  <p className="text-sm text-[var(--muted-text)]">
+                    Cardiff Metropolitan University (Reading)
+                  </p>
+                </div>
+              </div>
 
-      {/* HND */}
-      <div className="group flex items-start gap-3 p-4">
-        <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-pink-500 via-purple-500 to-cyan-400" />
-        <div>
-        <p className="bg-gradient-to-r from-white via-pink-400 to-cyan-400 bg-clip-text font-semibold text-white transition group-hover:text-transparent">
-          HND in Computing & Software Engineering
-        </p>
-          <p className="text-sm text-zinc-500">Cardiff Metropolitan University </p>
-        </div>
-      </div>
+              {/* HND */}
+              <div className="group flex items-start gap-3 p-4">
+                <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-pink-500 via-purple-500 to-cyan-400" />
 
-    </div>
-
-    {/* Certificate container */}
-    <div className="w-full max-w-4xl rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
-      <p className="text-center text-sm text-zinc-400">Certificate</p>
-      <p className="mt-2 text-center text-lg font-medium text-white">
-        HND in Computing & Software Engineering
-      </p>
-
-      <div className="mt-5 flex justify-center">
-        <a href="/hnd1.jpg" target="_blank" rel="noreferrer" className="group w-full max-w-[300px]">
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/30">
-            <img
-              src="/hnd1.jpg"
-              alt="HND Certificate front"
-              className="h-64 w-full object-contain transition duration-300 group-hover:scale-[1.03]"
-            />
-          </div>
-        </a>
-      </div>
-
-      <p className="mt-4 text-center text-sm text-zinc-300">
-        Click to view the full image.
-      </p>
-    </div>
-
-  </div>
-</Section>
-
-        <Section id="contact" title="Contact">
-          <div className="mx-auto max-w-3xl rounded-[32px] border border-white bg-gradient-purple-500 via-blue-500 p-8 text-center shadow-2xl shadow-black/20">
-            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-500/20 via-violet-500/20 to-cyan-400/20 ring-1 ring-white/10">
-              <FaEnvelope className="text-2xl text-white" />
+                <div>
+                  <p className="bg-gradient-to-r from-slate-900 via-pink-700 to-cyan-700 bg-clip-text font-semibold text-foreground transition group-hover:text-transparent dark:from-white dark:via-pink-400 dark:to-cyan-400">
+                    HND in Computing & Software Engineering
+                  </p>
+                  <p className="text-sm text-[var(--muted-text)]">
+                    Cardiff Metropolitan University
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <p className="mt-5 text-lg font-medium text-white">
+            {/* Certificate container */}
+            <div className="w-full max-w-4xl rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 sm:p-6">
+              <p className="text-center text-sm text-[var(--muted-text)]">
+                Certificate
+              </p>
+
+              <p className="mt-2 text-center text-lg font-medium text-foreground">
+                HND in Computing & Software Engineering
+              </p>
+
+              <div className="mt-5 flex justify-center">
+                <a
+                  href="/hnd1.jpg"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group w-full max-w-[300px]"
+                >
+                  <div className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)]">
+                    <img
+                      src="/hnd1.jpg"
+                      alt="HND Certificate front"
+                      className="h-64 w-full object-contain transition duration-300 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                </a>
+              </div>
+
+              <p className="mt-4 text-center text-sm text-[var(--muted-text)]">
+                Click to view the full image.
+              </p>
+            </div>
+          </div>
+        </Section>
+
+        <Section id="contact" title="Contact">
+          <div className="mx-auto max-w-3xl rounded-[32px] border border-[var(--border)] bg-[var(--surface)] p-8 text-center shadow-2xl shadow-black/5 dark:shadow-black/20">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-500/20 via-violet-500/20 to-cyan-400/20 ring-1 ring-[var(--border)]">
+              <FaEnvelope className="text-2xl text-foreground" />
+            </div>
+
+            <p className="mt-5 text-lg font-medium text-foreground">
               Let’s connect
             </p>
 
-            <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-white-400 sm:text-base">
-              I’m open to internship opportunities, collaborations, and professional connections.
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-[var(--muted-text)] sm:text-base">
+              I’m open to internship opportunities, collaborations, and
+              professional connections.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -307,7 +424,7 @@ export default function Home() {
                 href="mailto:nisithsaranga13@gmail.com"
                 aria-label="Email"
                 title="Email"
-                className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-zinc-200 transition hover:-translate-y-1 hover:border-fuchsia-400/50 hover:text-white"
+                className={contactLinkClass}
               >
                 <FaEnvelope className="text-xl" />
               </a>
@@ -318,7 +435,7 @@ export default function Home() {
                 rel="noreferrer"
                 aria-label="LinkedIn"
                 title="LinkedIn"
-                className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-zinc-200 transition hover:-translate-y-1 hover:border-fuchsia-400/50 hover:text-white"
+                className={contactLinkClass}
               >
                 <FaLinkedinIn className="text-xl" />
               </a>
@@ -329,7 +446,7 @@ export default function Home() {
                 rel="noreferrer"
                 aria-label="GitHub"
                 title="GitHub"
-                className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-zinc-200 transition hover:-translate-y-1 hover:border-fuchsia-400/50 hover:text-white"
+                className={contactLinkClass}
               >
                 <FaGithub className="text-xl" />
               </a>
@@ -340,55 +457,60 @@ export default function Home() {
                 rel="noreferrer"
                 aria-label="WhatsApp"
                 title="WhatsApp"
-                className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-zinc-200 transition hover:-translate-y-1 hover:border-fuchsia-400/50 hover:text-white"
+                className={contactLinkClass}
               >
                 <FaWhatsapp className="text-xl" />
               </a>
             </div>
 
-            <p className="mt-6 text-xs text-zinc-500">
+            <p className="mt-6 text-xs text-[var(--muted-text)]">
               Best reached by email or LinkedIn.
             </p>
           </div>
         </Section>
 
-      <footer className="relative overflow-hidden border-t border-white/10">
-        {/* gradient background matching layout */}
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/4 top-0 h-40 w-60 rounded-full bg-fuchsia-500/15 blur-3xl" />
-          <div className="absolute right-1/4 bottom-0 h-40 w-60 rounded-full bg-cyan-500/10 blur-3xl" />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-
-        <div className="relative mx-auto max-w-6xl py-16 sm:py-10">
-          {/* back to top button */}
-          <div className="flex flex-col items-center gap-6">
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="group flex flex-col items-center gap-2 text-zinc-400 transition hover:text-white"
-            >
-              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-xl transition group-hover:border-fuchsia-400/50 group-hover:bg-fuchsia-500/10 group-hover:-translate-y-1">
-                ↑
-              </span>
-              <span className="text-xs tracking-widest uppercase">Back to Top</span>
-            </button>
-
-            <div className="h-px w-24 rounded-full bg-gradient-to-r from-fuchsia-500/50 via-violet-400/50 to-cyan-400/50" />
-
-            <p className="bg-gradient-to-r from-fuchsia-400 via-violet-300 to-cyan-400 bg-clip-text text-2xl font-semibold tracking-tight text-transparent">
-              Nisith Saranga
-            </p>
-
-            <p className="max-w-sm text-center text-sm text-500">
-              Your next intern just built this.
-            </p>
-
-            <p className="text-xs text-zinc-600">
-              © {new Date().getFullYear()} Developed by Nisith Saranga. All rights reserved.
-            </p>
+        <footer className="relative overflow-hidden border-t border-[var(--border)] bg-background">
+          {/* Gradient background matching layout */}
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute left-1/4 top-0 h-40 w-60 rounded-full bg-fuchsia-500/15 blur-3xl" />
+            <div className="absolute bottom-0 right-1/4 h-40 w-60 rounded-full bg-cyan-500/10 blur-3xl" />
+            <div className="absolute inset-0 bg-background/40" />
           </div>
-        </div>
-      </footer>
+
+          <div className="relative mx-auto max-w-6xl py-16 sm:py-10">
+            {/* Back to top button */}
+            <div className="flex flex-col items-center gap-6">
+              <button
+                onClick={() =>
+                  window.scrollTo({ top: 0, behavior: "smooth" })
+                }
+                className="group flex flex-col items-center gap-2 text-[var(--muted-text)] transition hover:text-foreground"
+              >
+                <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-xl transition group-hover:-translate-y-1 group-hover:border-fuchsia-400/50 group-hover:bg-fuchsia-500/10">
+                  ↑
+                </span>
+                <span className="text-xs uppercase tracking-widest">
+                  Back to Top
+                </span>
+              </button>
+
+              <div className="h-px w-24 rounded-full bg-gradient-to-r from-fuchsia-500/50 via-violet-400/50 to-cyan-400/50" />
+
+              <p className="bg-gradient-to-r from-fuchsia-700 via-violet-700 to-cyan-700 bg-clip-text text-2xl font-semibold tracking-tight text-transparent dark:from-fuchsia-400 dark:via-violet-300 dark:to-cyan-400">
+                Nisith Saranga
+              </p>
+
+              <p className="max-w-sm text-center text-sm text-[var(--muted-text)]">
+                Your next intern just built this.
+              </p>
+
+              <p className="text-center text-xs text-[var(--muted-text)]">
+                © {new Date().getFullYear()} Developed by Nisith Saranga. All
+                rights reserved.
+              </p>
+            </div>
+          </div>
+        </footer>
       </main>
     </>
   );
@@ -396,14 +518,14 @@ export default function Home() {
 
 function Preloader() {
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-zinc-950 px-6">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-background px-6 text-foreground">
       <div className="pointer-events-none absolute inset-0 opacity-60">
         <div className="absolute left-1/2 top-[16%] h-40 w-40 -translate-x-1/2 rounded-full bg-fuchsia-500/20 blur-3xl" />
         <div className="absolute bottom-[18%] right-[12%] h-48 w-48 rounded-full bg-cyan-500/15 blur-3xl" />
       </div>
 
-      <div className="relative z-10 w-full max-w-md rounded-[28px] border border-white/10 bg-white/[0.04] p-8 text-center shadow-2xl shadow-black/40 backdrop-blur">
-        <div className="mx-auto flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-zinc-900 ring-2 ring-fuchsia-500/20">
+      <div className="relative z-10 w-full max-w-md rounded-[28px] border border-[var(--border)] bg-[var(--surface)] p-8 text-center shadow-2xl shadow-black/10 backdrop-blur dark:shadow-black/40">
+        <div className="mx-auto flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-[var(--border)] bg-[var(--surface-muted)] ring-2 ring-fuchsia-500/20">
           <img
             src="/profile.png"
             alt="Nisith Saranga"
@@ -411,20 +533,20 @@ function Preloader() {
           />
         </div>
 
-        <p className="mt-5 text-2xl font-semibold tracking-tight text-white">
+        <p className="mt-5 text-2xl font-semibold tracking-tight text-foreground">
           Nisith Saranga
         </p>
 
-        <div className="mt-2 min-h-[28px] text-sm text-zinc-300">
+        <div className="mt-2 min-h-[28px] text-sm text-[var(--muted-text)]">
           <TypewriterRotator words={rotatingRoles} />
         </div>
 
-        <p className="mt-2 text-xs uppercase tracking-[0.28em] text-zinc-500">
+        <p className="mt-2 text-xs uppercase tracking-[0.28em] text-[var(--muted-text)]">
           Loading portfolio
         </p>
 
-        <div className="mt-7 h-[4px] w-full overflow-hidden rounded-full bg-white/10">
-          <div className="h-full w-full origin-left animate-[nisithLoad_1.7s_ease-in-out_forwards] bg-gradient-to-r from-fuchsia-400 via-white to-cyan-400" />
+        <div className="mt-7 h-[4px] w-full overflow-hidden rounded-full bg-[var(--border)]">
+          <div className="h-full w-full origin-left animate-[nisithLoad_1.7s_ease-in-out_forwards] bg-gradient-to-r from-fuchsia-500 via-violet-500 to-cyan-500 dark:from-fuchsia-400 dark:via-white dark:to-cyan-400" />
         </div>
 
         <style jsx>{`
@@ -482,7 +604,7 @@ function TypewriterRotator({ words }: { words: string[] }) {
   return (
     <span className="inline-flex items-center">
       {words[wordIndex].substring(0, subIndex)}
-      <span className="ml-1 inline-block h-[1.1em] w-[2px] animate-pulse bg-white/80" />
+      <span className="ml-1 inline-block h-[1.1em] w-[2px] animate-pulse bg-foreground/80" />
     </span>
   );
 }
@@ -499,18 +621,23 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="scroll-mt-24 mx-auto max-w-6xl px-4 py-16 sm:py-20">
+    <section
+      id={id}
+      className="mx-auto max-w-6xl scroll-mt-24 px-4 py-16 sm:py-20"
+    >
       <div className="mb-8 text-center sm:mb-10">
-        <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           {title}
         </h2>
+
         {subtitle && (
           <>
             <div className="mx-auto mt-3 h-1 w-24 rounded-full bg-gradient-to-r from-fuchsia-500 to-violet-400" />
-            <p className="mt-4 text-zinc-400">{subtitle}</p>
+            <p className="mt-4 text-[var(--muted-text)]">{subtitle}</p>
           </>
         )}
       </div>
+
       <div>{children}</div>
     </section>
   );
@@ -518,9 +645,9 @@ function Section({
 
 function InfoCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-left shadow-lg shadow-black/10">
-      <p className="text-sm text-zinc-400">{label}</p>
-      <p className="mt-2 font-medium leading-7 text-white">{value}</p>
+    <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 text-left shadow-lg shadow-black/10">
+      <p className="text-sm text-[var(--muted-text)]">{label}</p>
+      <p className="mt-2 font-medium leading-7 text-foreground">{value}</p>
     </div>
   );
 }
@@ -537,14 +664,14 @@ function SkillMeterCard({
   level: number;
 }) {
   return (
-    <div className="rounded-[26px] border border-white/10 bg-white/5 p-4 text-center transition duration-300 hover:-translate-y-1 hover:border-white/20">
-      <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-slate-800/70 ring-1 ring-white/10">
-        <Icon className={`text-4xl ${color}`} />
+    <div className="rounded-[26px] border border-[var(--border)] bg-[var(--surface)] p-4 text-center transition duration-300 hover:-translate-y-1 hover:border-[var(--accent)]">
+      <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[var(--surface-muted)] ring-1 ring-[var(--border)]">
+        <Icon className={`text-4xl brightness-60 dark:brightness-100 ${color}`} />
       </div>
 
-      <p className="mt-4 text-lg font-semibold text-white">{label}</p>
+      <p className="mt-4 text-lg font-semibold text-foreground">{label}</p>
 
-      <div className="mt-4 h-3 w-full overflow-hidden rounded-full bg-white/10">
+      <div className="mt-4 h-3 w-full overflow-hidden rounded-full bg-[var(--border)]">
         <div
           className="h-full rounded-full bg-gradient-to-r from-fuchsia-500 to-pink-400"
           style={{ width: `${level}%` }}
@@ -583,7 +710,7 @@ function ProjectCard({
 
   return (
     <div
-      className="rounded-3xl border border-white/10 bg-white/5 p-5 transition duration-300 hover:border-white/20 hover:bg-white/[0.07]"
+      className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 transition duration-300 hover:border-[var(--accent)] hover:bg-[var(--surface-muted)]"
       onMouseEnter={() => setPreviewing(true)}
       onMouseLeave={() => {
         setPreviewing(false);
@@ -594,7 +721,7 @@ function ProjectCard({
         window.setTimeout(() => setPreviewing(false), 1400);
       }}
     >
-      <div className="mb-4 overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+      <div className="mb-4 overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)]">
         <div className="relative aspect-video w-full overflow-hidden">
           {projectImages.length > 0 ? (
             <div
@@ -615,7 +742,7 @@ function ProjectCard({
                       }}
                     />
                   ) : (
-                    <div className="flex h-full w-full items-center justify-center p-4 text-center text-sm text-zinc-400">
+                    <div className="flex h-full w-full items-center justify-center p-4 text-center text-sm text-[var(--muted-text)]">
                       Failed to load: {img}
                     </div>
                   )}
@@ -623,14 +750,13 @@ function ProjectCard({
               ))}
             </div>
           ) : (
-            <div className="flex h-full w-full items-center justify-center p-4 text-center text-sm text-zinc-400">
+            <div className="flex h-full w-full items-center justify-center p-4 text-center text-sm text-[var(--muted-text)]">
               No images provided
             </div>
           )}
 
           {projectImages.length > 1 && (
-            <div className="absolute right-3 top-3 rounded-full border border-white/10 bg-black/50 px-3 py-1 text-[11px] text-zinc-200 backdrop-blur">
-            </div>
+            <div className="absolute right-3 top-3 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-[11px] text-foreground backdrop-blur" />
           )}
         </div>
       </div>
@@ -644,7 +770,9 @@ function ProjectCard({
               onClick={() => setCurrentIndex(index)}
               className={[
                 "h-2.5 w-2.5 rounded-full transition-all duration-300",
-                currentIndex === index ? "w-6 bg-white" : "bg-zinc-600 hover:bg-zinc-400",
+                currentIndex === index
+                  ? "w-6 bg-foreground"
+                  : "bg-[var(--border)] hover:bg-[var(--muted-text)]",
               ].join(" ")}
               aria-label={`Show image ${index + 1}`}
             />
@@ -652,14 +780,17 @@ function ProjectCard({
         </div>
       )}
 
-      <h3 className="text-lg font-semibold text-white">{title}</h3>
-      <p className="mt-2 text-sm leading-6 text-zinc-300">{desc}</p>
+      <h3 className="text-lg font-semibold text-foreground">{title}</h3>
+
+      <p className="mt-2 text-sm leading-6 text-[var(--muted-text)]">
+        {desc}
+      </p>
 
       <div className="mt-4 flex flex-wrap gap-2">
         {tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-zinc-200"
+            className="rounded-full border border-[var(--border)] bg-[var(--surface-muted)] px-3 py-1 text-xs text-foreground"
           >
             {tag}
           </span>
@@ -678,14 +809,15 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className="inline-block border-b border-fuchsia-500/70 pb-1 text-xl font-medium text-fuchsia-400">
+      <h3 className="inline-block border-b border-fuchsia-500/70 pb-1 text-xl font-medium text-fuchsia-700 dark:text-fuchsia-400">
         {title}
       </h3>
 
       <div className="mt-5 space-y-4">
         {links.map((link) => {
           const isExternal =
-            link.external ?? (link.href.startsWith("http") || link.href.startsWith("mailto:"));
+            link.external ??
+            (link.href.startsWith("http") || link.href.startsWith("mailto:"));
 
           return (
             <a
@@ -693,7 +825,7 @@ function FooterColumn({
               href={link.href}
               target={isExternal ? "_blank" : undefined}
               rel={isExternal ? "noreferrer" : undefined}
-              className="block text-lg text-zinc-200 transition hover:text-white"
+              className="block text-lg text-[var(--muted-text)] transition hover:text-foreground"
             >
               {link.label}
             </a>
@@ -719,7 +851,7 @@ function FooterIconLink({
       target="_blank"
       rel="noreferrer"
       aria-label={label}
-      className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-zinc-200 transition hover:border-fuchsia-400/60 hover:text-white"
+      className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] text-[var(--muted-text)] transition hover:border-fuchsia-400/60 hover:text-foreground"
     >
       <span className="text-lg">{icon}</span>
     </a>

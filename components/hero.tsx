@@ -11,26 +11,46 @@ const technologies = [
 
 export function Hero() {
   return (
-    <section className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden bg-[#02050b] text-white">
-      {/* Complete workspace background with all three cards */}
+    <section className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden bg-background text-foreground">
+      {/* Light workspace background */}
       <div
-        className="absolute inset-0 -z-30 bg-cover bg-[70%_center] bg-no-repeat opacity-40 lg:bg-[length:auto_100%] lg:bg-right-bottom lg:opacity-100"
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 bg-cover bg-[70%_center] bg-no-repeat lg:bg-[length:auto_100%] lg:bg-right-bottom dark:hidden"
+        style={{
+          backgroundImage: "url('/hero-workspace-light.png')",
+        }}
+      />
+
+      {/* Dark workspace background */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 hidden bg-cover bg-[70%_center] bg-no-repeat lg:bg-[length:auto_100%] lg:bg-right-bottom dark:block"
         style={{
           backgroundImage: "url('/hero-workspace.png')",
         }}
       />
 
-      {/* Mobile readability overlay; transparent on desktop */}
-      <div className="absolute inset-0 -z-20 bg-[#02050b]/65 lg:bg-transparent" />
+      {/* Mobile overlay keeps text readable */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 bg-background/85 lg:hidden"
+      />
 
-      <div className="relative mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-6xl items-center px-4 py-20 sm:px-6 lg:py-24">
+      {/* Desktop fade softens the image's left boundary */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 hidden lg:block"
+        style={{
+          background:
+            "linear-gradient(to right, var(--background) 0%, var(--background) 24%, transparent 48%)",
+        }}
+      />
+
+      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-6xl items-center px-4 py-20 sm:px-6 lg:py-24">
         <div className="w-full max-w-[680px]">
           {/* Internship badge */}
-          <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-black/40 px-4 py-2 text-sm text-zinc-200 shadow-lg backdrop-blur-md">
-            <span
-              aria-hidden="true"
-              className="text-xs text-zinc-200"
-            >
+          <div className="inline-flex items-center gap-3 rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-sm text-foreground shadow-lg backdrop-blur-md dark:border-white/15 dark:bg-black/40">
+            <span className="text-xs">
               ⚡Software Engineering Undergraduate
             </span>
 
@@ -38,40 +58,37 @@ export function Hero() {
           </div>
 
           {/* Main heading */}
-          <h1 className="mt-10 text-5xl font-semibold leading-none tracking-[-0.055em] text-white sm:text-6xl lg:text-7xl">
+          <h1 className="mt-10 text-5xl font-semibold leading-none tracking-[-0.055em] text-foreground sm:text-6xl lg:text-7xl">
             Nisith Saranga
           </h1>
 
-          <p className="mt-5 text-xl font-medium tracking-tight text-zinc-300 sm:text-2xl lg:text-3xl">
-            Full Stack Developer 
+          <p className="mt-5 text-xl font-medium tracking-tight text-[var(--muted-text)] sm:text-2xl lg:text-3xl">
+            Full Stack Developer
           </p>
 
           <div className="mt-7 h-1 w-16 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 shadow-[0_0_18px_rgba(34,211,238,0.65)]" />
 
-          <p className="mt-8 max-w-2xl text-base leading-7 text-zinc-300 sm:text-lg">
+          <p className="mt-8 max-w-2xl text-base leading-7 text-[var(--muted-text)] sm:text-lg">
             Building full-stack, AI-powered and data-driven applications.
           </p>
 
           {/* Technology line */}
-          <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-sm text-cyan-200 sm:text-base">
+          <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-sm text-cyan-800 dark:text-cyan-200 sm:text-base">
             <span
               aria-hidden="true"
-              className="text-cyan-400"
+              className="text-cyan-700 dark:text-cyan-400"
             >
               &lt;
             </span>
 
             {technologies.map((technology, index) => (
-              <span
-                key={technology}
-                className="flex items-center gap-3"
-              >
+              <span key={technology} className="flex items-center gap-3">
                 {technology}
 
                 {index < technologies.length - 1 && (
                   <span
                     aria-hidden="true"
-                    className="text-blue-400"
+                    className="text-blue-600 dark:text-blue-400"
                   >
                     •
                   </span>
@@ -81,7 +98,7 @@ export function Hero() {
 
             <span
               aria-hidden="true"
-              className="text-cyan-400"
+              className="text-cyan-700 dark:text-cyan-400"
             >
               /&gt;
             </span>
@@ -103,7 +120,7 @@ export function Hero() {
               target="_blank"
               rel="noreferrer"
               aria-label="Visit Nisith Saranga's GitHub profile"
-              className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/20 bg-black/30 text-xl text-white backdrop-blur transition hover:-translate-y-0.5 hover:border-cyan-400/70 hover:text-cyan-300"
+              className="flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--surface)] text-xl text-foreground backdrop-blur transition hover:-translate-y-0.5 hover:border-cyan-600 hover:text-cyan-700 dark:border-white/20 dark:bg-black/30 dark:hover:border-cyan-400/70 dark:hover:text-cyan-300"
             >
               <FaGithub />
             </a>
@@ -113,7 +130,7 @@ export function Hero() {
               target="_blank"
               rel="noreferrer"
               aria-label="Visit Nisith Saranga's LinkedIn profile"
-              className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/20 bg-black/30 text-xl text-white backdrop-blur transition hover:-translate-y-0.5 hover:border-cyan-400/70 hover:text-cyan-300"
+              className="flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--surface)] text-xl text-foreground backdrop-blur transition hover:-translate-y-0.5 hover:border-cyan-600 hover:text-cyan-700 dark:border-white/20 dark:bg-black/30 dark:hover:border-cyan-400/70 dark:hover:text-cyan-300"
             >
               <FaLinkedinIn />
             </a>
@@ -123,11 +140,11 @@ export function Hero() {
         {/* Scroll indicator */}
         <a
           href="#projects"
-          className="absolute bottom-5 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500 transition hover:text-cyan-300 md:flex"
+          className="absolute bottom-5 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--muted-text)] transition hover:text-cyan-700 dark:hover:text-cyan-300 md:flex"
         >
           Scroll to explore
 
-          <HiArrowDown className="text-lg text-cyan-400" />
+          <HiArrowDown className="text-lg text-cyan-700 dark:text-cyan-400" />
         </a>
       </div>
     </section>

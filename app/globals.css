@@ -73,3 +73,21 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Gentle, repeating vertical movement */
+@keyframes aboutPortraitFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .about-portrait-float {
+    animation: aboutPortraitFloat 2s ease-in-out infinite;
+  }
+}
