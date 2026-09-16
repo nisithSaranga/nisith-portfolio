@@ -91,3 +91,81 @@ a {
     animation: aboutPortraitFloat 2s ease-in-out infinite;
   }
 }
+
+/* Skills section */
+.skills-marquee-window {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 24px,
+    black calc(100% - 24px),
+    transparent
+  );
+}
+
+@keyframes skillsMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes skillsPanelEnter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes skillsDetailEnter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .skills-marquee-track {
+    animation: skillsMarquee 35s linear infinite;
+  }
+
+  .skills-marquee-window:hover .skills-marquee-track {
+    animation-play-state: paused !important;
+  }
+
+  .skills-panel-enter {
+    animation: skillsPanelEnter 240ms ease-out both;
+  }
+
+  .skills-detail-enter {
+    animation: skillsDetailEnter 180ms ease-out both;
+  }
+}
+
+/* Keep the strip manually scrollable when animation is disabled */
+@media (prefers-reduced-motion: reduce) {
+  .skills-marquee-window {
+    overflow-x: auto;
+    mask-image: none;
+  }
+
+  .skills-marquee-track {
+    animation: none;
+    transform: none;
+  }
+
+  .skills-marquee-track > ul[aria-hidden="true"] {
+    display: none;
+  }
+}

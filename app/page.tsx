@@ -3,203 +3,20 @@
 import React, { useEffect, useState } from "react";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
-import { DiAndroid } from "react-icons/di";
 import { About } from "@/components/about";
+import { Skills } from "@/components/skills";
 
 import {
-  FaReact,
-  FaNodeJs,
   FaGithub,
-  FaHtml5,
-  FaCss3Alt,
-  FaJava,
   FaLinkedinIn,
   FaEnvelope,
   FaWhatsapp,
-  FaPython,
-  FaChartLine,
-  FaServer,
 } from "react-icons/fa";
-
-import {
-  SiNextdotjs,
-  SiTypescript,
-  SiJavascript,
-  SiTailwindcss,
-  SiDotnet,
-  SiExpress,
-  SiSocketdotio,
-  SiBootstrap,
-  SiFastapi,
-  SiMongodb,
-  SiFirebase,
-  SiPhp,
-  SiTensorflow,
-  SiNumpy,
-  SiScikitlearn,
-  SiKaggle,
-  SiPostman,
-  SiGooglecolab,
-  SiJupyter,
-} from "react-icons/si";
-
-import { TbBrandCSharp } from "react-icons/tb";
-import { GrMysql } from "react-icons/gr";
 
 const rotatingRoles = [
   "a Full-stack Developer",
   "an Undergraduate",
   "an IT Intern Candidate",
-];
-
-const skillGroups = [
-  {
-    title: "Programming Languages",
-    items: [
-      { icon: FaJava, label: "Java", color: "text-amber-300", level: 75 },
-      {
-        icon: SiJavascript,
-        label: "JavaScript",
-        color: "text-yellow-400",
-        level: 75,
-      },
-      {
-        icon: SiTypescript,
-        label: "TypeScript",
-        color: "text-blue-400",
-        level: 50,
-      },
-      { icon: FaPython, label: "Python", color: "text-blue-400", level: 50 },
-      { icon: TbBrandCSharp, label: "C#", color: "text-purple-400", level: 60 },
-    ],
-  },
-  {
-    title: "Frontend & Backend",
-    items: [
-      { icon: FaReact, label: "React", color: "text-cyan-400", level: 50 },
-      { icon: SiNextdotjs, label: "Next.js", color: "text-zinc-300", level: 65 },
-      { icon: FaNodeJs, label: "Node.js", color: "text-green-400", level: 60 },
-      { icon: SiExpress, label: "Express.js", color: "text-zinc-300", level: 60 },
-      {
-        icon: SiSocketdotio,
-        label: "Socket.IO",
-        color: "text-zinc-300",
-        level: 55,
-      },
-      { icon: SiFastapi, label: "FastAPI", color: "text-teal-400", level: 50 },
-    ],
-  },
-  {
-    title: "Web Technologies",
-    items: [
-      { icon: FaHtml5, label: "HTML5", color: "text-orange-400", level: 85 },
-      { icon: FaCss3Alt, label: "CSS3", color: "text-blue-300", level: 80 },
-      {
-        icon: SiBootstrap,
-        label: "Bootstrap",
-        color: "text-purple-400",
-        level: 65,
-      },
-      {
-        icon: SiTailwindcss,
-        label: "Tailwind CSS",
-        color: "text-blue-300",
-        level: 65,
-      },
-    ],
-  },
-  {
-    title: "Frameworks & Platforms",
-    items: [
-      { icon: SiDotnet, label: ".NET", color: "text-purple-400", level: 60 },
-      { icon: SiPhp, label: "PHP", color: "text-purple-400", level: 60 },
-      {
-        icon: DiAndroid,
-        label: "Android Studio",
-        color: "text-green-400",
-        level: 60,
-      },
-    ],
-  },
-  {
-    title: "Databases",
-    items: [
-      { icon: SiMongodb, label: "MongoDB", color: "text-green-400", level: 70 },
-      { icon: GrMysql, label: "MySQL", color: "text-blue-400", level: 70 },
-      { icon: FaServer, label: "SQL Server", color: "text-red-400", level: 60 },
-      {
-        icon: SiFirebase,
-        label: "Firebase",
-        color: "text-yellow-400",
-        level: 65,
-      },
-    ],
-  },
-  {
-    title: "Machine Learning & Data Science",
-    items: [
-      { icon: SiNumpy, label: "NumPy", color: "text-blue-400", level: 60 },
-      {
-        icon: SiScikitlearn,
-        label: "Scikit-learn",
-        color: "text-orange-400",
-        level: 60,
-      },
-      {
-        icon: SiTensorflow,
-        label: "TensorFlow",
-        color: "text-orange-400",
-        level: 60,
-      },
-      {
-        icon: SiTensorflow,
-        label: "TensorFlow.js",
-        color: "text-orange-400",
-        level: 55,
-      },
-      {
-        icon: FaChartLine,
-        label: "Matplotlib",
-        color: "text-blue-400",
-        level: 55,
-      },
-    ],
-  },
-  {
-    title: "Development & Tools",
-    items: [
-      {
-        icon: FaGithub,
-        label: "Git & GitHub",
-        color: "text-zinc-300",
-        level: 75,
-      },
-      {
-        icon: SiPostman,
-        label: "Postman",
-        color: "text-orange-400",
-        level: 70,
-      },
-      {
-        icon: SiGooglecolab,
-        label: "Google Colab",
-        color: "text-orange-400",
-        level: 65,
-      },
-      {
-        icon: SiKaggle,
-        label: "Kaggle Notebook",
-        color: "text-blue-400",
-        level: 65,
-      },
-      {
-        icon: SiJupyter,
-        label: "Jupyter Notebook",
-        color: "text-orange-400",
-        level: 65,
-      },
-    ],
-  },
 ];
 
 const contactLinkClass =
@@ -232,31 +49,7 @@ export default function Home() {
         <Navbar />
         <Hero />
         <About />
-
-        <Section id="skills" title="My Skills">
-          <div className="space-y-10">
-            {skillGroups.map((group) => (
-              <div key={group.title}>
-                <h3 className="mb-4 flex items-center gap-3 text-lg font-semibold text-foreground sm:text-xl">
-                  <span className="h-1 w-8 rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-400" />
-                  {group.title}
-                </h3>
-
-                <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-                  {group.items.map((skill) => (
-                    <SkillMeterCard
-                      key={skill.label}
-                      icon={skill.icon}
-                      label={skill.label}
-                      color={skill.color}
-                      level={skill.level}
-                    />
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </Section>
+        <Skills/>
 
         <Section id="projects" title="Projects">
           <div className="grid gap-5 md:grid-cols-2">
@@ -652,35 +445,6 @@ function InfoCard({ label, value }: { label: string; value: string }) {
   );
 }
 
-function SkillMeterCard({
-  icon: Icon,
-  label,
-  color,
-  level,
-}: {
-  icon: React.ElementType;
-  label: string;
-  color: string;
-  level: number;
-}) {
-  return (
-    <div className="rounded-[26px] border border-[var(--border)] bg-[var(--surface)] p-4 text-center transition duration-300 hover:-translate-y-1 hover:border-[var(--accent)]">
-      <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[var(--surface-muted)] ring-1 ring-[var(--border)]">
-        <Icon className={`text-4xl brightness-60 dark:brightness-100 ${color}`} />
-      </div>
-
-      <p className="mt-4 text-lg font-semibold text-foreground">{label}</p>
-
-      <div className="mt-4 h-3 w-full overflow-hidden rounded-full bg-[var(--border)]">
-        <div
-          className="h-full rounded-full bg-gradient-to-r from-fuchsia-500 to-pink-400"
-          style={{ width: `${level}%` }}
-        />
-      </div>
-    </div>
-  );
-}
-
 function ProjectCard({
   title,
   desc,
@@ -797,63 +561,5 @@ function ProjectCard({
         ))}
       </div>
     </div>
-  );
-}
-
-function FooterColumn({
-  title,
-  links,
-}: {
-  title: string;
-  links: { label: string; href: string; external?: boolean }[];
-}) {
-  return (
-    <div>
-      <h3 className="inline-block border-b border-fuchsia-500/70 pb-1 text-xl font-medium text-fuchsia-700 dark:text-fuchsia-400">
-        {title}
-      </h3>
-
-      <div className="mt-5 space-y-4">
-        {links.map((link) => {
-          const isExternal =
-            link.external ??
-            (link.href.startsWith("http") || link.href.startsWith("mailto:"));
-
-          return (
-            <a
-              key={`${title}-${link.label}`}
-              href={link.href}
-              target={isExternal ? "_blank" : undefined}
-              rel={isExternal ? "noreferrer" : undefined}
-              className="block text-lg text-[var(--muted-text)] transition hover:text-foreground"
-            >
-              {link.label}
-            </a>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
-function FooterIconLink({
-  href,
-  label,
-  icon,
-}: {
-  href: string;
-  label: string;
-  icon: React.ReactNode;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      aria-label={label}
-      className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] text-[var(--muted-text)] transition hover:border-fuchsia-400/60 hover:text-foreground"
-    >
-      <span className="text-lg">{icon}</span>
-    </a>
   );
 }
