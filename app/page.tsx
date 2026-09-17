@@ -1,147 +1,23 @@
-
 "use client";
 
-
 import React, { useEffect, useState } from "react";
-import { DiAndroid } from "react-icons/di";
-import {
-  FaReact,
-  FaNodeJs,
-  FaGithub,
-  FaHtml5,
-  FaCss3Alt,
-  FaJava,
-  FaDatabase,
-  FaLinkedinIn,
-  FaEnvelope,
-  FaWhatsapp,
-  FaPython,
-  FaChartLine,
-  FaServer,
-} from "react-icons/fa";
+import { Navbar } from "@/components/navbar";
+import { Hero } from "@/components/hero";
+import { About } from "@/components/about";
+import { Skills } from "@/components/skills";
+import { Projects } from "@/components/projects";
+import { Education } from "@/components/education";
+import { Contact } from "@/components/contact";
+import { Footer } from "@/components/footer";
 
-
-import {
-  SiNextdotjs,
-  SiTypescript,
-  SiJavascript,
-  SiTailwindcss,
-  SiDotnet,
-  SiExpress,
-  SiSocketdotio,
-  SiBootstrap,
-  SiFastapi,
-  SiMongodb,
-  SiMysql,
-  SiFirebase,
-  SiPhp,
-  SiTensorflow,
-  SiNumpy,
-  SiScikitlearn,
-  SiKaggle,
-  SiPostman,
-  SiGooglecolab,
-  SiJupyter,
-} from "react-icons/si";
-
-
-import { TbBrandCSharp } from "react-icons/tb";
-
-
-import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
-import { GrMysql } from "react-icons/gr";
-
-
-
-const rotatingRoles = [
-  "a Full-stack Developer",
-  "an Undergraduate",
-  "an IT Intern Candidate",
-];
-
-
-
-const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Education", href: "#education" },
-  { label: "Contact", href: "#contact" },
-];
-
-const skillGroups = [
-  {
-    title: "Programming Languages",
-    items: [
-      { icon: FaJava, label: "Java", color: "text-amber-300", level: 75 },
-      { icon: SiJavascript, label: "JavaScript", color: "text-yellow-400", level: 75 },
-      { icon: SiTypescript, label: "TypeScript", color: "text-blue-400", level: 50 },
-      { icon: FaPython, label: "Python", color: "text-blue-400", level: 50 },
-      { icon: TbBrandCSharp, label: "C#", color: "text-purple-400", level: 60 },
-    ],
-  },
-  {
-    title: "Frontend & Backend",
-    items: [
-      { icon: FaReact, label: "React", color: "text-cyan-400", level: 50 },
-      { icon: SiNextdotjs, label: "Next.js", color: "text-zinc-300", level: 65 },
-      { icon: FaNodeJs, label: "Node.js", color: "text-green-400", level: 60 },
-      { icon: SiExpress, label: "Express.js", color: "text-zinc-300", level: 60 },
-      { icon: SiSocketdotio, label: "Socket.IO", color: "text-zinc-300", level: 55 },
-      { icon: SiFastapi, label: "FastAPI", color: "text-teal-400", level: 50 },
-    ],
-  },
-  {
-    title: "Web Technologies",
-    items: [
-      { icon: FaHtml5, label: "HTML5", color: "text-orange-400", level: 85 },
-      { icon: FaCss3Alt, label: "CSS3", color: "text-blue-300", level: 80 },
-      { icon: SiBootstrap, label: "Bootstrap", color: "text-purple-400", level: 65 },
-      { icon: SiTailwindcss, label: "Tailwind CSS", color: "text-blue-300", level: 65 },
-    ],
-  },
-  {
-    title: "Frameworks & Platforms",
-    items: [
-      { icon: SiDotnet, label: ".NET", color: "text-purple-400", level: 60 },
-      { icon: SiPhp, label: "PHP", color: "text-purple-400", level: 60 },
-      { icon: DiAndroid, label: "Android Studio", color: "text-green-400", level: 60 },
-    ],
-  },
-  {
-    title: "Databases",
-    items: [
-      { icon: SiMongodb, label: "MongoDB", color: "text-green-400", level: 70 },
-      { icon: GrMysql, label: "MySQL", color: "text-blue-400", level: 70 },
-      { icon: FaServer, label: "SQL Server", color: "text-red-400", level: 60 },
-      { icon: SiFirebase, label: "Firebase", color: "text-yellow-400", level: 65 },
-    ],
-  },
-  {
-    title: "Machine Learning & Data Science",
-    items: [
-      { icon: SiNumpy, label: "NumPy", color: "text-blue-400", level: 60 },
-      { icon: SiScikitlearn, label: "Scikit-learn", color: "text-orange-400", level: 60 },
-      { icon: SiTensorflow, label: "TensorFlow", color: "text-orange-400", level: 60 },
-      { icon: SiTensorflow, label: "TensorFlow.js", color: "text-orange-400", level: 55 },
-      { icon: FaChartLine, label: "Matplotlib", color: "text-blue-400", level: 55 },
-    ],
-  },
-  {
-    title: "Development & Tools",
-    items: [
-      { icon: FaGithub, label: "Git & GitHub", color: "text-zinc-300", level: 75 },
-      { icon: SiPostman, label: "Postman", color: "text-orange-400", level: 70 },
-      { icon: SiGooglecolab, label: "Google Colab", color: "text-orange-400", level: 65 },
-      { icon: SiKaggle, label: "Kaggle Notebook", color: "text-blue-400", level: 65 },
-      { icon: SiJupyter, label: "Jupyter Notebook", color: "text-orange-400", level: 65 },
-    ],
-  },
-];
+const contactLinkClass =
+  "flex h-14 w-14 items-center justify-center rounded-2xl " +
+  "border border-[var(--border)] bg-[var(--surface)] text-foreground " +
+  "transition hover:-translate-y-1 hover:border-fuchsia-500/60 " +
+  "hover:text-fuchsia-700 dark:hover:text-fuchsia-300";
 
 export default function Home() {
   const [showLoader, setShowLoader] = useState(true);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -155,404 +31,20 @@ export default function Home() {
     <>
       {showLoader && <Preloader />}
 
-      <main
+      <main id="top"
         className={[
-  "min-h-screen overflow-x-clip bg-zinc-950 text-zinc-100 transition-opacity duration-700",
-  showLoader ? "pointer-events-none opacity-0" : "opacity-100",
-].join(" ")}
+          "min-h-screen overflow-x-clip bg-background text-foreground transition-opacity duration-700",
+          showLoader ? "pointer-events-none opacity-0" : "opacity-100",
+        ].join(" ")}
       >
-        <header className="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/80 backdrop-blur-xl">
-          <div className="mx-auto flex w-full max-w-6xl items-center px-4 py-4">
-            <a
-              href="#"
-              className="flex min-w-0 items-center gap-3 font-semibold tracking-tight"
-            >
-              <img
-                src="/profile.png"
-                alt="Nisith Saranga"
-                className="h-9 w-9 rounded-full border border-white/10 object-cover object-[center_12%] ring-2 ring-fuchsia-500/30"
-              />
-
-              <span className="bg-gradient-to-r from-fuchsia-400 via-violet-300 to-cyan-400 bg-clip-text text-10px font-semibold tracking-tight text-transparent">
-                Nisith Saranga
-              </span>
-            </a>
-
-            <div className="ml-auto flex items-center">
-              <nav className="hidden items-center gap-10 text-sm text-white-0 md:flex">
-                {navItems.map((item) => (
-                  <a
-                    key={item.href}
-                    className="transition hover:text-cyan-400"
-                    href={item.href}
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </nav>
-            </div>
-          </div>
-
-          {mobileMenuOpen && (
-            <div className="border-t border-white/10 md:hidden">
-              <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3">
-                {navItems.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    className="rounded-xl px-3 py-3 text-sm text-zinc-300 transition hover:bg-white/5 hover:text-white"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
-        </header>
-
-        <section className="relative overflow-x-clip">
-          <div className="pointer-events-none absolute inset-0 opacity-60">
-            <div className="absolute left-1/2 top-[-120px] h-[240px] w-[240px] -translate-x-1/2 rounded-full bg-fuchsia-500/20 blur-3xl sm:h-[340px] sm:w-[340px]" />
-            <div className="absolute right-[-100px] top-[140px] h-[240px] w-[240px] rounded-full bg-cyan-500/15 blur-3xl sm:right-[-40px] sm:h-[340px] sm:w-[340px]" />
-            <div className="absolute bottom-[-80px] left-[-60px] h-[200px] w-[200px] rounded-full bg-violet-500/10 blur-3xl sm:h-[280px] sm:w-[280px]" />
-          </div>
-
-          <div className="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:pb-20 sm:pt-16 lg:pt-20">
-            <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,430px)]">
-              <div className="min-w-0 text-center lg:text-left">
-                <h1 className="mx-auto max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl lg:mx-0 lg:text-6xl">
-                  I&apos;m Nisith Saranga
-                </h1>
-
-                <div className="mt-4 min-h-[38px] text-lg font-medium text-zinc-300 sm:text-xl lg:text-2xl">
-                  <span className="text-fuchsia-400">I am </span>
-                  <span className="bg-gradient-to-r from-fuchsia-400 via-pink-300 to-cyan-300 bg-clip-text text-transparent">
-                    <TypewriterRotator words={rotatingRoles} />
-                  </span>
-                </div>
-
-                <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-zinc-300 sm:text-base lg:mx-0">
-                   I focus on transforming ideas into polished and effective digital solutions,<br/>every line of code is a step toward something better.            </p>
-
-                <div className="mt-10 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-                  <a
-                    href="#projects"
-                      className="group rounded-full border border-white transition px-5 py-3 text-sm font-medium text-white"
-                    >
-                      <span className="group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:via-purple-500 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent">
-                        View Work
-                      </span>
-                    </a>
-                    <a href="#contact"
-                   className="group rounded-full border border-white transition px-5 py-3 text-sm font-medium text-white">
-                   <span className="group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:via-purple-500 group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent">
-                    Contact Me</span></a>
-                </div>
-              </div>
-              <div className="min-w-0">
-                <div className="mx-auto w-full max-w-sm">
-                  <div className="rounded-[30px] border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-black/30">
-                    <div className="relative flex justify-center">
-                      <div className="absolute top-8 h-56 w-56 rounded-full bg-fuchsia-500/15 blur-3xl sm:h-64 sm:w-64" />
-                      <div className="absolute top-10 h-52 w-52 rounded-full bg-cyan-500/10 blur-3xl sm:h-60 sm:w-60" />
-
-                      {/* wrapper to hold spinner + image together */}
-                      <div className="relative flex items-center justify-center">
-
-                        {/* full spinning ring */}
-                        <div
-                          className="absolute rounded-full"
-                          style={{
-                            width: "calc(100% + 15px)",
-                            height: "calc(100% + 15px)",
-                            background: "conic-gradient(from 0deg, #e879f9, #8b5cf6, #22d3ee, #6ee7b7, #e879f9)",
-                            animation: "spin 3s linear infinite",
-                            zIndex: 0,
-                          }}
-                        />
-
-                        {/* dark gap between spinner and image */}
-                        <div className="relative z-10 rounded-full  p-[1px]">
-                          <div className="rounded-full  p-1">
-                            <img
-                              src="/profile.png"
-                              alt="Nisith Saranga"
-                              className="h-56 w-56 rounded-full object-cover object-[center_12%] sm:h-64 sm:w-64 lg:h-72 lg:w-72"
-                            />
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-
-                    <div className="mt-6 text-center">
-                      <p className="text-lg font-semibold text-white">Nisith Saranga</p>
-                      <p className="mt-2 text-sm leading-6 text-zinc-400">
-                        Software Engineering undergraduate looking for IT internship opportunities.
-                      </p>
-
-                      <div className="mt-4 flex flex-wrap justify-center gap-2">
-                        <span className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-zinc-200">
-                          Full-stack
-                        </span>
-                        <span className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-zinc-200">
-                          Problem Solver
-                        </span>
-                        <span className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-zinc-200">
-                          Aspiring It Intern
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-<Section id="about" title="About Me">
-  <div className="mx-auto max-w-fit rounded-3xl border p-6 sm:p-8">
-    <p className="text-center leading-8 text-zinc-300">
-      I&apos;m Nisith Saranga, a Software Engineering undergraduate with a strong interest in
-      building systems that are both functional and polished.<br/>
-      I enjoy combining clean user interfaces, structured backend development & reliable
-      data handling to create solutions that solve real problems.<br/>
-      This portfolio reflects the kind of developer I&apos;m becoming: practical, detail-focused
-      & committed to building work that is clear, professional & useful.<br/>
-      I&apos;m currently seeking an IT internship where I can apply my skills, learn fast & add real value.
-    </p>
-  </div>
-</Section>
-        <Section id="skills" title="My Skills">
-  <div className="space-y-10">
-    {skillGroups.map((group) => (
-      <div key={group.title}>
-        <h3 className="mb-4 flex items-center gap-3 text-lg font-semibold text-zinc-200 sm:text-xl">
-          <span className="h-1 w-8 rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-400" />
-          {group.title}
-        </h3>
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-          {group.items.map((skill) => (
-            <SkillMeterCard
-              key={skill.label}
-              icon={skill.icon}
-              label={skill.label}
-              color={skill.color}
-              level={skill.level}
-            />
-          ))}
-        </div>
-      </div>
-    ))}
-  </div>
-</Section>
-
-        <Section id="projects" title="Projects">
-          <div className="grid gap-5 md:grid-cols-2">
-            <ProjectCard
-              title="FIFA 2026 World Cup Bracket Challenge"
-              desc="A full-stack prediction platform built with the MERN stack in TypeScript."
-              tags={["MERN", "Typescript", "Docker","	football-data.org API"]}
-              projectImages={["/fifa1.jpg", "/fifa2.png", "/fifa3.png","/fifa4.png"]}
-              imageAlt="FIFA 2026 World Cup Bracket Challenge project screenshots"
-            />
-            <ProjectCard
-              title="Confide - Private STI Screening for Men"
-              desc="A Privacy-Preserving Deep Learning System for Preliminary Visual Screening of Male Anogenital Sexually Transmitted Infections."
-              tags={["Transfer Learning","Convolutional Neural Network", "FastAPI", "Tensorflow.js"]}
-              projectImages={["/confide1.png", "/confide2.png", "/confide3.png", "/confide4.png"]}
-              imageAlt="Confide project screenshots"
-            />
-            <ProjectCard
-              title="FixTrack - Vehicle Service Platform"
-              desc="A full-stack platform for breakdown reporting, live tracking, and mechanic dispatch."
-              tags={["Express.js", "Next.js", "Firebase"]}
-              projectImages={["/fixtrack1.jpg", "/fixtrack2.jpg", "/fixtrack3.jpg"]}
-              imageAlt="FixTrack project screenshots"
-            />
-            <ProjectCard
-              title="OceanView Resort - Reservation Management System"
-              desc="Java EE web application to manage resort reservations, prevent booking conflicts & generate invoices."
-              tags={["Java EE", "MySQL", "HTML5", "Bootstrap"]}
-              projectImages={["/oceanview1.png", "/oceanview2.png" ]}
-              imageAlt="Oceanview RMS project screenshots"
-            />
-            <ProjectCard
-              title="SPC Pharmacy Network - Service Oriented Web App"
-              desc="Service-oriented web application for managing pharmacy operations and business workflows."
-              tags={["ASP.NET Core", "React", "SQL Server"]}
-              projectImages={["/soc1.png", "/soc2.png", "/soc3.png","/soc4.png"]}
-              imageAlt="SPC Pharmacy Network project screenshots"
-            />
-            
-            <ProjectCard
-              title="FitZone Fitness Center - Web App"
-              desc="Web application for fitness center operations and member-facing features."
-              tags={["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"]}
-              projectImages={["/fitzone1.jpg", "/fitzone2.jpg", "/fitzone3.jpg"]}
-              imageAlt="FitZone Fitness Center project screenshots"
-            />
-          </div>
-        </Section>
-<Section id="education" title="Education & Certifications">
-  <div className="flex flex-col items-center gap-6">
-
-    {/* Degree Details — plain background */}
-    <div className="w-full max-w-4xl space-y-3 pb-4">
-
-      {/* BSc */}
-      <div className="group flex items-start gap-3 p-4">
-        <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-pink-500 via-purple-500 to-cyan-400" />
-        <div>
-          <p className="bg-gradient-to-r from-white to-cyan-400 bg-clip-text font-semibold text-white transition group-hover:text-transparent">
-            BSc (Hons) in Software Engineering (Reading)
-          </p>
-          <p className="text-sm text-zinc-500">Cardiff Metropolitan University (Reading) </p>
-        </div>
-      </div>
-
-      {/* HND */}
-      <div className="group flex items-start gap-3 p-4">
-        <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-pink-500 via-purple-500 to-cyan-400" />
-        <div>
-        <p className="bg-gradient-to-r from-white via-pink-400 to-cyan-400 bg-clip-text font-semibold text-white transition group-hover:text-transparent">
-          HND in Computing & Software Engineering
-        </p>
-          <p className="text-sm text-zinc-500">Cardiff Metropolitan University </p>
-        </div>
-      </div>
-
-    </div>
-
-    {/* Certificate container */}
-    <div className="w-full max-w-4xl rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
-      <p className="text-center text-sm text-zinc-400">Certificate</p>
-      <p className="mt-2 text-center text-lg font-medium text-white">
-        HND in Computing & Software Engineering
-      </p>
-
-      <div className="mt-5 flex justify-center">
-        <a href="/hnd1.jpg" target="_blank" rel="noreferrer" className="group w-full max-w-[300px]">
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/30">
-            <img
-              src="/hnd1.jpg"
-              alt="HND Certificate front"
-              className="h-64 w-full object-contain transition duration-300 group-hover:scale-[1.03]"
-            />
-          </div>
-        </a>
-      </div>
-
-      <p className="mt-4 text-center text-sm text-zinc-300">
-        Click to view the full image.
-      </p>
-    </div>
-
-  </div>
-</Section>
-
-        <Section id="contact" title="Contact">
-          <div className="mx-auto max-w-3xl rounded-[32px] border border-white bg-gradient-purple-500 via-blue-500 p-8 text-center shadow-2xl shadow-black/20">
-            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-500/20 via-violet-500/20 to-cyan-400/20 ring-1 ring-white/10">
-              <FaEnvelope className="text-2xl text-white" />
-            </div>
-
-            <p className="mt-5 text-lg font-medium text-white">
-              Let’s connect
-            </p>
-
-            <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-white-400 sm:text-base">
-              I’m open to internship opportunities, collaborations, and professional connections.
-            </p>
-
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <a
-                href="mailto:nisithsaranga13@gmail.com"
-                aria-label="Email"
-                title="Email"
-                className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-zinc-200 transition hover:-translate-y-1 hover:border-fuchsia-400/50 hover:text-white"
-              >
-                <FaEnvelope className="text-xl" />
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/nisith-saranga-0529732a5/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn"
-                title="LinkedIn"
-                className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-zinc-200 transition hover:-translate-y-1 hover:border-fuchsia-400/50 hover:text-white"
-              >
-                <FaLinkedinIn className="text-xl" />
-              </a>
-
-              <a
-                href="https://github.com/nisithSaranga"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub"
-                title="GitHub"
-                className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-zinc-200 transition hover:-translate-y-1 hover:border-fuchsia-400/50 hover:text-white"
-              >
-                <FaGithub className="text-xl" />
-              </a>
-
-              <a
-                href="https://wa.me/94712698980"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="WhatsApp"
-                title="WhatsApp"
-                className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-zinc-200 transition hover:-translate-y-1 hover:border-fuchsia-400/50 hover:text-white"
-              >
-                <FaWhatsapp className="text-xl" />
-              </a>
-            </div>
-
-            <p className="mt-6 text-xs text-zinc-500">
-              Best reached by email or LinkedIn.
-            </p>
-          </div>
-        </Section>
-
-      <footer className="relative overflow-hidden border-t border-white/10">
-        {/* gradient background matching layout */}
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/4 top-0 h-40 w-60 rounded-full bg-fuchsia-500/15 blur-3xl" />
-          <div className="absolute right-1/4 bottom-0 h-40 w-60 rounded-full bg-cyan-500/10 blur-3xl" />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-
-        <div className="relative mx-auto max-w-6xl py-16 sm:py-10">
-          {/* back to top button */}
-          <div className="flex flex-col items-center gap-6">
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="group flex flex-col items-center gap-2 text-zinc-400 transition hover:text-white"
-            >
-              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-xl transition group-hover:border-fuchsia-400/50 group-hover:bg-fuchsia-500/10 group-hover:-translate-y-1">
-                ↑
-              </span>
-              <span className="text-xs tracking-widest uppercase">Back to Top</span>
-            </button>
-
-            <div className="h-px w-24 rounded-full bg-gradient-to-r from-fuchsia-500/50 via-violet-400/50 to-cyan-400/50" />
-
-            <p className="bg-gradient-to-r from-fuchsia-400 via-violet-300 to-cyan-400 bg-clip-text text-2xl font-semibold tracking-tight text-transparent">
-              Nisith Saranga
-            </p>
-
-            <p className="max-w-sm text-center text-sm text-500">
-              Your next intern just built this.
-            </p>
-
-            <p className="text-xs text-zinc-600">
-              © {new Date().getFullYear()} Developed by Nisith Saranga. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+        <Navbar />
+        <Hero />
+        <About />
+        <Skills/>
+        <Projects/>
+        <Education/>
+        <Contact/>
+        <Footer/>
       </main>
     </>
   );
@@ -560,14 +52,14 @@ export default function Home() {
 
 function Preloader() {
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-zinc-950 px-6">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-background px-6 text-foreground">
       <div className="pointer-events-none absolute inset-0 opacity-60">
         <div className="absolute left-1/2 top-[16%] h-40 w-40 -translate-x-1/2 rounded-full bg-fuchsia-500/20 blur-3xl" />
         <div className="absolute bottom-[18%] right-[12%] h-48 w-48 rounded-full bg-cyan-500/15 blur-3xl" />
       </div>
 
-      <div className="relative z-10 w-full max-w-md rounded-[28px] border border-white/10 bg-white/[0.04] p-8 text-center shadow-2xl shadow-black/40 backdrop-blur">
-        <div className="mx-auto flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-zinc-900 ring-2 ring-fuchsia-500/20">
+      <div className="relative z-10 w-full max-w-md rounded-[28px] border border-[var(--border)] bg-[var(--surface)] p-8 text-center shadow-2xl shadow-black/10 backdrop-blur dark:shadow-black/40">
+        <div className="mx-auto flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-[var(--border)] bg-[var(--surface-muted)] ring-2 ring-fuchsia-500/20">
           <img
             src="/profile.png"
             alt="Nisith Saranga"
@@ -575,20 +67,16 @@ function Preloader() {
           />
         </div>
 
-        <p className="mt-5 text-2xl font-semibold tracking-tight text-white">
+        <p className="mt-5 text-2xl font-semibold tracking-tight text-foreground">
           Nisith Saranga
         </p>
 
-        <div className="mt-2 min-h-[28px] text-sm text-zinc-300">
-          <TypewriterRotator words={rotatingRoles} />
-        </div>
-
-        <p className="mt-2 text-xs uppercase tracking-[0.28em] text-zinc-500">
+        <p className="mt-2 text-xs uppercase tracking-[0.28em] text-[var(--muted-text)]">
           Loading portfolio
         </p>
 
-        <div className="mt-7 h-[4px] w-full overflow-hidden rounded-full bg-white/10">
-          <div className="h-full w-full origin-left animate-[nisithLoad_1.7s_ease-in-out_forwards] bg-gradient-to-r from-fuchsia-400 via-white to-cyan-400" />
+        <div className="mt-7 h-[4px] w-full overflow-hidden rounded-full bg-[var(--border)]">
+          <div className="h-full w-full origin-left animate-[nisithLoad_1.7s_ease-in-out_forwards] bg-gradient-to-r from-fuchsia-500 via-violet-500 to-cyan-500 dark:from-fuchsia-400 dark:via-white dark:to-cyan-400" />
         </div>
 
         <style jsx>{`
@@ -646,7 +134,7 @@ function TypewriterRotator({ words }: { words: string[] }) {
   return (
     <span className="inline-flex items-center">
       {words[wordIndex].substring(0, subIndex)}
-      <span className="ml-1 inline-block h-[1.1em] w-[2px] animate-pulse bg-white/80" />
+      <span className="ml-1 inline-block h-[1.1em] w-[2px] animate-pulse bg-foreground/80" />
     </span>
   );
 }
@@ -663,229 +151,24 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="scroll-mt-24 mx-auto max-w-6xl px-4 py-16 sm:py-20">
+    <section
+      id={id}
+      className="mx-auto max-w-6xl scroll-mt-24 px-4 py-16 sm:py-20"
+    >
       <div className="mb-8 text-center sm:mb-10">
-        <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           {title}
         </h2>
+
         {subtitle && (
           <>
             <div className="mx-auto mt-3 h-1 w-24 rounded-full bg-gradient-to-r from-fuchsia-500 to-violet-400" />
-            <p className="mt-4 text-zinc-400">{subtitle}</p>
+            <p className="mt-4 text-[var(--muted-text)]">{subtitle}</p>
           </>
         )}
       </div>
+
       <div>{children}</div>
     </section>
-  );
-}
-
-function InfoCard({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-left shadow-lg shadow-black/10">
-      <p className="text-sm text-zinc-400">{label}</p>
-      <p className="mt-2 font-medium leading-7 text-white">{value}</p>
-    </div>
-  );
-}
-
-function SkillMeterCard({
-  icon: Icon,
-  label,
-  color,
-  level,
-}: {
-  icon: React.ElementType;
-  label: string;
-  color: string;
-  level: number;
-}) {
-  return (
-    <div className="rounded-[26px] border border-white/10 bg-white/5 p-4 text-center transition duration-300 hover:-translate-y-1 hover:border-white/20">
-      <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-slate-800/70 ring-1 ring-white/10">
-        <Icon className={`text-4xl ${color}`} />
-      </div>
-
-      <p className="mt-4 text-lg font-semibold text-white">{label}</p>
-
-      <div className="mt-4 h-3 w-full overflow-hidden rounded-full bg-white/10">
-        <div
-          className="h-full rounded-full bg-gradient-to-r from-fuchsia-500 to-pink-400"
-          style={{ width: `${level}%` }}
-        />
-      </div>
-    </div>
-  );
-}
-
-function ProjectCard({
-  title,
-  desc,
-  tags,
-  projectImages,
-  imageAlt,
-}: {
-  title: string;
-  desc: string;
-  tags: string[];
-  projectImages: string[];
-  imageAlt: string;
-}) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [previewing, setPreviewing] = useState(false);
-  const [failedImages, setFailedImages] = useState<string[]>([]);
-
-  useEffect(() => {
-    if (!previewing || projectImages.length <= 1) return;
-
-    const interval = window.setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % projectImages.length);
-    }, 1200);
-
-    return () => window.clearInterval(interval);
-  }, [previewing, projectImages.length]);
-
-  return (
-    <div
-      className="rounded-3xl border border-white/10 bg-white/5 p-5 transition duration-300 hover:border-white/20 hover:bg-white/[0.07]"
-      onMouseEnter={() => setPreviewing(true)}
-      onMouseLeave={() => {
-        setPreviewing(false);
-        setCurrentIndex(0);
-      }}
-      onTouchStart={() => setPreviewing(true)}
-      onTouchEnd={() => {
-        window.setTimeout(() => setPreviewing(false), 1400);
-      }}
-    >
-      <div className="mb-4 overflow-hidden rounded-2xl border border-white/10 bg-black/30">
-        <div className="relative aspect-video w-full overflow-hidden">
-          {projectImages.length > 0 ? (
-            <div
-              className="flex h-full w-full transition-transform duration-700 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {projectImages.map((img, index) => (
-                <div key={index} className="h-full w-full shrink-0">
-                  {!failedImages.includes(img) ? (
-                    <img
-                      src={img}
-                      alt={`${imageAlt} ${index + 1}`}
-                      className="h-full w-full object-cover"
-                      onError={() => {
-                        setFailedImages((prev) =>
-                          prev.includes(img) ? prev : [...prev, img]
-                        );
-                      }}
-                    />
-                  ) : (
-                    <div className="flex h-full w-full items-center justify-center p-4 text-center text-sm text-zinc-400">
-                      Failed to load: {img}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="flex h-full w-full items-center justify-center p-4 text-center text-sm text-zinc-400">
-              No images provided
-            </div>
-          )}
-
-          {projectImages.length > 1 && (
-            <div className="absolute right-3 top-3 rounded-full border border-white/10 bg-black/50 px-3 py-1 text-[11px] text-zinc-200 backdrop-blur">
-            </div>
-          )}
-        </div>
-      </div>
-
-      {projectImages.length > 1 && (
-        <div className="mb-4 flex justify-center gap-2">
-          {projectImages.map((_, index) => (
-            <button
-              key={index}
-              type="button"
-              onClick={() => setCurrentIndex(index)}
-              className={[
-                "h-2.5 w-2.5 rounded-full transition-all duration-300",
-                currentIndex === index ? "w-6 bg-white" : "bg-zinc-600 hover:bg-zinc-400",
-              ].join(" ")}
-              aria-label={`Show image ${index + 1}`}
-            />
-          ))}
-        </div>
-      )}
-
-      <h3 className="text-lg font-semibold text-white">{title}</h3>
-      <p className="mt-2 text-sm leading-6 text-zinc-300">{desc}</p>
-
-      <div className="mt-4 flex flex-wrap gap-2">
-        {tags.map((tag) => (
-          <span
-            key={tag}
-            className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-zinc-200"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function FooterColumn({
-  title,
-  links,
-}: {
-  title: string;
-  links: { label: string; href: string; external?: boolean }[];
-}) {
-  return (
-    <div>
-      <h3 className="inline-block border-b border-fuchsia-500/70 pb-1 text-xl font-medium text-fuchsia-400">
-        {title}
-      </h3>
-
-      <div className="mt-5 space-y-4">
-        {links.map((link) => {
-          const isExternal =
-            link.external ?? (link.href.startsWith("http") || link.href.startsWith("mailto:"));
-
-          return (
-            <a
-              key={`${title}-${link.label}`}
-              href={link.href}
-              target={isExternal ? "_blank" : undefined}
-              rel={isExternal ? "noreferrer" : undefined}
-              className="block text-lg text-zinc-200 transition hover:text-white"
-            >
-              {link.label}
-            </a>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
-function FooterIconLink({
-  href,
-  label,
-  icon,
-}: {
-  href: string;
-  label: string;
-  icon: React.ReactNode;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      aria-label={label}
-      className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-zinc-200 transition hover:border-fuchsia-400/60 hover:text-white"
-    >
-      <span className="text-lg">{icon}</span>
-    </a>
   );
 }
