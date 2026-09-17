@@ -19,14 +19,14 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-200/80 bg-white/80 backdrop-blur-xl dark:border-white/10 dark:bg-[#070b14]/80">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center px-4">
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center px-4 lg:px-0">
         <a
           href="#"
           onClick={closeMenu}
-          className="text-xl font-bold tracking-[-0.04em] text-zinc-950 dark:text-white"
+          className="lg:ml-[2px] text-xl font-bold tracking-[-0.04em] text-zinc-950 dark:text-white"
           aria-label="Go to the top of the page"
         >
-          NS<span className="text-blue-600 dark:text-blue-400">.</span>
+          &lt;NS/&gt;
         </a>
 
         <nav

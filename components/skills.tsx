@@ -521,7 +521,7 @@ export function Skills() {
     <section
       id="skills"
       aria-labelledby="skills-heading"
-      className="w-full scroll-mt-24 bg-background px-4 py-16 sm:py-20"
+      className="w-full scroll-mt-24 bg-background px-4 py-6 sm:py-8"
     >
       <div className="mx-auto max-w-6xl">
         <div className="text-center">

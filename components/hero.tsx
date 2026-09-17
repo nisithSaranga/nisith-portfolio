@@ -1,12 +1,13 @@
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { HiArrowDown, HiArrowRight } from "react-icons/hi";
+import { RoleRotator } from "@/components/role-rotator";
 
 const technologies = [
   "React",
   "Next.js",
   "Node.js",
+  "Java",
   "Python",
-  "TensorFlow",
 ];
 
 export function Hero() {
@@ -47,23 +48,25 @@ export function Hero() {
       />
 
       <div className="relative z-10 mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-6xl items-center px-4 py-20 sm:px-6 lg:py-24">
-        <div className="w-full max-w-[680px]">
-          {/* Internship badge */}
+        <div className="w-full max-w-[680px] -translate-x-6">
           <div className="inline-flex items-center gap-3 rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-sm text-foreground shadow-lg backdrop-blur-md dark:border-white/15 dark:bg-black/40">
-            <span className="text-xs">
-              ⚡Software Engineering Undergraduate
+           <span
+              aria-hidden="true"
+              className="relative flex h-2.5 w-2.5 items-center justify-center"
+            >
+              <span className="relative h-2.5 w-2.5 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 shadow-[0_0_12px_rgba(34,211,238,0.85)]" />
             </span>
-
-            <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.9)]" />
+            <span className="text-xs">
+              open to opportunities
+            </span>
           </div>
-
           {/* Main heading */}
           <h1 className="mt-10 text-5xl font-semibold leading-none tracking-[-0.055em] text-foreground sm:text-6xl lg:text-7xl">
             Nisith Saranga
           </h1>
 
-          <p className="mt-5 text-xl font-medium tracking-tight text-[var(--muted-text)] sm:text-2xl lg:text-3xl">
-            Full Stack Developer
+          <p className="mt-5 min-h-[36px] text-xl font-medium tracking-tight text-[var(--muted-text)] sm:min-h-[40px] sm:text-2xl lg:min-h-[44px] lg:text-3xl">
+            <RoleRotator />
           </p>
 
           <div className="mt-7 h-1 w-16 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 shadow-[0_0_18px_rgba(34,211,238,0.65)]" />

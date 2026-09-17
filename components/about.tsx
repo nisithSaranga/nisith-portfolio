@@ -2,23 +2,18 @@ import {
   HiOutlineChatAlt2,
   HiOutlineCode,
   HiOutlineChartBar,
+  HiOutlineLocationMarker
 } from "react-icons/hi";
 
 export function About() {
   return (
-   <section
-  id="about"
-  aria-labelledby="about-heading"
-  className="w-full scroll-mt-24 bg-background"
->
-  <div className="relative isolate overflow-hidden px-4 py-14 sm:py-16">
-    {/* Background accent */}
-    <div
-      aria-hidden="true"
-      className="pointer-events-none absolute right-0 top-0 -z-10 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl dark:bg-blue-500/10"
-    />
-
-    <div className="mx-auto grid w-full max-w-[920px] items-center gap-10 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">
+    <section
+      id="about"
+      aria-labelledby="about-heading"
+      className="w-full scroll-mt-24 bg-background"
+    >
+      <div className="relative isolate overflow-hidden px-4 pt-14 pb-6 sm:pt-16 sm:pb-8">
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[minmax(0,680px)_280px] lg:justify-between lg:gap-12">
           {/* Introduction */}
           <div className="min-w-0">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-700 dark:text-cyan-400">
@@ -36,8 +31,10 @@ export function About() {
 
             <div className="mt-5 space-y-4 text-base leading-7 text-[var(--muted-text)]">
               <p>
-                I’m Nisith, a Software Engineering undergraduate connecting
-                thoughtful interfaces with the logic behind them.
+                I’m Nisith Saranga, a Full-stack developer specializing in React and Java, 
+                pursuing a Software Engineering degree with a growing interest in applied AI and machine learning, building 
+                practical applications that combine thoughtful interfaces, structured backend logic
+                and reliable data handling.
               </p>
 
               <p>
@@ -49,7 +46,8 @@ export function About() {
               </p>
 
               <p>
-                Seeking an internship to contribute, learn, and grow.
+                I’m seeking an IT internship where I can contribute, learn and further develop
+                 my technical and professional capabilities.
               </p>
             </div>
 
@@ -72,13 +70,15 @@ export function About() {
               </span>
             </div>
 
-            <a
-              href="#contact"
-              className="mt-6 inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-blue-500/15 transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500"
-            >
-              <HiOutlineChatAlt2 aria-hidden="true" className="text-xl" />
-              Let’s connect
-            </a>
+           <div className="mt-6 flex flex-wrap items-center gap-4">
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-blue-500/15 transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500"
+              >
+                <HiOutlineChatAlt2 aria-hidden="true" className="text-xl" />
+                Let’s connect
+              </a>
+            </div>
           </div>
 
           {/* Smaller portrait */}
@@ -112,6 +112,13 @@ export function About() {
               </p>
             </figcaption>
           </figure>
+             <p className="ml-auto inline-flex items-center gap-1.5 text-sm text-[var(--muted-text)]">
+  <HiOutlineLocationMarker
+    aria-hidden="true"
+    className="text-lg text-cyan-700 dark:text-cyan-400"
+  />
+  Based in Colombo, Sri Lanka
+</p>
         </div>
       </div>
     </section>
