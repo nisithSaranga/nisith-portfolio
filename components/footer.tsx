@@ -12,9 +12,20 @@ export function Footer() {
       <div className="relative mx-auto grid w-full max-w-6xl items-center gap-5 px-4 py-6 sm:px-6 md:grid-cols-3 md:gap-6">
         {/* Branding */}
         <div className="flex items-center justify-center gap-3 md:justify-start">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cyan-400/60 bg-[var(--surface)] text-xs font-semibold text-foreground shadow-[0_0_18px_rgba(34,211,238,0.12)]">
-            &lt;NS/&gt;
-          </div>
+         <div
+          aria-label="Nisith Saranga"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-cyan-400/60 bg-[var(--surface)] text-[10px] font-bold tracking-[-0.06em] shadow-[0_0_18px_rgba(34,211,238,0.12)]"
+        >
+          <span className="bg-gradient-to-b from-cyan-400 to-blue-600 bg-clip-text text-transparent">
+            &lt;
+          </span>
+
+          <span className="text-foreground">NS</span>
+
+          <span className="bg-gradient-to-b from-cyan-400 to-blue-600 bg-clip-text text-transparent">
+            /&gt;
+          </span>
+        </div>
 
           <p className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-sm font-semibold text-transparent">
             Nisith Saranga
