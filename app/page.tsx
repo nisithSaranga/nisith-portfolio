@@ -42,9 +42,11 @@ export default function Home() {
         <About />
         <Skills/>
         <Projects/>
-        <Education/>
-        <Contact/>
-        <Footer/>
+        <Education />
+      <div className="flex min-h-[calc(100svh-4rem)] flex-col border-t border-[var(--border)]">
+        <Contact />
+        <Footer />
+      </div>
       </main>
     </>
   );

@@ -20,7 +20,7 @@ const projects: Project[] = [
     id: "fifa",
     summary:
      "Full-stack prediction platform built with the MERN stack in typeScript",
-    title: "FIFA 2026 World Cup — Bracket Challenge",
+    title: "FIFA 2026 World Cup - Bracket Challenge",
     cardTitle: "FIFA 2026 Bracket Challenge",
     images: [
       "/fifa1.jpg",
@@ -51,7 +51,7 @@ const projects: Project[] = [
   {
     id: "confide",
     summary:"Privacy-preserving deep learning system for STI Visual Screening of Men",
-    title: "Confide — Private STI Screening for Men",
+    title: "Confide - Private STI Screening for Men",
     cardTitle: "Confide",
     images: [
       "/confide1.png",
@@ -110,7 +110,7 @@ const projects: Project[] = [
   {
     id: "oceanview",
     summary:"Resort reservation management system for internal use ",
-    title: "OceanView Resort — Reservation Management System",
+    title: "OceanView Resort - Reservation Management System",
     cardTitle: "OceanView Resort",
     images: [
       "/oceanview1.png",
@@ -138,7 +138,7 @@ const projects: Project[] = [
   {
     id: "spc",
     summary:"Service-oriented web application for managing pharmacy operations and business workflows.",
-    title: "SPC Pharmacy Network — Pharmacy Management System",
+    title: "SPC Pharmacy Network - Pharmacy Management System",
     cardTitle: "SPC Pharmacy Network",
     images: [
       "/soc1.png",
@@ -161,7 +161,38 @@ const projects: Project[] = [
       "EF Core",
       "SQL Server",
     ],
-    github: "https://github.com/nisithSaranga/PharmacyApp",
+        github: "https://github.com/nisithSaranga/PharmacyApp",
+  },
+  {
+    id: "bank-term-deposit",
+    summary:
+      "Machine learning application predicting term deposit subscriptions with individual SHAP explanations.",
+    title: "Bank Term Deposit Subscription Predictor",
+    cardTitle: "Bank Term Deposit Predictor",
+    images: [
+      "/bank1.png",
+      "/bank2.png",
+    ],
+    overview:
+      "An interactive prediction application that estimates whether a bank customer will subscribe to a term deposit. Developed for a Computational Intelligence module, the project compares classification models and uses a tuned XGBoost pipeline with SHAP explanations to show the factors influencing each prediction. The deployed model includes call duration, so its predictions require information available after a call.",
+    features: [
+      "Enter customer details and campaign information to estimate subscription probability.",
+      "Display a subscription prediction alongside its probability.",
+      "Explain individual predictions with SHAP contributions and a readable summary.",
+      "Compare classification models, with tuned XGBoost achieving a holdout ROC-AUC of 0.9676.",
+      "Evaluate how removing call duration affects performance and document its limitation for pre-call scoring.",
+    ],
+    stack: [
+      "Python",
+      "Pandas",
+      "Scikit-learn",
+      "XGBoost",
+      "SHAP",
+      "Streamlit",
+      "Joblib",
+    ],
+    github:
+      "https://github.com/nisithSaranga/bank-term-deposit-predictor",
   },
 ];
 

@@ -35,9 +35,34 @@ export function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="w-full scroll-mt-24 bg-background py-6 sm:py-8"
+      className="relative isolate flex w-full flex-1 scroll-mt-24 items-center overflow-hidden bg-background py-6 sm:py-8"
     >
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 lg:grid-cols-[minmax(0,1fr)_minmax(380px,500px)] lg:gap-14">
+          {/* Decorative background */}
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 z-0"
+    >
+      {/* Faint dot grid */}
+      <div
+        className="absolute inset-0 opacity-[0.09] dark:opacity-[0.12]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(34, 211, 238, 0.7) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+          maskImage:
+            "linear-gradient(to bottom, transparent, black 18%, black 82%, transparent)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent, black 18%, black 82%, transparent)",
+        }}
+      />
+
+  {/* Cyan glow behind heading */}
+  <div className="absolute left-[4%] top-1/2 h-[360px] w-[460px] -translate-y-1/2 rounded-full bg-cyan-400/15 blur-[120px] dark:bg-cyan-400/8" />
+
+  {/* Blue glow behind contact controls */}
+  <div className="absolute right-[3%] top-1/2 h-[380px] w-[500px] -translate-y-1/2 rounded-full bg-blue-500/15 blur-[130px] dark:bg-blue-500/10" />
+</div>
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-10 px-4 lg:grid-cols-[minmax(0,1fr)_minmax(380px,500px)] lg:gap-14">
         {/* Invitation */}
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-700 dark:text-cyan-400">

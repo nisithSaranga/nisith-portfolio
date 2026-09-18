@@ -521,7 +521,7 @@ export function Skills() {
     <section
       id="skills"
       aria-labelledby="skills-heading"
-      className="w-full scroll-mt-24 bg-background px-4 py-6 sm:py-8"
+      className="w-full scroll-mt-24 bg-background px-4 py-6"
     >
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
@@ -545,7 +545,7 @@ export function Skills() {
         </div>
 
         {/* Category tabs */}
-      <div className="mt-9 overflow-x-auto pb-1">
+      <div className="mt-6 overflow-x-auto pb-1">
         <div
             role="tablist"
             aria-label="Skill categories"
@@ -569,7 +569,7 @@ export function Skills() {
                 onClick={() => changeCategory(index)}
                 onKeyDown={(event) => handleTabKey(event, index)}
                 className={[
-                  "rounded-t-lg px-3 py-4 text-sm font-medium transition-colors",
+                  "rounded-t-lg px-3 py-3 text-sm font-medium transition-colors",
                   "focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-cyan-500",
                   categoryIndex === index
                     ? "text-cyan-700 dark:text-cyan-400"
@@ -603,7 +603,7 @@ export function Skills() {
             hidden={categoryIndex !== index}
           >
             {categoryIndex === index && (
-              <div className="skills-panel-enter mt-6 grid items-stretch gap-5 lg:grid-cols-[1.65fr_1fr]">
+              <div className="skills-panel-enter mt-4 grid items-stretch gap-5 lg:grid-cols-[1.65fr_1fr]">
                 {/* Technology tiles */}
                 <div className="grid auto-rows-fr grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
                   {category.items.map((id) => {
@@ -618,8 +618,8 @@ export function Skills() {
                         aria-pressed={active}
                         aria-controls="skill-description"
                         onClick={() => setSelectedId(id)}
-                        className={[
-                          "flex min-h-[140px] flex-col items-center justify-center gap-4 rounded-2xl border p-4 sm:min-h-[165px]",
+                        className={["flex min-h-[132px] flex-col items-center justify-center gap-3 rounded-2xl border p-4 sm:min-h-[145px]",
+                          
                           "transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-500",
                           "motion-safe:hover:-translate-y-1",
                           active
@@ -629,7 +629,7 @@ export function Skills() {
                       >
                         <Icon
                           aria-hidden="true"
-                          className={`text-4xl sm:text-5xl ${skill.color}`}
+                          className={`text-4xl ${skill.color}`}
                         />
                         <span className="text-center text-sm font-semibold text-foreground sm:text-base">
                           {skill.name}
@@ -644,7 +644,7 @@ export function Skills() {
                   id="skill-description"
                   aria-live="polite"
                   aria-atomic="true"
-                  className="min-w-0 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-7"
+                  className="min-w-0 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 sm:p-6"
                 >
                   <div key={selectedId} className="skills-detail-enter">
                     <div className="flex items-center gap-4">
@@ -665,13 +665,13 @@ export function Skills() {
                       </div>
                     </div>
 
-                    <div className="my-6 h-px bg-[var(--border)]" />
+                    <div className="my-5 h-px bg-[var(--border)]" />
 
                     <p className="text-base leading-7 text-[var(--muted-text)]">
                       {selected.description}
                     </p>
 
-                    <div className="my-6 h-px bg-[var(--border)]" />
+                    <div className="my-5 h-px bg-[var(--border)]" />
 
                     <ul
                       aria-label="Key features"
@@ -694,9 +694,9 @@ export function Skills() {
         ))}
 
         {/* Moving technology strip */}
-        <div className="mt-7 flex items-center overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)]">
+        <div className="mt-5 flex items-center overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)]">
           <div
-            className="skills-marquee-window min-w-0 flex-1 overflow-hidden py-5"
+            className="skills-marquee-window min-w-0 flex-1 overflow-hidden py-3"
             aria-label="Featured technologies"
           >
             <div
