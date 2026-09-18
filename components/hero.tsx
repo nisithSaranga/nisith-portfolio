@@ -12,7 +12,7 @@ const technologies = [
 
 export function Hero() {
   return (
-    <section className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden bg-background text-foreground">
+    <section className="portfolio-hero relative isolate min-h-[calc(100svh-75px)] overflow-hidden bg-background text-foreground">
       {/* Light workspace background */}
       <div
         aria-hidden="true"
@@ -34,7 +34,7 @@ export function Hero() {
       {/* Mobile overlay keeps text readable */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0 bg-background/85 lg:hidden"
+        className="pointer-events-none absolute inset-0 z-0 bg-background/95 sm:bg-background/90 lg:hidden"
       />
 
       {/* Desktop fade softens the image's left boundary */}
@@ -47,8 +47,8 @@ export function Hero() {
         }}
       />
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-6xl items-center px-4 py-20 sm:px-6 lg:py-24">
-        <div className="w-full max-w-[680px] -translate-x-6">
+      <div className="hero-content relative z-10 mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-6xl items-center px-4 py-20 sm:px-6 lg:py-24">
+        <div className="w-full max-w-[680px] lg:-translate-x-6">
           <div className="inline-flex items-center gap-3 rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-sm text-foreground shadow-lg backdrop-blur-md dark:border-white/15 dark:bg-black/40">
            <span
               aria-hidden="true"
@@ -61,7 +61,7 @@ export function Hero() {
             </span>
           </div>
           {/* Main heading */}
-          <h1 className="mt-10 text-5xl font-semibold leading-none tracking-[-0.055em] text-foreground sm:text-6xl lg:text-7xl">
+          <h1 className="mt-10 lg:mt-6 text-5xl font-semibold leading-none tracking-[-0.055em] text-foreground sm:text-6xl lg:text-7xl">
             Nisith Saranga
           </h1>
 

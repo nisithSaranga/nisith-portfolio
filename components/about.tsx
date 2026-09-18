@@ -112,7 +112,7 @@ export function About() {
               </p>
             </figcaption>
           </figure>
-             <p className="ml-auto inline-flex items-center gap-1.5 text-sm text-[var(--muted-text)]">
+             <p className="mx-auto inline-flex items-center gap-1.5 text-sm text-[var(--muted-text)] lg:ml-auto lg:mr-0">
   <HiOutlineLocationMarker
     aria-hidden="true"
     className="text-lg text-cyan-700 dark:text-cyan-400"

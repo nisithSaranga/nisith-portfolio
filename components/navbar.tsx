@@ -67,7 +67,7 @@ export function Navbar() {
       {mobileMenuOpen && (
         <nav
           id="mobile-navigation"
-          className="border-t border-zinc-200 bg-white px-4 py-4 md:hidden dark:border-white/10 dark:bg-[#070b14]"
+          className="max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-zinc-200 bg-white px-4 py-4 md:hidden dark:border-white/10 dark:bg-[#070b14]"
           aria-label="Mobile navigation"
         >
           <div className="mx-auto flex max-w-6xl flex-col">

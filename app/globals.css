@@ -1,5 +1,94 @@
 @import "tailwindcss";
 
+/* Mobile/tablet adjustments only; desktop geometry stays unchanged. */
+@media (width < 64rem) {
+  .portfolio-hero,
+  .portfolio-hero .hero-content {
+    min-height: 0;
+  }
+
+  .portfolio-hero .hero-content {
+    padding-block: 3rem;
+  }
+
+  .portfolio-hero h1 {
+    font-size: clamp(2.5rem, 7.5vw, 3.75rem);
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+  }
+
+  .portfolio-hero a[href="#projects"].absolute {
+    display: none;
+  }
+
+  #about, #skills, #projects, #education, #contact {
+    scroll-margin-top: 5rem;
+  }
+
+  #contact {
+    flex: none;
+    padding-block: 3rem;
+  }
+
+  #contact h2 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    overflow-wrap: anywhere;
+  }
+
+  #contact p,
+  #education h4,
+  #skills h3,
+  .project-drawer h3 {
+    overflow-wrap: anywhere;
+  }
+
+  #skills [role="tablist"] button,
+  #skills button[aria-pressed],
+  header button,
+  .project-drawer button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  #education a {
+    min-height: 44px;
+  }
+
+  .project-preview-card {
+    width: min(82vw, 360px);
+  }
+
+  .project-drawer > div > div:last-child {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+
+@media (width < 40rem) {
+  #about > div {
+    padding-top: 2.5rem;
+  }
+
+  #skills > div,
+  #skills [role="tabpanel"],
+  #contact > div:last-child > div {
+    min-width: 0;
+  }
+
+  #skills [role="tabpanel"] > div > div > button {
+    min-width: 0;
+    padding: 0.75rem;
+    overflow-wrap: anywhere;
+  }
+
+  #contact .grid-cols-3 {
+    gap: 0.5rem;
+  }
+
+  footer {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
