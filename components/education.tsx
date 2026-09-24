@@ -14,6 +14,16 @@ type Certification = {
 };
 
 const certifications: Certification[] = [
+    {
+    title: "AWS Student Builder Group SUSL Kickoff: Connect, Learn & Build",
+    issuer:
+      "AWS Student Builder Group at Sabaragamuwa University of Sri Lanka",
+    issued: "September 2026",
+    logo: "/aws-susl-logo.png",
+    logoAlt: "AWS Student Builder Group SUSL logo",
+    credentialUrl: "/aws-susl-certificate.png",
+    credentialId: "AWS-2026-S01-072",
+  },
   {
     title: "From Idea to Market Workshop",
     issuer: "AIconomy Summit",
@@ -156,7 +166,12 @@ export function Education() {
               </h3>
             </div>
 
-            <div className="space-y-4">
+            <div
+              role="region"
+              aria-label="Certificates"
+              tabIndex={0}
+              className="space-y-4 rounded-2xl p-1 lg:max-h-[360px] lg:overflow-y-auto lg:pr-3 [scrollbar-width:thin] [scrollbar-color:var(--muted-text)_var(--surface)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
+            >
               {certifications.map((certification) => (
                 <article
                   key={certification.title}
@@ -208,6 +223,10 @@ export function Education() {
                 </article>
               ))}
             </div>
+            <p className="mt-3 text-right text-xs text-[var(--muted-text)]">
+              {certifications.length} certificates
+              <span className="hidden lg:inline"> · Scroll to explore</span>
+            </p>
           </div>
         </div>
       </div>
