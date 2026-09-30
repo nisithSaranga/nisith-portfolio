@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { HiArrowDown, HiArrowRight } from "react-icons/hi";
 import { RoleRotator } from "@/components/role-rotator";
@@ -11,6 +14,7 @@ const technologies = [
 ];
 
 export function Hero() {
+  const [opportunityOpen, setOpportunityOpen] = useState(false);
   return (
     <section className="portfolio-hero relative isolate min-h-[calc(100svh-75px)] overflow-hidden bg-background text-foreground">
       {/* Light workspace background */}
@@ -49,17 +53,46 @@ export function Hero() {
 
       <div className="hero-content relative z-10 mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-6xl items-center px-4 py-20 sm:px-6 lg:py-24">
         <div className="w-full max-w-[680px] lg:-translate-x-6">
-          <div className="inline-flex items-center gap-3 rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-sm text-foreground shadow-lg backdrop-blur-md dark:border-white/15 dark:bg-black/40">
-           <span
-              aria-hidden="true"
-              className="relative flex h-2.5 w-2.5 items-center justify-center"
+         <div className="relative inline-block">
+          <button
+            type="button"
+            onClick={() => setOpportunityOpen((open) => !open)}
+            aria-expanded={opportunityOpen}
+            aria-controls="hero-opportunity-details"
+            className="inline-flex items-center gap-3 rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-foreground shadow-lg backdrop-blur-md transition hover:border-cyan-500 dark:border-white/15 dark:bg-black/40"
+          >
+            <span aria-hidden="true" className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-50 motion-reduce:animate-none" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.85)]" />
+            </span>
+
+            <span className="text-xs">Open to opportunities</span>
+          </button>
+
+          {opportunityOpen && (
+            <div
+              id="hero-opportunity-details"
+              className="absolute left-0 top-full z-30 mt-3 w-72 max-w-[calc(100vw-2rem)] rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 text-left text-foreground shadow-xl dark:border-white/15 dark:bg-[#101827]"
             >
-              <span className="relative h-2.5 w-2.5 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 shadow-[0_0_12px_rgba(34,211,238,0.85)]" />
-            </span>
-            <span className="text-xs">
-              open to opportunities
-            </span>
-          </div>
+              <p className="text-sm font-semibold">
+                Currently seeking an internship
+              </p>
+
+              <p className="mt-2 text-sm leading-6 text-[var(--muted-text)]">
+                I’m looking for a Software Engineering internship where I can
+                contribute to real projects and grow with a team.
+              </p>
+
+              <a
+                href="#contact"
+                onClick={() => setOpportunityOpen(false)}
+                className="mt-4 inline-block text-sm font-semibold text-blue-600 hover:underline dark:text-cyan-400"
+              >
+                Get in touch →
+              </a>
+            </div>
+          )}
+        </div>
           {/* Main heading */}
           <h1 className="mt-10 lg:mt-6 text-5xl font-semibold leading-none tracking-[-0.055em] text-foreground sm:text-6xl lg:text-7xl">
             Nisith Saranga

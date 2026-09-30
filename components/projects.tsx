@@ -79,8 +79,8 @@ const projects: Project[] = [
   },
   {
     id: "fixtrack",
-    summary:"Smart vehicle service platform with real-time service tracking",
-    title: "FixTrack — Vehicle Breakdown & Service Management Platform",
+    summary:"Vehicle Breakdown & Service Management platform with real-time service tracking",
+    title: "FixTrack - Vehicle Breakdown & Service Management Platform",
     cardTitle: "FixTrack",
     images: [
       "/fixtrack1.jpg",
@@ -168,7 +168,7 @@ const projects: Project[] = [
     summary:
       "Machine learning application predicting term deposit subscriptions with individual SHAP explanations.",
     title: "Bank Term Deposit Subscription Predictor",
-    cardTitle: "Bank Term Deposit Predictor",
+    cardTitle: "Bank Term Deposit Subscription Predictor",
     images: [
       "/bank1.png",
       "/bank2.png",

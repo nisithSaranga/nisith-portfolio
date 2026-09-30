@@ -14,6 +14,26 @@ type Certification = {
 };
 
 const certifications: Certification[] = [
+  {
+    title: "Applied AI Foundations",
+    issuer:
+      "OpenAI Academy",
+    issued: "September 2026",
+    logo: "/open-ai-logo.png",
+    logoAlt: "OpenAI Academy logo",
+    credentialUrl: "https://oaiacademy.credential.net/127998d9-8087-4f09-9ee3-4f18cadedf6f#acc.OQtb8JG5",
+    credentialId: "",
+  },
+   {
+    title: "AI Foundations",
+    issuer:
+      "OpenAI Academy",
+    issued: "September 2026",
+    logo: "/open-ai-logo.png",
+    logoAlt: "OpenAI Academy logo",
+    credentialUrl: "https://oaiacademy.credential.net/50abdbe5-25ee-4aa6-ab76-cc4c4044f135#acc.E6pJaRCP",
+    credentialId: "",
+  },
     {
     title: "AWS Student Builder Group SUSL Kickoff: Connect, Learn & Build",
     issuer:
