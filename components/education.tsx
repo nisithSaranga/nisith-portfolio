@@ -14,6 +14,36 @@ type Certification = {
 };
 
 const certifications: Certification[] = [
+   {
+    title: "CertDirectory Workshop 2 Attendee - October 2026",
+    issuer:
+      "CertDirectory.io",
+    issued: "October 2026",
+    logo: "/certdirectory-logo.png",
+    logoAlt: "CertDirectory.io logo",
+    credentialUrl: "https://credentials.certdirectory.io/verify/CRD-AUTETSES",
+    credentialId: "CRD-AUTETSES",
+  },
+   {
+    title: "CertDirectory Workshop 1 Attendee - October 2026",
+    issuer:
+      "CertDirectory.io",
+    issued: "October 2026",
+    logo: "/certdirectory-logo.png",
+    logoAlt: "CertDirectory.io logo",
+    credentialUrl: "https://credentials.certdirectory.io/verify/CRD-DCKE67VL",
+    credentialId: "CRD-DCKE67VL",
+  },
+  {
+    title: "AWS Certification Roadmap: Learn, Build, Get Certiifed",
+    issuer:
+      "AWS Student Builder Group at ICBT Campus Colombo",
+    issued: "October 2026",
+    logo: "/aws-icbt-logo.png",
+    logoAlt: "AWS Student Builder Group ICBT logo",
+    credentialUrl: "/aws-icbt-certificate.png",
+    credentialId: "AWS-2026-S01-072",
+  },
   {
     title: "Applied AI Foundations",
     issuer:
@@ -130,7 +160,7 @@ export function Education() {
                     </h4>
 
                     <span className="rounded-full border border-cyan-500/25 bg-cyan-500/10 px-2.5 py-1 text-[11px] font-medium text-cyan-700 dark:text-cyan-300">
-                      Reading
+                      Reading ( expected 2028 )
                     </span>
                   </div>
 
@@ -182,7 +212,7 @@ export function Education() {
               </span>
 
               <h3 className="text-lg font-semibold text-foreground">
-                Certifications
+                Certifications & Badges
               </h3>
             </div>
 
